@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import styles from "./main.module.css";
-import Modal1 from './modal1';
+import styles from "./css/main.module.css";
+import Modal1 from './modal/modal1';
+import Modal2 from './modal/modal2';
 
 
 
@@ -8,6 +9,8 @@ export default function Main() {
 
 
     const [showModal, setShowModal] = useState<boolean>(false);
+    const [showModal2, setShowModal2] = useState<boolean>(false);
+
     const [back, setBack] = useState<boolean>(false);
 
     //모달 열기
@@ -37,14 +40,23 @@ export default function Main() {
                 </div>
 
                 <div className={styles.project}>project</div>
+
                 <div className={styles.pj1} onClick={show}>
                     {showModal && <Modal1 showModal={showModal} setShowModal={setShowModal} />}
                     box1
                 </div>
+
                 {back &&
                     <div className={styles.modalBack} onClick={close}>
                     </div>}
-                <div className={styles.pj2}>box2</div>
+
+                <div className={styles.pj2} onClick={show}>
+                    {showModal && <Modal2 showModal={showModal2} setShowModal={setShowModal2} />}
+                    box2
+                </div>
+                {back &&
+                    <div className={styles.modalBack} onClick={close}>
+                    </div>}
                 <div className={styles.pj3}>box3</div>
                 <div className={styles.pj4}>box4</div>
 
