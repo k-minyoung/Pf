@@ -31,13 +31,22 @@ export default function Main() {
         <div className={styles.body}>
             <div className={styles.top}>포트폴리오입니다</div>
             <div className={styles.header}>
-                <div>skill</div>
-                <div>project</div>
-                <div>footer</div>
+                <div className={styles.skill2}>skill</div>
+                <div className={styles.project}>project</div>
+                <div className={styles.footer}>footer</div>
             </div>
             <div className={styles.mid}>
-                <div className={styles.skill}>skill
+                <div className={styles.skill}>
+
+                    <div className={styles.frontBox}> front-end
+                        <div className={styles.barBox}>
+                            <div className={styles.stack}>HTML</div>
+                        </div>
+                    </div>
+                    <div className={styles.backBox}> back-end</div>
+
                 </div>
+
 
                 <div className={styles.project}>project</div>
 

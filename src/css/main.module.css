@@ -5,7 +5,7 @@
 }
 
 .body {
-    background-color: green;
+    background-color: rgb(255, 255, 255);
 }
 
 .top {
@@ -19,18 +19,54 @@
 }
 
 .header {
+    position: sticky;
+    top: 0px;
+
+    background-color: wheat;
     width: auto;
+    height: 100px;
+
     display: flex;
     justify-content: space-around;
+    align-items: center;
+
     border-bottom: 2px solid black;
+
+    font-size: 30px;
 }
 
 .skill {
+    display: flex;
     border: 2px solid black;
     border-radius: 10px;
     margin: 70px 200px 70px 200px;
     background-color: gray;
     height: 400px;
+}
+
+.frontBox {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.barBox {
+    display: flex;
+    width: 400px;
+    height: auto;
+    text-align: start;
+    border: 2px solid skyblue;
+}
+
+.stack {
+    width: 80px;
+}
+
+.backBox {
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    background-color: aquamarine;
 }
 
 .pj1 {
