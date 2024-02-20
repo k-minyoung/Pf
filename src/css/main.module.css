@@ -20,7 +20,8 @@
 
 .header {
     position: sticky;
-    top: 0px;
+    animation: slideUp 0.5s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
 
     background-color: wheat;
     width: auto;
@@ -35,6 +36,30 @@
     font-size: 30px;
 }
 
+.header2 {
+    position: sticky;
+    animation: slideDown 0.5s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+
+    background-color: wheat;
+    width: auto;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border-bottom: 2px solid black;
+
+    font-size: 30px;
+}
+
+.skillTitle {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 80px;
+}
+
 .skill {
     display: flex;
     border: 2px solid black;
@@ -45,21 +70,81 @@
 }
 
 .frontBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 50%;
     height: 100%;
     text-align: center;
+
 }
 
 .barBox {
     display: flex;
-    width: 400px;
-    height: auto;
-    text-align: start;
+    width: 420px;
+    height: 25px;
     border: 2px solid skyblue;
+    margin-top: 7px;
 }
 
 .stack {
-    width: 80px;
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    background-color: aquamarine;
+}
+
+.barFill1 {
+    display: inline-block;
+
+    background-color: blueviolet;
+    animation: slidein65 1s;
+    animation-fill-mode: forwards;
+}
+
+.barFill2 {
+    display: inline-block;
+
+    background-color: blueviolet;
+    animation: slidein65 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.1s;
+}
+
+.barFill3 {
+    display: inline-block;
+
+    background-color: blueviolet;
+    animation: slidein65 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.2s;
+}
+
+.barFill4 {
+    display: inline-block;
+
+    background-color: blueviolet;
+    animation: slidein50 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.3s;
+}
+
+.barFill5 {
+    display: inline-block;
+
+    background-color: blueviolet;
+    animation: slidein40 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.4s;
+}
+
+.barFill6 {
+    display: inline-block;
+
+    background-color: blueviolet;
+    animation: slidein40 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
 }
 
 .backBox {
@@ -114,4 +199,56 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 0;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100px;
+    }
+
+    to {
+        top: 0px;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 0px;
+    }
+
+    to {
+        top: -100px;
+    }
+}
+
+@keyframes slidein65 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 63%;
+    }
+
+}
+
+@keyframes slidein50 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 53%;
+    }
+
+}
+
+@keyframes slidein40 {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 40%;
+    }
 }
