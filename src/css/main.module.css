@@ -20,10 +20,11 @@
 
 .header {
     position: sticky;
-    animation: slideUp 0.5s ease-in-out 0s 1;
-    animation-fill-mode: forwards;
+    top: -100px;
+    /* animation: slideUp 0.5s ease-in-out 0s 1;
+    animation-fill-mode: forwards; */
 
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
     width: auto;
     height: 100px;
 
@@ -31,17 +32,17 @@
     justify-content: space-around;
     align-items: center;
 
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
 
     font-size: 30px;
 }
 
 .header2 {
     position: sticky;
-    animation: slideDown 0.5s ease-in-out 0s 1;
+    animation: slideDown 0.5s ease-in-out 0.2s 1;
     animation-fill-mode: forwards;
 
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
     width: auto;
     height: 100px;
 
@@ -49,7 +50,7 @@
     justify-content: space-around;
     align-items: center;
 
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
 
     font-size: 30px;
 }
@@ -207,7 +208,7 @@
     }
 
     to {
-        top: 0px;
+        top: calc(-1px/10);
     }
 }
 
