@@ -80,12 +80,17 @@
 
 }
 
+.frontIcon {
+    width: 230px;
+    height: 230px;
+}
+
 .barBox {
     display: flex;
     width: 420px;
-    height: 25px;
+    height: 30px;
     border: 2px solid skyblue;
-    margin-top: 7px;
+    margin-top: 15px;
 }
 
 .stack {
@@ -93,6 +98,10 @@
     text-align: center;
     width: 100px;
     background-color: aquamarine;
+}
+
+.barEmpty {
+    display: inline-block;
 }
 
 .barFill1 {
