@@ -7,4 +7,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
+    animation: modalOpen 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+        top: 55%
+    }
+
+    to {
+        opacity: 1;
+        top: 50%
+    }
 }
