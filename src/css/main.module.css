@@ -5,7 +5,7 @@
 }
 
 .body {
-    background-color: rgb(255, 255, 255);
+    background-color: #F5F5F5;
 }
 
 .top {
@@ -18,21 +18,25 @@
     border: 2px solid black;
 }
 
+.Logo {
+    position: absolute;
+    left: 10px;
+    cursor: pointer;
+}
+
+
 .header {
     position: sticky;
     top: -100px;
     /* animation: slideUp 0.5s ease-in-out 0s 1;
     animation-fill-mode: forwards; */
 
-    background-color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
     width: auto;
-    height: 100px;
+    height: 60px;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
-    /* border-bottom: 2px solid black; */
+    border-bottom: 2px solid #59a5f5;
 
     font-size: 30px;
 }
@@ -42,18 +46,111 @@
     animation: slideDown 0.5s ease-in-out 0.2s 1;
     animation-fill-mode: forwards;
 
-    background-color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
     width: auto;
-    height: 100px;
+    height: 60px;
 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
-    /* border-bottom: 2px solid black; */
+    border-bottom: 2px solid #59a5f5;
 
     font-size: 30px;
+    z-index: 999;
 }
+
+.headerText {
+    font-size: 22px;
+    height: 60px;
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+
+}
+
+.textWrapper {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between
+}
+
+
+.skill2 {
+
+    color: #cccccc;
+
+    text-align: center;
+}
+
+.skill2:hover {
+    animation: textColor 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.skill2:not(:hover) {
+    animation: textColorR 0.3s ease-in-out 0s 1 forwards;
+}
+
+.project {
+    color: #cccccc;
+    text-align: center;
+}
+
+.project:hover {
+    animation: textColor 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+
+}
+
+.project:not(:hover) {
+    animation: textColorR 0.3s ease-in-out 0s 1 forwards;
+}
+
+.footer {
+    color: #cccccc;
+    text-align: center;
+
+}
+
+.footer:hover {
+    animation: textColor 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+.footer:not(:hover) {
+    animation: textColorR 0.3s ease-in-out 0s 1 forwards;
+}
+
+.colorChange {
+    animation: textColor 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+}
+
+/* .selectSkill {
+    position: relative;
+    margin-left: 10px;
+    width: 50px;
+    height: 4px;
+    background-color: #0077C2;
+}
+
+.selectProject {
+    position: relative;
+    width: 70px;
+    padding-right: 10px;
+    height: 4px;
+    background-color: #0077C2;
+}
+
+.selectFooter {
+    position: relative;
+    width: 70px;
+    height: 4px;
+    background-color: #0077C2;
+} */
 
 .skillTitle {
     font-size: 36px;
@@ -99,11 +196,27 @@
     flex-direction: column;
 }
 
+.Wrapper120 {
+    position: relative;
+    width: 110px;
+    display: flex;
+    margin: 7px;
+    flex-direction: column;
+}
+
 .frontIcon {
     width: 100px;
     height: 100px;
     border-radius: 20px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.frontIcon120 {
+    width: 110px;
+    height: 100px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+
 }
 
 .hoverText {
@@ -113,6 +226,20 @@
     justify-content: center;
     align-items: center;
     width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.121);
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.hoverText120 {
+    display: none;
+    position: absolute;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
     height: 100px;
     background-color: rgba(0, 0, 0, 0.121);
     color: white;
@@ -132,6 +259,21 @@
     background-color: rgba(0, 0, 0, 0.5);
     animation: modalOpen 0.2s linear 0s 1;
     animation-fill-mode: forwards;
+}
+
+.frontIcon120:hover+.hoverText120 {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: modalOpen 0.2s linear 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.hoverText120:hover {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: modalOpen 0.2s linear 0s 1;
+    animation-fill-mode: forwards;
+
 }
 
 .barBox {
@@ -325,5 +467,35 @@
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes modalOpenR {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes textColor {
+    from {
+        color: #cccccc;
+    }
+
+    to {
+        color: #00619a
+    }
+}
+
+@keyframes textColorR {
+    from {
+        color: #00619a
+    }
+
+    to {
+        color: #cccccc
     }
 }

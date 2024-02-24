@@ -17,7 +17,6 @@ import Java from './icon/java.png'
 import MySQL from './icon/mysql.png'
 import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
-import { hover } from '@testing-library/user-event/dist/hover';
 //////////////
 
 
@@ -29,6 +28,8 @@ export default function Main() {
     const [visible, setVisible] = useState<boolean>(false);
     const [frontView, setFrontView] = useState<boolean>(false);
     const [backView, setBackView] = useState<boolean>(false);
+    const [midView, setMidView] = useState<boolean>(false);
+    const [mid2View, setMid2View] = useState<boolean>(false);
 
 
     const [back, setBack] = useState<boolean>(false);
@@ -105,6 +106,54 @@ export default function Main() {
         io3.observe(document.querySelector("#back") as HTMLElement);
         console.log(backView)
     }, [backView]);
+
+    // mid 뷰포트 감지
+    const io4 = new IntersectionObserver((entries) => {
+        entries.forEach((entry2, i) => {
+            if (entry2.isIntersecting) {
+                setMidView(true)
+                console.log(`mid가 뷰포트에 ${midView}`)
+            } else {
+                setMidView(false)
+                console.log(`mid가 뷰포트에 ${midView}`)
+            }
+        });
+    },
+        {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3
+        }
+    )
+
+    useEffect(() => {
+        io4.observe(document.querySelector("#mid") as HTMLElement);
+        console.log(midView)
+    }, [midView]);
+
+    // mid2 뷰포트 감지
+    const io5 = new IntersectionObserver((entries) => {
+        entries.forEach((entry2, i) => {
+            if (entry2.isIntersecting) {
+                setMid2View(true)
+                console.log(`mid2가 뷰포트에 ${mid2View}`)
+            } else {
+                setMid2View(false)
+                console.log(`mid2가 뷰포트에 ${mid2View}`)
+            }
+        });
+    },
+        {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.3
+        }
+    )
+
+    useEffect(() => {
+        io5.observe(document.querySelector("#mid2") as HTMLElement);
+        console.log(mid2View)
+    }, [mid2View]);
     //https://ww8007-learn.tistory.com/6 참고했음
 
 
@@ -133,6 +182,11 @@ export default function Main() {
         setShowModal(false)
         setBack(false)
         console.log(showModal)
+    }
+    //새로고침
+    const reload = () => {
+        window.location.reload();
+        window.scrollTo(0, 0);
     }
     interface Icon {
         name: string;
@@ -165,17 +219,48 @@ export default function Main() {
             text: "JQuery"
         }
     ]
+    const backIconArray: Icon[] = [
+        {
+            name: Node,
+            text: 'Node.js'
+        },
+        {
+            name: Java,
+            text: 'Java'
+        },
+        {
+            name: MySQL,
+            text: 'MySQL'
+        },
+        {
+            name: Spring,
+            text: 'Spring-boot'
+        },
+        {
+            name: AWS,
+            text: 'AWS'
+        },
+    ]
 
     return (
         <div className={styles.body} id='body'>
             <div className={styles.top}>포트폴리오입니다</div>
 
-            <div className={visible ? styles.header : styles.header2} id='header'>
-                <div className={styles.skill2}>skill</div>
-                <div className={styles.project}>project</div>
-                <div className={styles.footer}>footer</div>
+            <div className={visible || showModal ? styles.header : styles.header2} id='header'>
+                <div className={styles.headerText}>
+                    <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
+
+
+                    <div className={styles.textWrapper}>
+                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2}>Skill</div>
+                        <div className={mid2View ? styles.colorChange : styles.project}>Project</div>
+                        <div className={styles.footer}>Footer</div>
+
+                    </div>
+                </div>
             </div>
-            <div className={styles.mid}>
+
+            <div className={styles.mid} id='mid'>
                 <div className={styles.skillTitle}>Skill</div>
                 <div className={styles.skill} id='front'>
 
@@ -231,16 +316,23 @@ export default function Main() {
                 </div>
                 <div className={styles.skill} id='back'>
 
-                    <div className={styles.frontBox}> 분야
-                        <div>
-                            <img src={Node} className={styles.frontIcon} />
-                            <img src={Java} className={styles.frontIcon} />
-                            <img src={MySQL} className={styles.frontIcon} />
-                            <img src={Spring} className={styles.frontIcon} style={{ width: '110px' }} />
-                            <img src={AWS} className={styles.frontIcon} style={{ width: '110px' }} />
+                    <div className={styles.frontBox}>
+                        <div>분야</div>
+                        <div className={styles.iconBox}>
+                            {backIconArray.map((i, index) => {
+                                return (
 
+                                    <div className={index <= 2 ? styles.Wrapper : styles.Wrapper120}>
+
+                                        <img key={index} src={i.name} className={index <= 2 ? styles.frontIcon : styles.frontIcon120} />
+                                        <div className={index <= 2 ? styles.hoverText : styles.hoverText120}>{i.text}</div>
+
+                                    </div>
+
+                                )
+                            })}
                         </div>
-                        <div>Back-end</div>
+                        <div>Back-End</div>
                         <div>어쩌고저쩌고</div>
                     </div>
 
@@ -270,8 +362,9 @@ export default function Main() {
 
 
                 </div>
+            </div>
 
-
+            <div className={styles.mid2} id='mid2'>
                 <div className={styles.project}>project</div>
 
                 <div className={styles.pj1} onClick={show}>
@@ -293,8 +386,8 @@ export default function Main() {
                 <div className={styles.pj3}>box3</div>
                 <div className={styles.pj4}>box4</div>
 
+                <div className={styles.bot}>b</div>
             </div>
-            <div className={styles.bot}>b</div>
         </div>
     );
 }
