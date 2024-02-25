@@ -17,6 +17,7 @@ import Java from './icon/java.png'
 import MySQL from './icon/mysql.png'
 import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
+import K from './icon/letter-k.png'
 //////////////
 
 
@@ -248,15 +249,12 @@ export default function Main() {
 
             <div className={visible || showModal ? styles.header : styles.header2} id='header'>
                 <div className={styles.headerText}>
-                    <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
-
-
                     <div className={styles.textWrapper}>
                         <div className={!visible && !mid2View ? styles.colorChange : styles.skill2}>Skill</div>
                         <div className={mid2View ? styles.colorChange : styles.project}>Project</div>
                         <div className={styles.footer}>Footer</div>
-
                     </div>
+                    <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
                 </div>
             </div>
 
@@ -285,8 +283,16 @@ export default function Main() {
                     </div>
 
                     <div className={styles.backBox}> 숙련도
-
-                        <div className={styles.barBox}>
+                        {frontIconArray.map((i, index) => {
+                            const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
+                            return (
+                                <div className={styles.barBox}>
+                                    <div className={styles.stack}>{i.text}</div>
+                                    <div className={frontView ? barFillClass : styles.barEmpty}></div>
+                                </div>
+                            )
+                        })}
+                        {/* <div className={styles.barBox}>
                             <div className={styles.stack}>HTML</div>
                             <div className={frontView ? styles.barFill1 : styles.barEmpty}></div>
                         </div>
@@ -307,9 +313,9 @@ export default function Main() {
                             <div className={frontView ? styles.barFill5 : styles.barEmpty}></div>
                         </div>
                         <div className={styles.barBox}>
-                            <div className={styles.stack}>Jquery</div>
+                            <div className={styles.stack}>JQuery</div>
                             <div className={frontView ? styles.barFill6 : styles.barEmpty}></div>
-                        </div>
+                        </div> */}
                     </div>
 
 
@@ -321,14 +327,10 @@ export default function Main() {
                         <div className={styles.iconBox}>
                             {backIconArray.map((i, index) => {
                                 return (
-
                                     <div className={index <= 2 ? styles.Wrapper : styles.Wrapper120}>
-
                                         <img key={index} src={i.name} className={index <= 2 ? styles.frontIcon : styles.frontIcon120} />
                                         <div className={index <= 2 ? styles.hoverText : styles.hoverText120}>{i.text}</div>
-
                                     </div>
-
                                 )
                             })}
                         </div>
@@ -337,8 +339,23 @@ export default function Main() {
                     </div>
 
                     <div className={styles.backBox}> 숙련도
-
-                        <div className={styles.barBox}>
+                        {backIconArray.map((i, index) => {
+                            const barFillClasses = [
+                                styles.barFill4,
+                                styles.barFill5,
+                                styles.barFill6,
+                                styles.barFill6,
+                                styles.barFill6
+                            ];
+                            const barFillClass = barFillClasses[index]
+                            return (
+                                <div className={styles.barBox}>
+                                    <div className={styles.stack}>{i.text}</div>
+                                    <div className={frontView ? barFillClass : styles.barEmpty}></div>
+                                </div>
+                            )
+                        })}
+                        {/* <div className={styles.barBox}>
                             <div className={styles.stack}>Node.js</div>
                             <div className={backView ? styles.barFill4 : styles.barEmpty}></div>
                         </div>
@@ -357,7 +374,7 @@ export default function Main() {
                         <div className={styles.barBox}>
                             <div className={styles.stack}>AWS</div>
                             <div className={backView ? styles.barFill6 : styles.barEmpty}></div>
-                        </div>
+                        </div> */}
                     </div>
 
 

@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --barFill: #0077C2;
+}
+
 .body {
     background-color: #F5F5F5;
 }
@@ -20,8 +24,12 @@
 
 .Logo {
     position: absolute;
-    left: 10px;
+    right: 70px;
     cursor: pointer;
+}
+
+.K {
+    width: 40px;
 }
 
 
@@ -43,7 +51,7 @@
 
 .header2 {
     position: sticky;
-    animation: slideDown 0.5s ease-in-out 0.2s 1;
+    animation: slideDown 0.5s ease-in-out 0.1s 1;
     animation-fill-mode: forwards;
 
     background-color: #FFFFFF;
@@ -62,16 +70,17 @@
     height: 60px;
     padding: 10px 0 10px 0;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    width: 100vw;
-
+    width: auto;
 }
 
 .textWrapper {
     display: flex;
-    width: 50vw;
-    justify-content: space-between
+    width: 40vw;
+    margin-left: 100px;
+    justify-content: space-evenly;
+
 }
 
 
@@ -186,6 +195,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 12px;
 }
 
 .Wrapper {
@@ -278,17 +288,21 @@
 
 .barBox {
     display: flex;
-    width: 420px;
-    height: 30px;
-    border: 2px solid skyblue;
-    margin-top: 15px;
+    width: 430px;
+    height: 26px;
+    /* border: 2px solid #59a5f5; */
+    background-color: #cccccc;
+    margin-top: 20px;
 }
 
 .stack {
     display: inline-block;
     text-align: center;
     width: 100px;
-    /* background-color: aquamarine; */
+    line-height: 27px;
+    font-size: 15px;
+    background-color: #59a5f5;
+    color: #f5f5f5;
 }
 
 .barEmpty {
@@ -298,7 +312,7 @@
 .barFill1 {
     display: inline-block;
 
-    background-color: blueviolet;
+    background-color: var(--barFill);
     animation: slidein65 1s;
     animation-fill-mode: forwards;
 }
@@ -306,7 +320,8 @@
 .barFill2 {
     display: inline-block;
 
-    background-color: blueviolet;
+    background-color: var(--barFill);
+    ;
     animation: slidein65 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.1s;
@@ -315,7 +330,8 @@
 .barFill3 {
     display: inline-block;
 
-    background-color: blueviolet;
+    background-color: var(--barFill);
+    ;
     animation: slidein65 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.2s;
@@ -324,7 +340,8 @@
 .barFill4 {
     display: inline-block;
 
-    background-color: blueviolet;
+    background-color: var(--barFill);
+    ;
     animation: slidein50 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.3s;
@@ -333,7 +350,8 @@
 .barFill5 {
     display: inline-block;
 
-    background-color: blueviolet;
+    background-color: var(--barFill);
+    ;
     animation: slidein40 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.4s;
@@ -342,7 +360,8 @@
 .barFill6 {
     display: inline-block;
 
-    background-color: blueviolet;
+    background-color: var(--barFill);
+    ;
     animation: slidein40 1s;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
