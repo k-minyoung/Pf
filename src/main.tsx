@@ -67,10 +67,9 @@ export default function Main() {
         entries.forEach((entry2, i) => {
             if (entry2.isIntersecting) {
                 setFrontView(true)
-                console.log(frontView)
+                console.log("프론트 뷰포트 상태" + frontView)
             } else {
-                // setbackView(false)
-                // console.log(backView)
+                console.log("프론트 뷰포트 상태" + frontView)
             }
         });
     },
@@ -91,8 +90,9 @@ export default function Main() {
         entries.forEach((entry2, i) => {
             if (entry2.isIntersecting) {
                 setBackView(true)
-                console.log(backView)
+                console.log("백 뷰포트 상태" + backView)
             } else {
+                console.log("백 뷰포트 상태" + backView)
             }
         });
     },
@@ -243,6 +243,31 @@ export default function Main() {
         },
     ]
 
+    //div 위치 구하기
+    const divRef = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+
+    useEffect(() => {
+        const updatePosition = () => {
+            if (divRef.current) {
+                const rect = divRef.current.getBoundingClientRect();
+                setPosition({ top: rect.top, left: rect.left })
+            }
+        }
+        updatePosition();
+
+        window.addEventListener('resize', updatePosition);
+        return () => {
+            window.removeEventListener('resize', updatePosition);
+        }
+    }, [])
+
+    const which = () => {
+        window.scrollTo(position.top, position.left)
+        console.log(position.top, position.left)
+    }
+
+    ////////////////
     return (
         <div className={styles.body} id='body'>
             <div className={styles.top}>포트폴리오입니다</div>
@@ -250,7 +275,7 @@ export default function Main() {
             <div className={visible || showModal ? styles.header : styles.header2} id='header'>
                 <div className={styles.headerText}>
                     <div className={styles.textWrapper}>
-                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2}>Skill</div>
+                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={which}>Skill</div>
                         <div className={mid2View ? styles.colorChange : styles.project}>Project</div>
                         <div className={styles.footer}>Footer</div>
                     </div>
@@ -259,16 +284,18 @@ export default function Main() {
             </div>
 
             <div className={styles.mid} id='mid'>
-                <div className={styles.skillTitle}>Skill</div>
+                <div className={styles.titleWrapper}>
+                    <div className={styles.skillTitle} ref={divRef} >Skill</div>
+                </div>
                 <div className={styles.skill} id='front'>
 
-                    <div className={styles.frontBox}>
-                        <div>분야</div>
-                        <div className={styles.iconBox}>
+                    <div className={styles.frontBox} >
+
+                        <div className={styles.iconBox} >
                             {frontIconArray.map((i, index) => {
                                 return (
 
-                                    <div className={styles.Wrapper}>
+                                    <div className={styles.Wrapper} >
 
                                         <img key={index} src={i.name} className={styles.frontIcon} />
                                         <div className={styles.hoverText}>{i.text}</div>
@@ -282,7 +309,7 @@ export default function Main() {
                         <div>어쩌고저쩌고</div>
                     </div>
 
-                    <div className={styles.backBox}> 숙련도
+                    <div className={styles.backBox}>
                         {frontIconArray.map((i, index) => {
                             const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
                             return (
@@ -323,7 +350,7 @@ export default function Main() {
                 <div className={styles.skill} id='back'>
 
                     <div className={styles.frontBox}>
-                        <div>분야</div>
+
                         <div className={styles.iconBox}>
                             {backIconArray.map((i, index) => {
                                 return (
@@ -338,7 +365,7 @@ export default function Main() {
                         <div>어쩌고저쩌고</div>
                     </div>
 
-                    <div className={styles.backBox}> 숙련도
+                    <div className={styles.backBox}>
                         {backIconArray.map((i, index) => {
                             const barFillClasses = [
                                 styles.barFill4,
@@ -351,7 +378,7 @@ export default function Main() {
                             return (
                                 <div className={styles.barBox}>
                                     <div className={styles.stack}>{i.text}</div>
-                                    <div className={frontView ? barFillClass : styles.barEmpty}></div>
+                                    <div className={backView ? barFillClass : styles.barEmpty}></div>
                                 </div>
                             )
                         })}
@@ -382,8 +409,9 @@ export default function Main() {
             </div>
 
             <div className={styles.mid2} id='mid2'>
-                <div className={styles.project}>project</div>
-
+                <div className={styles.titleWrapper}>
+                    <div className={styles.projectTitle}>Project</div>
+                </div>
                 <div className={styles.pj1} onClick={show}>
                     {showModal && <Modal1 showModal={showModal} setShowModal={setShowModal} />}
                     box1
