@@ -14,16 +14,13 @@ export default function Modal2({ showModal, setShowModal }: Props) {
     // }
 
     useEffect(() => {
-        console.log(showModal); // showModal 값이 변경될 때마다 호출됩니다.
+        console.log(showModal); // showModal 값이 변경될 때마다 호출
     }, [showModal]);
     return (
         <>
             <div>
-                <div className={styles.modalBasic}>모달입니다</div>
-
-
+                <div className={showModal ? styles.modalBasic : styles.modalBasicClose}>모달입니다22</div>
             </div>
-            {/* <button className={styles.close} onClick={close}>닫기</button> */}
         </>
     )
 }

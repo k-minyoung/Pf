@@ -136,6 +136,7 @@
 .colorChange {
     animation: textColor 0.3s ease-in-out 0s 1;
     animation-fill-mode: forwards;
+    cursor: pointer;
 }
 
 /* .selectSkill {
@@ -443,7 +444,7 @@
 
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.356);
+    background-color: rgba(0, 0, 0, 0.247);
     animation: modalOpen 0.2s linear 0s 1;
     animation-fill-mode: forwards;
     position: fixed;

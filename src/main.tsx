@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from "./css/main.module.css";
-import Modal1 from './modal/modal1';
-import Modal2 from './modal/modal2';
+
 
 //////// ICON
 import frontIcon from './icon/9094993.png'
@@ -24,16 +23,12 @@ import K from './icon/letter-k.png'
 export default function Main() {
 
 
-    const [showModal, setShowModal] = useState<boolean>(false);
-    const [showModal2, setShowModal2] = useState<boolean>(false);
     const [visible, setVisible] = useState<boolean>(false);
     const [frontView, setFrontView] = useState<boolean>(false);
     const [backView, setBackView] = useState<boolean>(false);
     const [midView, setMidView] = useState<boolean>(false);
     const [mid2View, setMid2View] = useState<boolean>(false);
 
-
-    const [back, setBack] = useState<boolean>(false);
 
     //화면에 나타남을 감지(헤더)
     const io = new IntersectionObserver(
@@ -173,17 +168,8 @@ export default function Main() {
     // }, [scrollPosition])
 
     //모달 열기
-    const show = () => {
-        setShowModal(true)
-        setBack(true)
-        console.log(showModal)
-    }
-    //모달 닫기
-    const close = () => {
-        setShowModal(false)
-        setBack(false)
-        console.log(showModal)
-    }
+
+
     //새로고침
     const reload = () => {
         window.location.reload();
@@ -243,40 +229,57 @@ export default function Main() {
         },
     ]
 
-    //div 위치 구하기
+    //div 위치 구해서 해당 위치로 스크롤
     const divRef = useRef<HTMLDivElement>(null);
-    const [position, setPosition] = useState<{ top: number; left: number }>({ top: 0, left: 0 });
+    const divRef2 = useRef<HTMLDivElement>(null);
+    const [position, setPosition] = useState<number>(0);
+    const [position2, setPosition2] = useState<number>(0);
+
 
     useEffect(() => {
         const updatePosition = () => {
             if (divRef.current) {
-                const rect = divRef.current.getBoundingClientRect();
-                setPosition({ top: rect.top, left: rect.left })
+                const rect = divRef.current.offsetTop
+                setPosition(rect)
+            }
+        };
+        const updatePosition2 = () => {
+            if (divRef2.current) {
+                const rect2 = divRef2.current.offsetTop
+                setPosition2(rect2)
             }
         }
         updatePosition();
+        updatePosition2();
 
-        window.addEventListener('resize', updatePosition);
+        const handleResize = () => {
+            updatePosition();
+            updatePosition2();
+        };
+
+        // 'resize'는 창의 크기가 변경될 때마다 다시 이벤트리스너를 추가함
+        window.addEventListener('resize', handleResize);
         return () => {
-            window.removeEventListener('resize', updatePosition);
+            window.removeEventListener('resize', handleResize);
         }
     }, [])
 
-    const which = () => {
-        window.scrollTo(position.top, position.left)
-        console.log(position.top, position.left)
+    // 해당 위치로 스크롤, behavior : 'smooth'를 붙여줘야 부드럽게 이동
+    const which = (position: number) => {
+        window.scrollTo({ top: position, behavior: 'smooth' })
+        console.log(position)
     }
 
     ////////////////
     return (
         <div className={styles.body} id='body'>
             <div className={styles.top}>포트폴리오입니다</div>
-
-            <div className={visible || showModal ? styles.header : styles.header2} id='header'>
+            {/*  <div className={visible || showModal ? styles.header : styles.header2} id='header'> */}
+            <div className={visible ? styles.header : styles.header2} id='header'>
                 <div className={styles.headerText}>
                     <div className={styles.textWrapper}>
-                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={which}>Skill</div>
-                        <div className={mid2View ? styles.colorChange : styles.project}>Project</div>
+                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => which(position)}>Skill</div>
+                        <div className={mid2View ? styles.colorChange : styles.project} onClick={() => which(position2)}>Project</div>
                         <div className={styles.footer}>Footer</div>
                     </div>
                     <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
@@ -410,24 +413,24 @@ export default function Main() {
 
             <div className={styles.mid2} id='mid2'>
                 <div className={styles.titleWrapper}>
-                    <div className={styles.projectTitle}>Project</div>
+                    <div className={styles.projectTitle} ref={divRef2} >Project</div>
                 </div>
-                <div className={styles.pj1} onClick={show}>
-                    {showModal && <Modal1 showModal={showModal} setShowModal={setShowModal} />}
-                    box1
+                <div className={styles.pj1}>
+                    {/* {showModal && <Modal1 back={back} setBack={setBack} showModal={showModal} setShowModal={setShowModal} />}
+                    box1 */}
                 </div>
-
+                {/* 
                 {back &&
                     <div className={styles.modalBack} onClick={close}>
-                    </div>}
-
+                    </div>} */}
+                {/* 
                 <div className={styles.pj2} onClick={show}>
                     {showModal && <Modal2 showModal={showModal2} setShowModal={setShowModal2} />}
                     box2
                 </div>
                 {back &&
                     <div className={styles.modalBack} onClick={close}>
-                    </div>}
+                    </div>} */}
                 <div className={styles.pj3}>box3</div>
                 <div className={styles.pj4}>box4</div>
 

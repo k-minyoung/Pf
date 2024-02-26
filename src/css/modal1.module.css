@@ -11,6 +11,38 @@
     animation-fill-mode: forwards;
 }
 
+.back {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    animation: backOpen 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.backR {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    animation: backOpenR 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.modalBasicClose {
+    background-color: blue;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
 @keyframes modalOpen {
     from {
         opacity: 0;
@@ -20,5 +52,41 @@
     to {
         opacity: 1;
         top: 50%
+    }
+}
+
+@keyframes modalOpenR {
+    from {
+        opacity: 1;
+        top: 50%
+    }
+
+    to {
+        opacity: 0;
+        top: 55%
+    }
+}
+
+@keyframes backOpen {
+    from {
+        opacity: 0;
+
+    }
+
+    to {
+        opacity: 1;
+
+    }
+}
+
+@keyframes backOpenR {
+    from {
+        opacity: 1;
+
+    }
+
+    to {
+        opacity: 0;
+
     }
 }
