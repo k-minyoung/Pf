@@ -1,92 +1,94 @@
-.modalBasic {
-    width: 900px;
-    height: 600px;
-    background-color: palegoldenrod;
+.modalOverlay {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    animation: modalOpen 0.3s ease-in-out 0s 1;
-    animation-fill-mode: forwards;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: modalOpen 0.3s ease 0s 1 forwards;
+
+
 }
 
-.back {
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
+.modalOverlayR {
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
-    animation: backOpen 0.3s ease-in-out 0s 1;
-    animation-fill-mode: forwards;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: modalOpenR 0.3s ease 0s 1 forwards;
 }
 
-.backR {
-    z-index: 1;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
-    animation: backOpenR 0.3s ease-in-out 0s 1;
-    animation-fill-mode: forwards;
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: modalInner 0.3s ease 0s 1 forwards;
 }
 
-.modalBasicClose {
-    background-color: blue;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+.modalContentR {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: modalInnerR 0.3s ease 0s 1 forwards;
+}
+
+.modalContent h2 {
+    margin-top: 0;
+}
+
+.modalContent button {
+    margin-top: 10px;
 }
 
 @keyframes modalOpen {
     from {
         opacity: 0;
-        top: 55%
     }
 
     to {
         opacity: 1;
-        top: 50%
     }
 }
 
 @keyframes modalOpenR {
     from {
         opacity: 1;
-        top: 50%
     }
 
     to {
         opacity: 0;
-        top: 55%
     }
 }
 
-@keyframes backOpen {
+@keyframes modalInner {
     from {
-        opacity: 0;
-
+        scale: 0.9;
     }
 
     to {
-        opacity: 1;
-
+        scale: 1;
     }
 }
 
-@keyframes backOpenR {
+@keyframes modalInnerR {
     from {
-        opacity: 1;
-
+        scale: 1;
     }
 
     to {
-        opacity: 0;
-
+        scale: 0.9
     }
 }

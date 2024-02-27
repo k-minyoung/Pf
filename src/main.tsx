@@ -19,6 +19,8 @@ import AWS from './icon/AWS.png'
 import K from './icon/letter-k.png'
 //////////////
 
+import Modal1 from './modal/modal1';
+import Modal2 from './modal/modal2';
 
 export default function Main() {
 
@@ -28,6 +30,27 @@ export default function Main() {
     const [backView, setBackView] = useState<boolean>(false);
     const [midView, setMidView] = useState<boolean>(false);
     const [mid2View, setMid2View] = useState<boolean>(false);
+
+    //모달
+
+    // state이름을 매개변수로 받기 위해 interface를 먼저 설정
+    interface ModalState {
+        modalName: boolean;
+        setModalName: React.Dispatch<React.SetStateAction<boolean>>;
+    }
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const [modalOpen2, setModalOpen2] = useState<boolean>(false);
+    const toggleModal = ({ modalName, setModalName }: ModalState) => {
+        if (!modalName) {
+            setModalName(true);
+        } else {
+            // 모달 닫을 시 애니메이션이 나오지 않는 이유 = 애니메이션이 재생되기도 전에 닫혀버리기 때문, 애니메이션 시간만큼
+            // setTimeout을 걸어서 재생될 시간을 주자.
+            setTimeout(() => setModalName(false), 300)
+        }
+        console.log(modalName)
+    };
+
 
 
     //화면에 나타남을 감지(헤더)
@@ -415,9 +438,11 @@ export default function Main() {
                 <div className={styles.titleWrapper}>
                     <div className={styles.projectTitle} ref={divRef2} >Project</div>
                 </div>
-                <div className={styles.pj1}>
-                    {/* {showModal && <Modal1 back={back} setBack={setBack} showModal={showModal} setShowModal={setShowModal} />}
-                    box1 */}
+                <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                    {modalOpen && <Modal1 />}
+                </div>
+                <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
+                    {modalOpen2 && <Modal2 />}
                 </div>
                 {/* 
                 {back &&

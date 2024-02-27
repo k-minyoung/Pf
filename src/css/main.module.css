@@ -8,6 +8,39 @@
     --barFill: #0077C2;
 }
 
+
+.testBack {
+    width: 100vw;
+    height: 100vh;
+    background-color: #33333322;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: modalOpen 1s ease 0s 1 forwards;
+}
+
+.testBackR {
+    animation: modalOpenR 1s ease 0s 1 forwards;
+}
+
+.test {
+    width: 500px;
+    height: 500px;
+    background-color: #00619a;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.testR {
+    animation: modalOpenR 1s ease 0s 1 forwards;
+}
+
+
+
 .body {
     background-color: #F5F5F5;
 }

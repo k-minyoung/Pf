@@ -1,39 +1,22 @@
-import styles from "../css/modal1.module.css"
-import React, { useState, useEffect } from 'react';
-import { Dispatch, SetStateAction } from 'react';
+import React, { useState } from 'react';
+import styles from '../css/modal1.module.css'; // 모달 스타일링을 위한 CSS 파일 import
 
-interface Props {
-    showModal: boolean
-    setShowModal: Dispatch<SetStateAction<boolean>>;
-    back: boolean;
-    setBack: Dispatch<SetStateAction<boolean>>;
-}
 
-export default function Modal1({ showModal, setShowModal, back, setBack }: Props) {
-    // const [back, setBack] = useState<boolean>(false);
+export default function Modal() {
+    const [isOpen, setIsOpen] = useState(true);
 
-    //모달 닫기
-    const close = () => {
-        setShowModal(false)
-        setBack(false)
-        console.log(showModal)
-    }
+    const handleCloseModal = () => {
+        setIsOpen(false);
+        console.log(isOpen)
+    };
 
-    // const close = () => {
-    //     setShowModal(false)
-    // }
-
-    useEffect(() => {
-        console.log(showModal); // showModal 값이 변경될 때마다 호출
-    }, [showModal]);
     return (
-        <>
-            <div className={back ? styles.back : styles.backR} onClick={close}>
-                <div className={showModal ? styles.modalBasic : styles.modalBasicClose}>모달입니다11</div>
-
-
+        <div className={isOpen ? styles.modalOverlay : styles.modalOverlayR} onClick={handleCloseModal}>
+            {/* 모달 내부를 클릭하여도 닫히지 않게 함 */}
+            <div className={isOpen ? styles.modalContent : styles.modalContentR} onClick={(e) => e.stopPropagation()}>
+                <h2>모달 내용1</h2>
+                <p>모달 내용 적기1</p>
             </div>
-            {/* <button className={styles.close} onClick={close}>닫기</button> */}
-        </>
-    )
+        </div>
+    );
 }
