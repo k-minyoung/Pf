@@ -44,8 +44,8 @@ export default function Main() {
         if (!modalName) {
             setModalName(true);
         } else {
-            // 모달 닫을 시 애니메이션이 나오지 않는 이유 = 애니메이션이 재생되기도 전에 닫혀버리기 때문, 애니메이션 시간만큼
-            // setTimeout을 걸어서 재생될 시간을 주자.
+            // 모달 닫을 시 애니메이션이 나오지 않는 이유 = 애니메이션이 재생되기도 전에 닫혀버리기 때문
+            // 애니메이션 시간만큼 setTimeout을 걸어서 재생될 시간을 주자.
             setTimeout(() => setModalName(false), 300)
         }
         console.log(modalName)
@@ -297,8 +297,8 @@ export default function Main() {
     return (
         <div className={styles.body} id='body'>
             <div className={styles.top}>포트폴리오입니다</div>
-            {/*  <div className={visible || showModal ? styles.header : styles.header2} id='header'> */}
-            <div className={visible ? styles.header : styles.header2} id='header'>
+            <div className={visible || modalOpen || modalOpen2 ? styles.header : styles.header2} id='header'>
+                {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
                 <div className={styles.headerText}>
                     <div className={styles.textWrapper}>
                         <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => which(position)}>Skill</div>
@@ -331,7 +331,7 @@ export default function Main() {
                                 )
                             })}
                         </div>
-                        <div>Front-End</div>
+                        <div className={styles.frontEnd}>Front-End</div>
                         <div>어쩌고저쩌고</div>
                     </div>
 
@@ -387,7 +387,7 @@ export default function Main() {
                                 )
                             })}
                         </div>
-                        <div>Back-End</div>
+                        <div className={styles.backEnd}>Back-End</div>
                         <div>어쩌고저쩌고</div>
                     </div>
 
