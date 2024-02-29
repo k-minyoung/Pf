@@ -85,11 +85,10 @@ export default function Modal() {
                         </div>
                     </div>
 
-                    <h3>성과</h3>
-                    <div>프로젝트 참여한 7팀 중 최우수상 수상</div>
+
                     <h3>역할</h3>
                     <div>총 인원 4명이 함께 개발</div>
-                    <div>Friedns 페이지 개발</div>
+                    <div>Friedns 페이지 개발 (이미지 2,3번)</div>
                     <li className={styles.textLi}>Swiper.js 라이브러리를 이용한 카드 슬라이드 기능</li>
                     <li className={styles.textLi}>JQuery를 이용한 댓글 작성 기능과 좋아요 버튼 및 카운트 기능</li>
                     <h3>📝개발 중점사항</h3>
@@ -98,9 +97,12 @@ export default function Modal() {
                     <li className={styles.textLi}>독자적인 이모티콘 디자인으로 개성 및 접근성 향상</li>
 
                     <h3>📌미흡했던 점</h3>
-                    <li className={styles.textLi}>UI / UX에 중점을 뒀으나 반응형 구현이 부족했던 점</li>
+                    <li className={styles.textLi}>UI / UX에 중점을 두었으나 반응형 구현이 부족했던 점</li>
                     <li className={styles.textLi}>재사용에 용이한 코드를 작성하지 못한 점</li>
                     <li className={styles.textLi}>로그인 및 닉네임 설정 구현을 하지 못한 점</li>
+
+                    {/* <h3>성과</h3>
+                    <div>프로젝트 참여한 7팀 중 최우수상 수상</div> */}
                 </div>
             </div>
         </div>

@@ -17,6 +17,7 @@ import MySQL from './icon/mysql.png'
 import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
 import K from './icon/letter-k.png'
+import velog from './icon/velog.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 /////////////
@@ -32,6 +33,7 @@ export default function Main() {
     const [backView, setBackView] = useState<boolean>(false);
     const [midView, setMidView] = useState<boolean>(false);
     const [mid2View, setMid2View] = useState<boolean>(false);
+    const [infoView, setInfoView] = useState<boolean>(false);
 
     //모달
 
@@ -153,7 +155,7 @@ export default function Main() {
     // mid2 뷰포트 감지
     const io5 = new IntersectionObserver((entries) => {
         entries.forEach((entry2, i) => {
-            if (entry2.isIntersecting) {
+            if (entry2.isIntersecting && !infoView) {
                 setMid2View(true)
                 console.log(`mid2가 뷰포트에 ${mid2View}`)
             } else {
@@ -173,6 +175,30 @@ export default function Main() {
         io5.observe(document.querySelector("#mid2") as HTMLElement);
         console.log(mid2View)
     }, [mid2View]);
+
+    // Info 뷰포트 감지
+    const io6 = new IntersectionObserver((entries) => {
+        entries.forEach((entry2, i) => {
+            if (entry2.isIntersecting) {
+                setInfoView(true)
+                console.log(`Info가 뷰포트에 ${infoView}`)
+            } else {
+                setInfoView(false)
+                console.log(`Info가 뷰포트에 ${infoView}`)
+            }
+        });
+    },
+        {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.8
+        }
+    )
+
+    useEffect(() => {
+        io6.observe(document.querySelector("#Info") as HTMLElement);
+        console.log(infoView)
+    }, [infoView]);
     //https://ww8007-learn.tistory.com/6 참고했음
 
     //새로고침
@@ -237,8 +263,10 @@ export default function Main() {
     //div 위치 구해서 해당 위치로 스크롤
     const divRef = useRef<HTMLDivElement>(null);
     const divRef2 = useRef<HTMLDivElement>(null);
+    const divRef3 = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState<number>(0);
     const [position2, setPosition2] = useState<number>(0);
+    const [position3, setPosition3] = useState<number>(0);
 
     useEffect(() => {
         const updatePosition = () => {
@@ -253,12 +281,20 @@ export default function Main() {
                 setPosition2(rect2)
             }
         }
+        const updatePosition3 = () => {
+            if (divRef3.current) {
+                const rect3 = divRef3.current.offsetTop
+                setPosition3(rect3)
+            }
+        }
         updatePosition();
         updatePosition2();
+        updatePosition3();
 
         const handleResize = () => {
             updatePosition();
             updatePosition2();
+            updatePosition3();
         };
 
         // 'resize'는 창의 크기가 변경될 때마다 다시 이벤트리스너를 추가함
@@ -269,7 +305,7 @@ export default function Main() {
     }, [])
 
     // 해당 위치로 스크롤, behavior : 'smooth'를 붙여줘야 부드럽게 이동
-    const which = (position: number) => {
+    const move = (position: number) => {
         window.scrollTo({ top: position, behavior: 'smooth' })
         console.log(position)
     }
@@ -277,14 +313,14 @@ export default function Main() {
     ////////////////
     return (
         <div className={styles.body} id='body'>
-            <div className={styles.top}>포트폴리오입니다</div>
+            <div className={styles.top}>포트폴리오</div>
             <div className={visible || modalOpen || modalOpen2 ? styles.header : styles.header2} id='header'>
                 {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
                 <div className={styles.headerText}>
                     <div className={styles.textWrapper}>
-                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => which(position)}>Skill</div>
-                        <div className={mid2View ? styles.colorChange : styles.project} onClick={() => which(position2)}>Project</div>
-                        <div className={styles.footer}>Footer</div>
+                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
+                        <div className={!visible && mid2View && !infoView ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
+                        <div className={!visible && infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(position3)}>Infomation</div>
                     </div>
                     <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
                 </div>
@@ -370,26 +406,72 @@ export default function Main() {
                 <div className={styles.titleWrapper}>
                     <div className={styles.projectTitle} ref={divRef2} >Project</div>
                 </div>
-                <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                    {modalOpen && <Modal1 />}
-                    <img className={styles.pjMainImg1} src={pj1}></img>
-                    <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                        <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                <div className={styles.mid2Box}>
+                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                        {modalOpen && <Modal1 />}
+                        <div className={styles.pjWrapper1}>
+                            <img className={styles.pjMainImg1} src={pj1}></img>
+                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                            </div>
+                        </div>
                     </div>
+                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                        {modalOpen && <Modal1 />}
+                        <div className={styles.pjWrapper1}>
+                            <img className={styles.pjMainImg1} src={pj1}></img>
+                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                        {modalOpen && <Modal1 />}
+                        <div className={styles.pjWrapper1}>
+                            <img className={styles.pjMainImg1} src={pj1}></img>
+                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                        {modalOpen && <Modal1 />}
+                        <div className={styles.pjWrapper1}>
+                            <img className={styles.pjMainImg1} src={pj1}></img>
+                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                            </div>
+                        </div>
+                    </div>
+                    {/* <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
+                        {modalOpen2 && <Modal2 />}
+                    </div>
+                    <div className={styles.pj3}>box3</div>
+                    <div className={styles.pj4}>box4</div> */}
                 </div>
-                <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
-                    {modalOpen2 && <Modal2 />}
-                </div>
-                <div className={styles.pj3}>box3</div>
-                <div className={styles.pj4}>box4</div>
-
-                <div className={styles.bot}>
+                <div className={styles.bot} id='Info'>
                     <div className={styles.infoTitle}>
-                        <div>INFOMATION</div>
+                        <div ref={divRef3}>INFOMATION</div>
                     </div>
                     <div className={styles.infoText}>
-                        <div>
+                        <div className={styles.infoLeft}>
+                            <div className={styles.infoLeftInner}>
+                                <div>개발 기간 - ??~ ??</div>
 
+                                <div>기술 - React + Typescript</div>
+
+                                <div>배포 - ??</div>
+
+                                <div>아이콘 - Flaticon</div>
+
+                            </div>
+                        </div>
+                        <div className={styles.infoRight}>
+                            <div>E-MAIL</div>
+                            <div>alsdudsk12@naver.com</div>
+                            <div>
+                                <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
+                            </div>
                         </div>
                     </div>
                 </div>
