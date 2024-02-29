@@ -18,6 +18,8 @@ import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
 import K from './icon/letter-k.png'
 //////////////
+import pj1 from './screenshot/a1.png'
+/////////////
 
 import Modal1 from './modal/modal1';
 import Modal2 from './modal/modal2';
@@ -50,8 +52,6 @@ export default function Main() {
         }
         console.log(modalName)
     };
-
-
 
     //화면에 나타남을 감지(헤더)
     const io = new IntersectionObserver(
@@ -175,24 +175,6 @@ export default function Main() {
     }, [mid2View]);
     //https://ww8007-learn.tistory.com/6 참고했음
 
-
-
-    // // 스크롤 이벤트 리스너 등록
-    // useEffect(() => {
-    //     window.addEventListener("scroll", onScroll);
-    //     return () => {
-    //         window.removeEventListener("scroll", onScroll);
-    //     };
-    // }, []);
-
-    //위치 콘솔 찍어주기
-    // useEffect(() => {
-    //     console.log(scrollPosition)
-    // }, [scrollPosition])
-
-    //모달 열기
-
-
     //새로고침
     const reload = () => {
         window.location.reload();
@@ -257,7 +239,6 @@ export default function Main() {
     const divRef2 = useRef<HTMLDivElement>(null);
     const [position, setPosition] = useState<number>(0);
     const [position2, setPosition2] = useState<number>(0);
-
 
     useEffect(() => {
         const updatePosition = () => {
@@ -334,7 +315,6 @@ export default function Main() {
                         <div className={styles.frontEnd}>Front-End</div>
                         <div>어쩌고저쩌고</div>
                     </div>
-
                     <div className={styles.backBox}>
                         {frontIconArray.map((i, index) => {
                             const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
@@ -345,33 +325,7 @@ export default function Main() {
                                 </div>
                             )
                         })}
-                        {/* <div className={styles.barBox}>
-                            <div className={styles.stack}>HTML</div>
-                            <div className={frontView ? styles.barFill1 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>CSS</div>
-                            <div className={frontView ? styles.barFill2 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>Javascript</div>
-                            <div className={frontView ? styles.barFill3 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>React</div>
-                            <div className={frontView ? styles.barFill4 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>Typescript</div>
-                            <div className={frontView ? styles.barFill5 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>JQuery</div>
-                            <div className={frontView ? styles.barFill6 : styles.barEmpty}></div>
-                        </div> */}
                     </div>
-
-
                 </div>
                 <div className={styles.skill} id='back'>
 
@@ -408,29 +362,7 @@ export default function Main() {
                                 </div>
                             )
                         })}
-                        {/* <div className={styles.barBox}>
-                            <div className={styles.stack}>Node.js</div>
-                            <div className={backView ? styles.barFill4 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>Java</div>
-                            <div className={backView ? styles.barFill5 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>MySQL</div>
-                            <div className={backView ? styles.barFill6 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>Spring-boot</div>
-                            <div className={backView ? styles.barFill6 : styles.barEmpty}></div>
-                        </div>
-                        <div className={styles.barBox}>
-                            <div className={styles.stack}>AWS</div>
-                            <div className={backView ? styles.barFill6 : styles.barEmpty}></div>
-                        </div> */}
                     </div>
-
-
                 </div>
             </div>
 
@@ -440,26 +372,27 @@ export default function Main() {
                 </div>
                 <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
                     {modalOpen && <Modal1 />}
+                    <img className={styles.pjMainImg1} src={pj1}></img>
+                    <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                        <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                    </div>
                 </div>
                 <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
                     {modalOpen2 && <Modal2 />}
                 </div>
-                {/* 
-                {back &&
-                    <div className={styles.modalBack} onClick={close}>
-                    </div>} */}
-                {/* 
-                <div className={styles.pj2} onClick={show}>
-                    {showModal && <Modal2 showModal={showModal2} setShowModal={setShowModal2} />}
-                    box2
-                </div>
-                {back &&
-                    <div className={styles.modalBack} onClick={close}>
-                    </div>} */}
                 <div className={styles.pj3}>box3</div>
                 <div className={styles.pj4}>box4</div>
 
-                <div className={styles.bot}>b</div>
+                <div className={styles.bot}>
+                    <div className={styles.infoTitle}>
+                        <div>INFOMATION</div>
+                    </div>
+                    <div className={styles.infoText}>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );
