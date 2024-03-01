@@ -20,6 +20,7 @@ import K from './icon/letter-k.png'
 import velog from './icon/velog.png'
 //////////////
 import pj1 from './screenshot/a1.png'
+import pj2 from './screenshot/b3.png'
 /////////////
 
 import Modal1 from './modal/modal1';
@@ -413,7 +414,7 @@ export default function Main() {
                     </div>
                     <div className={styles.mid2Box}>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                            {modalOpen && <Modal1 />}
+                            {/* {modalOpen && <Modal1 />} */}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj1}></img>
                                 <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
@@ -422,7 +423,7 @@ export default function Main() {
                             </div>
                         </div>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                            {modalOpen && <Modal1 />}
+                            {/* {modalOpen && <Modal1 />} */}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj1}></img>
                                 <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
@@ -430,12 +431,12 @@ export default function Main() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                            {modalOpen && <Modal1 />}
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
+                            {modalOpen2 && <Modal2 />}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj1}></img>
-                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                <img className={styles.pjMainImg1} src={pj2}></img>
+                                <div className={styles.pjMainText1}>Chatta - 관심사 기반 채팅방 서비스
+                                    <div className={styles.pjSubText1}> Node.js + socket.io를 이용한 백엔드 채팅 커뮤니티</div>
                                 </div>
                             </div>
                         </div>

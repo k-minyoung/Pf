@@ -76,12 +76,12 @@ export default function Modal() {
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>
                             <div className={styles.date}>기간</div>
-                            <div className={styles.skill}>기술</div>
+                            <div className={styles.skill}>프론트엔드</div>
                             <div className={styles.framework}>프레임워크 & 라이브러리</div>
                         </div>
                         <div className={styles.rangeText}>
                             <div className={styles.dateText}>2023/07/07 ~ 2023/07/26</div>
-                            <div className={styles.skillText}>프론트엔드 - #HTML  #CSS  #Javascript </div>
+                            <div className={styles.skillText}>#HTML  #CSS  #Javascript </div>
                             <div className={styles.frameworkText}>#Bootstrap  #JQuery #Swiper.js</div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@ export default function Modal() {
                     <li className={styles.textLi}>사용자 친화적 UI / UX 및 간결하고 심플한 디자인</li>
                     <li className={styles.textLi}>독자적인 이모티콘 디자인으로 개성 및 접근성 향상</li>
 
-                    <div className={styles.feedback}>📌미흡했던 점</div>
+                    <div className={styles.feedback}>📌아쉬웠던 점</div>
                     <li className={styles.textLi}>UI / UX에 중점을 두었으나 반응형 구현이 부족했던 점</li>
                     <li className={styles.textLi}>재사용에 용이한 코드를 작성하지 못한 점</li>
                     <li className={styles.textLi}>로그인 및 닉네임 설정 구현을 하지 못한 점</li>
