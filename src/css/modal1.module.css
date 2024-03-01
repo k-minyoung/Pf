@@ -177,16 +177,85 @@
     padding-top: 12px;
 }
 
+
+/* /////////////////////////////////////// */
+.title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #333333;
+}
+
+.subTitle {
+    font-size: 17px;
+    font-weight: bold;
+    color: #5c5c5c;
+}
+
+.hr {
+    margin: 10px 100px 10px 5px;
+}
+
 .modalTextBox {
     display: flex;
 }
 
 .range {
-    width: 20%;
+    width: 25%;
 }
 
 .rangeText {
-    width: 80%;
+    width: 75%;
+}
+
+.date {
+    font-weight: bold;
+    color: #333333;
+}
+
+.skill {
+    font-weight: bold;
+    color: #333333;
+}
+
+.skillText {
+    color: #0055ff;
+}
+
+.framework {
+    font-weight: bold;
+    color: #333333;
+}
+
+.frameworkText {
+    color: darkgreen;
+}
+
+.role {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
+}
+
+.myRole {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
+}
+
+.important {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
+}
+
+.feedback {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
 }
 
 .textLi {
