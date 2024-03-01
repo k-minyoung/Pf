@@ -313,164 +313,170 @@ export default function Main() {
     ////////////////
     return (
         <div className={styles.body} id='body'>
-            <div className={styles.top}>포트폴리오</div>
-            <div className={visible || modalOpen || modalOpen2 ? styles.header : styles.header2} id='header'>
-                {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
-                <div className={styles.headerText}>
-                    <div className={styles.textWrapper}>
-                        <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
-                        <div className={!visible && mid2View && !infoView ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
-                        <div className={!visible && infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(position3)}>Infomation</div>
+            <div className={styles.overlay}>
+                <div className={styles.top}>
+                    <img src={K}></img>
+                    <div className={styles.topText}>포트폴리오</div>
+                </div>
+                <div className={visible || modalOpen || modalOpen2 ? styles.header : styles.header2} id='header'>
+                    {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
+                    <div className={styles.headerText}>
+                        <div className={styles.textWrapper}>
+                            <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
+                            <div className={!visible && mid2View && !infoView ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
+                            <div className={!visible && infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(position3)}>Infomation</div>
+                        </div>
+                        <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
                     </div>
-                    <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
                 </div>
-            </div>
 
-            <div className={styles.mid} id='mid'>
-                <div className={styles.titleWrapper}>
-                    <div className={styles.skillTitle} ref={divRef} >Skill</div>
-                </div>
-                <div className={styles.skill} id='front'>
+                <div className={styles.mid} id='mid'>
 
-                    <div className={styles.frontBox} >
+                    <div className={styles.titleWrapper}>
+                        <div className={styles.skillTitle} ref={divRef} >Skill</div>
+                    </div>
+                    <div className={styles.skill} id='front'>
 
-                        <div className={styles.iconBox} >
+                        <div className={styles.frontBox} >
+
+                            <div className={styles.iconBox} >
+                                {frontIconArray.map((i, index) => {
+                                    return (
+
+                                        <div className={styles.Wrapper} >
+
+                                            <img key={index} src={i.name} className={styles.frontIcon} />
+                                            <div className={styles.hoverText}>{i.text}</div>
+
+                                        </div>
+
+                                    )
+                                })}
+                            </div>
+                            <div className={styles.frontEnd}>Front-End</div>
+                            <div>어쩌고저쩌고</div>
+                        </div>
+                        <div className={styles.backBox}>
                             {frontIconArray.map((i, index) => {
+                                const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
                                 return (
-
-                                    <div className={styles.Wrapper} >
-
-                                        <img key={index} src={i.name} className={styles.frontIcon} />
-                                        <div className={styles.hoverText}>{i.text}</div>
-
+                                    <div className={styles.barBox}>
+                                        <div className={styles.stack}>{i.text}</div>
+                                        <div className={frontView ? barFillClass : styles.barEmpty}></div>
                                     </div>
-
                                 )
                             })}
                         </div>
-                        <div className={styles.frontEnd}>Front-End</div>
-                        <div>어쩌고저쩌고</div>
                     </div>
-                    <div className={styles.backBox}>
-                        {frontIconArray.map((i, index) => {
-                            const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
-                            return (
-                                <div className={styles.barBox}>
-                                    <div className={styles.stack}>{i.text}</div>
-                                    <div className={frontView ? barFillClass : styles.barEmpty}></div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-                <div className={styles.skill} id='back'>
+                    <div className={styles.skill} id='back'>
 
-                    <div className={styles.frontBox}>
+                        <div className={styles.frontBox}>
 
-                        <div className={styles.iconBox}>
+                            <div className={styles.iconBox}>
+                                {backIconArray.map((i, index) => {
+                                    return (
+                                        <div className={index <= 2 ? styles.Wrapper : styles.Wrapper120}>
+                                            <img key={index} src={i.name} className={index <= 2 ? styles.frontIcon : styles.frontIcon120} />
+                                            <div className={index <= 2 ? styles.hoverText : styles.hoverText120}>{i.text}</div>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                            <div className={styles.backEnd}>Back-End</div>
+                            <div>어쩌고저쩌고</div>
+                        </div>
+
+                        <div className={styles.backBox}>
                             {backIconArray.map((i, index) => {
+                                const barFillClasses = [
+                                    styles.barFill4,
+                                    styles.barFill5,
+                                    styles.barFill6,
+                                    styles.barFill6,
+                                    styles.barFill6
+                                ];
+                                const barFillClass = barFillClasses[index]
                                 return (
-                                    <div className={index <= 2 ? styles.Wrapper : styles.Wrapper120}>
-                                        <img key={index} src={i.name} className={index <= 2 ? styles.frontIcon : styles.frontIcon120} />
-                                        <div className={index <= 2 ? styles.hoverText : styles.hoverText120}>{i.text}</div>
+                                    <div className={styles.barBox}>
+                                        <div className={styles.stack}>{i.text}</div>
+                                        <div className={backView ? barFillClass : styles.barEmpty}></div>
                                     </div>
                                 )
                             })}
                         </div>
-                        <div className={styles.backEnd}>Back-End</div>
-                        <div>어쩌고저쩌고</div>
                     </div>
+                </div>
 
-                    <div className={styles.backBox}>
-                        {backIconArray.map((i, index) => {
-                            const barFillClasses = [
-                                styles.barFill4,
-                                styles.barFill5,
-                                styles.barFill6,
-                                styles.barFill6,
-                                styles.barFill6
-                            ];
-                            const barFillClass = barFillClasses[index]
-                            return (
-                                <div className={styles.barBox}>
-                                    <div className={styles.stack}>{i.text}</div>
-                                    <div className={backView ? barFillClass : styles.barEmpty}></div>
+                <div className={styles.mid2} id='mid2'>
+                    <div className={styles.titleWrapper}>
+                        <div className={styles.projectTitle} ref={divRef2} >Project</div>
+                    </div>
+                    <div className={styles.mid2Box}>
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                            {modalOpen && <Modal1 />}
+                            <div className={styles.pjWrapper1}>
+                                <img className={styles.pjMainImg1} src={pj1}></img>
+                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
                                 </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </div>
-
-            <div className={styles.mid2} id='mid2'>
-                <div className={styles.titleWrapper}>
-                    <div className={styles.projectTitle} ref={divRef2} >Project</div>
-                </div>
-                <div className={styles.mid2Box}>
-                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                        {modalOpen && <Modal1 />}
-                        <div className={styles.pjWrapper1}>
-                            <img className={styles.pjMainImg1} src={pj1}></img>
-                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                        {modalOpen && <Modal1 />}
-                        <div className={styles.pjWrapper1}>
-                            <img className={styles.pjMainImg1} src={pj1}></img>
-                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                            {modalOpen && <Modal1 />}
+                            <div className={styles.pjWrapper1}>
+                                <img className={styles.pjMainImg1} src={pj1}></img>
+                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                        {modalOpen && <Modal1 />}
-                        <div className={styles.pjWrapper1}>
-                            <img className={styles.pjMainImg1} src={pj1}></img>
-                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                            {modalOpen && <Modal1 />}
+                            <div className={styles.pjWrapper1}>
+                                <img className={styles.pjMainImg1} src={pj1}></img>
+                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                        {modalOpen && <Modal1 />}
-                        <div className={styles.pjWrapper1}>
-                            <img className={styles.pjMainImg1} src={pj1}></img>
-                            <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                            {modalOpen && <Modal1 />}
+                            <div className={styles.pjWrapper1}>
+                                <img className={styles.pjMainImg1} src={pj1}></img>
+                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    {/* <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
+                        {/* <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
                         {modalOpen2 && <Modal2 />}
                     </div>
                     <div className={styles.pj3}>box3</div>
                     <div className={styles.pj4}>box4</div> */}
-                </div>
-                <div className={styles.bot} id='Info'>
-                    <div className={styles.infoTitle}>
-                        <div ref={divRef3}>INFOMATION</div>
                     </div>
-                    <div className={styles.infoText}>
-                        <div className={styles.infoLeft}>
-                            <div className={styles.infoLeftInner}>
-                                <div>개발 기간 - ??~ ??</div>
-
-                                <div>기술 - React + Typescript</div>
-
-                                <div>배포 - ??</div>
-
-                                <div>아이콘 - Flaticon</div>
-
-                            </div>
+                    <div className={styles.bot} id='Info'>
+                        <div className={styles.infoTitle}>
+                            <div ref={divRef3}>INFOMATION</div>
                         </div>
-                        <div className={styles.infoRight}>
-                            <div>E-MAIL</div>
-                            <div>alsdudsk12@naver.com</div>
-                            <div>
-                                <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
+                        <div className={styles.infoText}>
+                            <div className={styles.infoLeft}>
+                                <div className={styles.infoLeftInner}>
+                                    <div>개발 기간 - ??~ ??</div>
+
+                                    <div>기술 - React + Typescript</div>
+
+                                    <div>배포 - ??</div>
+
+                                    <div>아이콘 - Flaticon</div>
+
+                                </div>
+                            </div>
+                            <div className={styles.infoRight}>
+                                <div>E-MAIL</div>
+                                <div>alsdudsk12@naver.com</div>
+                                <div>
+                                    <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
+                                </div>
                             </div>
                         </div>
                     </div>
