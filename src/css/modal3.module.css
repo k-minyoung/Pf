@@ -1,0 +1,274 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: modalOpen 0.3s ease 0s 1 forwards;
+
+
+}
+
+.modalOverlayR {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: modalOpenR 0.3s ease 0s 1 forwards;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 0 60px 20px 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 1050px;
+    max-width: 1050px;
+    max-height: 660px;
+    animation: modalInner 0.3s ease 0s 1 forwards;
+}
+
+.modalContentR {
+    background-color: white;
+    padding: 0 60px 20px 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 1050px;
+    max-width: 1050px;
+    max-height: 660px;
+    animation: modalInnerR 0.3s ease 0s 1 forwards;
+}
+
+.modalContent h2 {
+    margin-top: 0;
+}
+
+.modalContent button {
+    margin-top: 10px;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalOpenR {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modalInner {
+    from {
+        scale: 0.9;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes modalInnerR {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 0.9
+    }
+}
+
+/* ////////// */
+
+.mainImgBox {
+    width: 1000px;
+    height: 441px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.sliderList {
+    display: flex;
+    transition: 0.5s;
+}
+
+.imgLi {
+    width: 980px;
+    list-style: none;
+
+}
+
+.imgBox {
+    width: 1030px;
+    max-width: 1030px;
+    height: 441px;
+    display: flex;
+    align-items: center;
+    padding-right: 120px;
+}
+
+.prevBtn {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: 50px;
+    height: 65px;
+    transform: translate(0, -50%);
+    margin: 0px;
+    left: 0px;
+}
+
+.nextBtn {
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: 50px;
+    height: 65px;
+    transform: translate(0, -50%);
+    right: 0px;
+    margin: 0px;
+
+}
+
+.page {
+    position: absolute;
+    top: 470px;
+    left: 510px;
+    width: auto;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.748);
+    color: white;
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    font-size: 13px;
+}
+
+.textWrapper {
+    padding-top: 12px;
+}
+
+
+/* /////////////////////////////////////// */
+.title {
+    font-size: 28px;
+    font-weight: 900;
+    color: #333333;
+}
+
+.subTitle {
+    font-size: 17px;
+    font-weight: bold;
+    color: #5c5c5c;
+}
+
+.hr {
+    margin: 10px 100px 10px 5px;
+}
+
+.modalTextBox {
+    display: flex;
+}
+
+.range {
+    width: 25%;
+}
+
+.rangeText {
+    width: 75%;
+}
+
+.date {
+    font-weight: bold;
+    color: #333333;
+    margin: 1px 0 1px 0;
+}
+
+.dateText {
+    margin: 1px 0 1px 0;
+}
+
+.skill {
+    font-weight: bold;
+    color: #333333;
+    margin: 1px 0 1px 0;
+}
+
+.skillText {
+    color: #0055ff;
+    margin: 1px 0 1px 0;
+}
+
+.framework {
+    font-weight: bold;
+    color: #333333;
+    margin: 1px 0 1px 0;
+}
+
+.frameworkText {
+    color: darkgreen;
+    margin: 1px 0 1px 0;
+}
+
+.role {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333333;
+    margin: 8px 0 5px 0;
+}
+
+.myRole {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
+}
+
+.important {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
+}
+
+.feedback {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+    margin: 5px 0 5px 0;
+}
+
+.textLi {
+    text-indent: 10px;
+    margin-left: 10px;
+    margin: 5px 0 5px 10px;
+}

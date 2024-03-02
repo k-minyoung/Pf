@@ -21,10 +21,12 @@ import velog from './icon/velog.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
+import pj3 from './screenshot/c.png'
 /////////////
 
 import Modal1 from './modal/modal1';
 import Modal2 from './modal/modal2';
+import Modal3 from './modal/modal3';
 
 export default function Main() {
 
@@ -45,6 +47,7 @@ export default function Main() {
     }
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [modalOpen2, setModalOpen2] = useState<boolean>(false);
+    const [modalOpen3, setModalOpen3] = useState<boolean>(false);
     const toggleModal = ({ modalName, setModalName }: ModalState) => {
         if (!modalName) {
             setModalName(true);
@@ -422,11 +425,11 @@ export default function Main() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                            {/* {modalOpen && <Modal1 />} */}
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen3, setModalName: setModalOpen3 })}>
+                            {modalOpen3 && <Modal3 />}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj1}></img>
-                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
+                                <img className={styles.pjMainImg1} src={pj3}></img>
+                                <div className={styles.pjMainText1}>구매 시뮬레이터
                                     <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
                                 </div>
                             </div>
