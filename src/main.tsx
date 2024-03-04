@@ -322,7 +322,7 @@ export default function Main() {
                     <img src={K}></img>
                     <div className={styles.topText}>포트폴리오</div>
                 </div>
-                <div className={visible || modalOpen || modalOpen2 ? styles.header : styles.header2} id='header'>
+                <div className={visible || modalOpen || modalOpen2 || modalOpen3 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
                     <div className={styles.headerText}>
                         <div className={styles.textWrapper}>
@@ -430,7 +430,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj3}></img>
                                 <div className={styles.pjMainText1}>구매 시뮬레이터
-                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                    <div className={styles.pjSubText1}> React + Redux를 이용한 프론트엔드 쇼핑 / 부동산 구매 금액 계산 사이트</div>
                                 </div>
                             </div>
                         </div>
