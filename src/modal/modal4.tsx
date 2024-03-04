@@ -1,16 +1,18 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../css/modal2.module.css';
+import styles from '../css/modal4.module.css';
 
 import left from "../icon/left.png"
 import right from "../icon/right.png"
-import slide1 from "../screenshot/c1.png"
-import slide2 from "../screenshot/c2.png"
-import slide3 from "../screenshot/c3.png"
-import slide4 from "../screenshot/c4.png"
-import slide5 from "../screenshot/c5.png"
-import slide6 from "../screenshot/c6.png"
-import slide7 from "../screenshot/c7.png"
-import slide8 from "../screenshot/c8.png"
+import slide1 from "../screenshot/d1.png"
+import slide15 from "../screenshot/b15.png"
+import slide16 from "../screenshot/b16.png"
+import slide2 from "../screenshot/b2.png"
+import slide25 from "../screenshot/b25.png"
+import slide3 from "../screenshot/b3.png"
+import slide4 from "../screenshot/b4.png"
+import slide5 from "../screenshot/b5.png"
+import slide6 from "../screenshot/b6.png"
+import slide7 from "../screenshot/b7.png"
 
 export default function Modal() {
     const ref = useRef<HTMLUListElement>(null);
@@ -18,7 +20,7 @@ export default function Modal() {
     // 슬라이드 ------------------------------------------------------------
 
     const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const products = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8]
+    const products = [slide1, slide15, slide16, slide2, slide25, slide3, slide4, slide5, slide6, slide7]
 
     useEffect(() => {
         if (ref.current) {
@@ -74,48 +76,46 @@ export default function Modal() {
                 <div className={styles.textWrapper}>
 
 
-                    <div className={styles.title}>[ How Long..? ] - 모의 구매 및 계산 시뮬레이터 </div>
-                    <div className={styles.subTitle}>구매에 필요한 금액과 기간을 계산해주는 시뮬레이터 사이트 </div>
+                    <div className={styles.title}>[ Chatta ] -  관심사 기반 채팅방 서비스 </div>
+                    <div className={styles.subTitle}>관심사가 다양한 유저들이 모여 직접 채팅방을 만들어 소통 할 수 있는 커뮤니티</div>
                     <hr className={styles.hr} />
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>
                             <div className={styles.date}>기간</div>
                             <div className={styles.skill}>프론트엔드</div>
-                            {/* <div className={styles.skill}>백엔드</div> */}
-                            <div className={styles.framework}>라이브러리 & API</div>
+                            <div className={styles.skill}>백엔드</div>
+                            <div className={styles.framework}>라이브러리 & 모듈</div>
                         </div>
                         <div className={styles.rangeText}>
-                            <div className={styles.dateText}>2023/10/11 ~ 2023/10/18</div>
-                            <div className={styles.skillText}> #HTML  #CSS #Javascript #React </div>
-                            {/* <div className={styles.skillText2}> #Node.js #Express #MySQL</div> */}
-                            <div className={styles.frameworkText}>#Redux #React-Router-DOM #Tailwind CSS #네이버API</div>
+                            <div className={styles.dateText}>2023/08/31 ~ 2023/09/15</div>
+                            <div className={styles.skillText}> #HTML  #CSS  #Javascript</div>
+                            <div className={styles.skillText2}> #Node.js #Express #MySQL</div>
+                            <div className={styles.frameworkText}>#JQuery | #JWT #Bcrypt #Sequelize #Socket.io #Axios #Nodemailer #ejs</div>
                         </div>
                     </div>
                     <div className={styles.role}>💻기여도</div>
-                    <div className={styles.roleText}>1인 프로젝트</div>
-                    <div className={styles.myRole}>메인 페이지 (이미지 1번)</div>
-                    <li className={styles.textLi}>React-Router-DOM의 Link를 이용한 페이지 구분</li>
-                    <div className={styles.myRole}>쇼핑 페이지 (이미지 2,3,4,5번)</div>
-                    <li className={styles.textLi}>네이버API를 이용한 상품 검색, 상품 이미지 클릭 시 네이버 쇼핑사이트로 연결</li>
-                    <li className={styles.textLi}>담기 클릭 시 Array를 이용한 페이지 아래에 장바구니 생성 및 상품목록 삭제 기능</li>
-                    <li className={styles.textLi}>구매 시 사용자 정보를 입력받아 State에 저장</li>
-                    <li className={styles.textLi}>입력받은 정보를 기반으로 금액 및 기간 계산</li>
-                    <div className={styles.myRole}>부동산 페이지 (이미지 6,7,8번)</div>
-                    <li className={styles.textLi}>서울시 제공 부동산 실거래가 내역을 이용한 부동산 목록</li>
-                    <li className={styles.textLi}>위치정보 클릭 시 해당 부동산의 네이버 지도로 연결해주는 위치정보 기능</li>
-                    <li className={styles.textLi}>중첩 가능한 평수 / 구분 / 지역 정렬과 정렬 초기화 기능</li>
-                    <li className={styles.textLi}>구매해보기 클릭 시 Flow는 쇼핑과 같음</li>
+                    <div className={styles.roleText}>총 인원 5명이 함께 개발</div>
+                    <div className={styles.myRole}>로그인 / 회원가입 페이지 (이미지 1,2번)</div>
+                    <li className={styles.textLi}>JQuery를 이용한 로그인/회원가입 유효성 검사</li>
+                    <li className={styles.textLi}>데이터는 Sequelize와 Axios통신을 이용해 MySQL DB에 저장</li>
+                    <div className={styles.myRole}>ID/PW찾기 (이미지 3번)</div>
+                    <li className={styles.textLi}>Nodemailer를 이용해 회원가입시 입력한 Email로 암호화된 임시 비밀번호 전송</li>
+                    {/* <li className={styles.textLi}>임시 비밀번호 전송 직후 회원의 비밀번호를 임시 비밀번호로 수정</li> */}
+                    <div className={styles.myRole}>프로필 페이지 / 비밀번호 변경 / 회원 탈퇴 (이미지 8,9,10번)</div>
+                    <li className={styles.textLi}>비밀번호 변경과 회원 탈퇴 클릭 시 본인확인 페이지 / 유효성 검사</li>
                     <div className={styles.important}>📝개발 중점사항</div>
-                    <li className={styles.textLi}>익숙하지 않은 기술들을 연습하기 위한 프로젝트</li>
-                    <li className={styles.textLi}>Redux, Tailwind CSS, React-Router-DOM을 이용해 효율적인 코드를 짜는데에 중점을 둠</li>
-                    <li className={styles.textLi}>사용자가 비정상적인 데이터를 입력했을 때를 대비해 데이터 입력 범위 제한, 오작동을 방지</li>
+                    <li className={styles.textLi}>MVC 패턴을 이용한 효율적인 데이터 흐름과 파일 구조</li>
+                    <li className={styles.textLi}>페이지 이동 시 마다 JWT인증 / 회원정보 저장 암호화로 보안성에 중점을 둠</li>
+                    {/* 일정 시간이 지나면 자동 로그아웃 기능을 JWT로 구현 및 잘못된 접근 방지 */}
+                    <li className={styles.textLi}>기본적인 소셜 앱에서 제공하는 기능을 모두 구현</li>
+                    <li className={styles.textLi}>카테고리별 유저들이 관심있는 곳으로 모일 수 있도록 직관적인 디자인</li>
 
                     {/* <div className={styles.feedback}>📌보완할 점</div>
                     <li className={styles.textLi}>기능 구현에 중점을 둬 다소 부족했던 CSS디자인</li>
                     <li className={styles.textLi}>모든 기능을 한눈에 볼 수 있는 메인 페이지의 부재</li>
                     <li className={styles.textLi}>ID/PW찾기 시 유저 한 명을 식별할 고유한 정보가 부족</li> */}
-
-                    {/* <h3>성과</h3>
+                    {/* 
+                    <h3>🥇🥈🥉🏅🎖️🏆성과</h3>
                     <div>프로젝트 참여한 7팀 중 최우수상 수상</div> */}
                 </div>
             </div>

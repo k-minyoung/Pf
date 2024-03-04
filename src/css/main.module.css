@@ -434,6 +434,11 @@
     border-bottom: solid 4px #333333;
 }
 
+.projectSubTilte {
+    font-size: 17px;
+    border-top: #333333 4px solid;
+}
+
 .mid2Box {
     display: flex;
     justify-content: center;

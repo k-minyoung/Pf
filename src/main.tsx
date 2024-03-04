@@ -21,12 +21,14 @@ import velog from './icon/velog.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
-import pj3 from './screenshot/c.png'
+import pj3 from './screenshot/c1.png'
+import pj4 from './screenshot/d1.png'
 /////////////
 
 import Modal1 from './modal/modal1';
 import Modal2 from './modal/modal2';
 import Modal3 from './modal/modal3';
+import Modal4 from './modal/modal4';
 
 export default function Main() {
 
@@ -48,6 +50,7 @@ export default function Main() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [modalOpen2, setModalOpen2] = useState<boolean>(false);
     const [modalOpen3, setModalOpen3] = useState<boolean>(false);
+    const [modalOpen4, setModalOpen4] = useState<boolean>(false);
     const toggleModal = ({ modalName, setModalName }: ModalState) => {
         if (!modalName) {
             setModalName(true);
@@ -417,11 +420,11 @@ export default function Main() {
                     </div>
                     <div className={styles.mid2Box}>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                            {/* {modalOpen && <Modal1 />} */}
+                            {modalOpen4 && <Modal4 />}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj1}></img>
-                                <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                <img className={styles.pjMainImg1} src={pj4}></img>
+                                <div className={styles.pjMainText1}>Demure - 가구 쇼핑몰
+                                    <div className={styles.pjSubText1}> React + Typescript + IKEA API를 이용한 풀스택 가구 쇼핑몰</div>
                                 </div>
                             </div>
                         </div>
@@ -429,8 +432,8 @@ export default function Main() {
                             {modalOpen3 && <Modal3 />}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj3}></img>
-                                <div className={styles.pjMainText1}>구매 시뮬레이터
-                                    <div className={styles.pjSubText1}> React + Redux를 이용한 프론트엔드 쇼핑 / 부동산 구매 금액 계산 사이트</div>
+                                <div className={styles.pjMainText1}>How Long..? - 모의 구매 및 계산 시뮬레이터
+                                    <div className={styles.pjSubText1}> React + Redux 를 이용한 프론트엔드 쇼핑 / 부동산 구매 금액 계산 사이트</div>
                                 </div>
                             </div>
                         </div>

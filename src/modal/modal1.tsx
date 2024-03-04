@@ -85,7 +85,7 @@ export default function Modal() {
                             <div className={styles.frameworkText}>#Bootstrap  #JQuery #Swiper.js</div>
                         </div>
                     </div>
-                    <div className={styles.role}>역할</div>
+                    <div className={styles.role}>💻기여도</div>
                     <div className={styles.roleText}>총 인원 4명이 함께 개발</div>
                     <div className={styles.myRole}>Friedns 페이지 개발 (이미지 2,3번)</div>
                     <li className={styles.textLi}>Swiper.js 라이브러리를 이용한 카드 슬라이드 기능</li>
