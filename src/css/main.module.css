@@ -59,7 +59,7 @@
 
     background-color: #FFFFFF;
     width: auto;
-    height: 60px;
+    height: 50px;
 
 
     border-bottom: 2px solid #59a5f5;
@@ -74,7 +74,7 @@
 
     background-color: #FFFFFF;
     width: auto;
-    height: 60px;
+    height: 50px;
 
 
     border-bottom: 2px solid #59a5f5;
@@ -85,7 +85,7 @@
 
 .headerText {
     font-size: 22px;
-    height: 60px;
+    height: 50px;
     padding: 10px 0 10px 0;
     display: flex;
     justify-content: start;
@@ -159,6 +159,10 @@
 }
 
 .mid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #F5F5F5;
 }
 
@@ -181,19 +185,21 @@
 
 .skill {
     display: flex;
+    align-items: center;
     border: 2px solid black;
     border-radius: 10px;
-    margin: 70px 200px 0px 200px;
+    /* margin: 20px 200px 0px 200px; */
     /* background-color: gray; */
-    height: 400px;
+    width: 500px;
+    height: 350px;
 }
 
 .frontBox {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 40%;
+    align-items: start;
+    width: 50px;
     height: 100%;
     text-align: center;
     margin-left: 5%;
@@ -203,52 +209,61 @@
 }
 
 .iconBox {
-    width: auto;
+    width: 56px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 12px;
+
+}
+
+.iconBox2 {
+    width: 56px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .Wrapper {
     position: relative;
-    width: 100px;
+    width: 50px;
     display: flex;
-    margin: 7px;
+    margin: 3px;
     flex-direction: column;
 }
 
 .Wrapper120 {
     position: relative;
-    width: 110px;
+    width: 50px;
     display: flex;
     margin: 7px;
     flex-direction: column;
 }
 
 .frontIcon {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 20px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
 .frontIcon120 {
-    width: 110px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 20px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 
 }
 
 .hoverText {
+    font-size: 12px;
     display: none;
     position: absolute;
     text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.121);
     color: white;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
@@ -261,8 +276,8 @@
     text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
     justify-content: center;
     align-items: center;
-    width: 110px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     background-color: rgba(0, 0, 0, 0.121);
     color: white;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
@@ -308,13 +323,24 @@
     font-weight: bold;
 }
 
+.skillBack {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    /* margin: 20px 200px 0px 200px; */
+    /* background-color: gray; */
+    width: 500px;
+    height: 300px;
+}
+
 .barBox {
     display: flex;
-    width: 430px;
+    width: 300px;
     height: 26px;
     /* border: 2px solid #59a5f5; */
     background-color: #cccccc;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 
 
 }
@@ -394,14 +420,25 @@
 }
 
 .backBox {
-    width: 50%;
-    height: 100%;
+    width: 400px;
+    height: 300px;
     text-align: center;
     /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: center;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.backBox2 {
+    width: 400px;
+    height: 252px;
+    text-align: center;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
 }
 
 
@@ -543,13 +580,21 @@
     text-align: center;
 }
 
+.infoWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 250px;
+}
+
 .infoLeft {
     font-size: 19px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: start;
+    text-align: center;
     color: #F5F5F5;
     width: 50%;
     height: 130px;
@@ -558,7 +603,7 @@
 
 .infoLeftInner {
 
-    width: 300px;
+    width: auto;
 }
 
 .infoRight {

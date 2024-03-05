@@ -360,40 +360,42 @@ export default function Main() {
                                     )
                                 })}
                             </div>
-                            <div className={styles.frontEnd}>Front-End</div>
-                            <div>어쩌고저쩌고</div>
+                            {/* <div className={styles.frontEnd}>Front-End</div>
+                            <div>어쩌고저쩌고</div> */}
                         </div>
+
                         <div className={styles.backBox}>
                             {frontIconArray.map((i, index) => {
                                 const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
                                 return (
                                     <div className={styles.barBox}>
-                                        <div className={styles.stack}>{i.text}</div>
+                                        {/* <div className={styles.stack}>{i.text}</div> */}
                                         <div className={frontView ? barFillClass : styles.barEmpty}></div>
                                     </div>
                                 )
                             })}
                         </div>
                     </div>
-                    <div className={styles.skill} id='back'>
+                    <div>---------------------------</div>
+                    <div className={styles.skillBack} id='back'>
 
                         <div className={styles.frontBox}>
 
-                            <div className={styles.iconBox}>
+                            <div className={styles.iconBox2}>
                                 {backIconArray.map((i, index) => {
                                     return (
-                                        <div className={index <= 2 ? styles.Wrapper : styles.Wrapper120}>
-                                            <img key={index} src={i.name} className={index <= 2 ? styles.frontIcon : styles.frontIcon120} />
-                                            <div className={index <= 2 ? styles.hoverText : styles.hoverText120}>{i.text}</div>
+                                        <div className={styles.Wrapper}>
+                                            <img key={index} src={i.name} className={styles.frontIcon} />
+                                            <div className={styles.hoverText}>{i.text}</div>
                                         </div>
                                     )
                                 })}
                             </div>
-                            <div className={styles.backEnd}>Back-End</div>
-                            <div>어쩌고저쩌고</div>
+                            {/* <div className={styles.backEnd}>Back-End</div>
+                            <div>어쩌고저쩌고</div> */}
                         </div>
 
-                        <div className={styles.backBox}>
+                        <div className={styles.backBox2}>
                             {backIconArray.map((i, index) => {
                                 const barFillClasses = [
                                     styles.barFill4,
@@ -405,7 +407,7 @@ export default function Main() {
                                 const barFillClass = barFillClasses[index]
                                 return (
                                     <div className={styles.barBox}>
-                                        <div className={styles.stack}>{i.text}</div>
+                                        {/* <div className={styles.stack}>{i.text}</div> */}
                                         <div className={backView ? barFillClass : styles.barEmpty}></div>
                                     </div>
                                 )
@@ -468,14 +470,15 @@ export default function Main() {
                         <div className={styles.infoText}>
                             <div className={styles.infoLeft}>
                                 <div className={styles.infoLeftInner}>
-                                    <div>개발 기간 - ??~ ??</div>
+                                    <div className={styles.infoWrapper}>
+                                        <div>개발 기간 - ??~ ??</div>
 
-                                    <div>기술 - React + Typescript</div>
+                                        <div>기술 - React + Typescript</div>
 
-                                    <div>배포 - ??</div>
+                                        <div>배포 - ??</div>
 
-                                    <div>아이콘 - Flaticon</div>
-
+                                        <div>아이콘 - Flaticon</div>
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.infoRight}>

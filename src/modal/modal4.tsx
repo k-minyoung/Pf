@@ -123,7 +123,7 @@ export default function Modal() {
                     <li className={styles.textLi}>결제를 포함 실제 쇼핑몰의 모든 기능을 구현하는데에 중점을 둠</li>
                     <li className={styles.textLi}>원활한 유지보수를 위해 깔끔한 코드와 디테일한 주석 작성</li>
                     <li className={styles.textLi}>버그 방지를 위한 Typescript의 꼼꼼한 타입 설정</li>
-                    <li className={styles.textLi}>고급스럽고 깔끔한 느낌을 주기 위한 메인페이지와 전체적인 css디자인</li>
+                    <li className={styles.textLi}>고급스럽고 깔끔한 느낌을 줄 수 있는 css와 메인페이지</li>
 
                     {/* <div className={styles.feedback}>📌보완할 점</div>
                     <li className={styles.textLi}>기능 구현에 중점을 둬 다소 부족했던 CSS디자인</li>
