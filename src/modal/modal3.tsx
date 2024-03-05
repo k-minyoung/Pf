@@ -91,16 +91,16 @@ export default function Modal() {
                             <div className={styles.frameworkText}>#Redux #React-Router-DOM #Tailwind CSS #네이버API</div>
                         </div>
                     </div>
-                    <div className={styles.role}>💻기여도</div>
-                    <div className={styles.roleText}>1인 프로젝트</div>
+                    <div className={styles.role}>💻나의 기여도</div>
+                    <div className={styles.roleText}> - 개인 프로젝트</div>
                     <div className={styles.myRole}>메인 페이지 (이미지 1번)</div>
                     <li className={styles.textLi}>React-Router-DOM의 Link를 이용한 페이지 구분</li>
-                    <div className={styles.myRole}>쇼핑 페이지 (이미지 2,3,4,5번)</div>
+                    <div className={styles.myRole}>쇼핑 페이지 (이미지 2, 3, 4, 5번)</div>
                     <li className={styles.textLi}>네이버API를 이용한 상품 검색, 상품 이미지 클릭 시 네이버 쇼핑사이트로 연결</li>
                     <li className={styles.textLi}>담기 클릭 시 Array를 이용한 페이지 아래에 장바구니 생성 및 상품목록 삭제 기능</li>
                     <li className={styles.textLi}>구매 시 사용자 정보를 입력받아 State에 저장</li>
                     <li className={styles.textLi}>입력받은 정보를 기반으로 금액 및 기간 계산</li>
-                    <div className={styles.myRole}>부동산 페이지 (이미지 6,7,8번)</div>
+                    <div className={styles.myRole}>부동산 페이지 (이미지 6, 7, 8번)</div>
                     <li className={styles.textLi}>서울시 제공 부동산 실거래가 내역을 이용한 부동산 목록</li>
                     <li className={styles.textLi}>위치정보 클릭 시 해당 부동산의 네이버 지도로 연결해주는 위치정보 기능</li>
                     <li className={styles.textLi}>중첩 가능한 평수 / 구분 / 지역 정렬과 정렬 초기화 기능</li>

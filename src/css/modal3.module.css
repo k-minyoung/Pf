@@ -210,33 +210,38 @@
 .date {
     font-weight: bold;
     color: #333333;
-    margin: 1px 0 1px 0;
+    margin: 2px 0 2px 0;
 }
 
 .dateText {
-    margin: 1px 0 1px 0;
+    margin: 2px 0 2px 0;
 }
 
 .skill {
     font-weight: bold;
     color: #333333;
-    margin: 1px 0 1px 0;
+    margin: 2px 0 2px 0;
 }
 
 .skillText {
     color: #0055ff;
-    margin: 1px 0 1px 0;
+    margin: 2px 0 2px 0;
+}
+
+.skillText2 {
+    color: #6f00ff;
+    margin: 2px 0 2px 0;
 }
 
 .framework {
     font-weight: bold;
     color: #333333;
-    margin: 1px 0 1px 0;
+    margin: 2px 0 2px 0;
 }
 
 .frameworkText {
     color: darkgreen;
-    margin: 1px 0 1px 0;
+    margin: 2px 0 2px 0;
 }
 
 .role {
@@ -250,14 +255,14 @@
     font-size: 16px;
     font-weight: bold;
     color: #333333;
-    margin: 5px 0 5px 0;
+    margin: 20px 0 5px 0;
 }
 
 .important {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     color: #333333;
-    margin: 5px 0 5px 0;
+    margin: 20px 0 5px 0;
 }
 
 .feedback {

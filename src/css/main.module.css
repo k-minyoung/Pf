@@ -479,8 +479,8 @@
 }
 
 .pjMainImg1 {
-    width: 511px;
-    height: 220px;
+    width: 510px;
+    height: 225px;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     cursor: pointer;
@@ -488,7 +488,7 @@
 
 .pjMainText1 {
     font-size: 18px;
-    padding: 15px;
+    padding: 10px 0 15px 15px;
     width: 510px;
     cursor: pointer;
 }

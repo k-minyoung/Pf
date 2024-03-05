@@ -325,7 +325,7 @@ export default function Main() {
                     <img src={K}></img>
                     <div className={styles.topText}>포트폴리오</div>
                 </div>
-                <div className={visible || modalOpen || modalOpen2 || modalOpen3 ? styles.header : styles.header2} id='header'>
+                <div className={visible || modalOpen || modalOpen2 || modalOpen3 || modalOpen4 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
                     <div className={styles.headerText}>
                         <div className={styles.textWrapper}>
@@ -419,7 +419,7 @@ export default function Main() {
                         <div className={styles.projectTitle} ref={divRef2} >Project</div>
                     </div>
                     <div className={styles.mid2Box}>
-                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
+                        <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen4, setModalName: setModalOpen4 })}>
                             {modalOpen4 && <Modal4 />}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj4}></img>
@@ -433,7 +433,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj3}></img>
                                 <div className={styles.pjMainText1}>How Long..? - 모의 구매 및 계산 시뮬레이터
-                                    <div className={styles.pjSubText1}> React + Redux 를 이용한 프론트엔드 쇼핑 / 부동산 구매 금액 계산 사이트</div>
+                                    <div className={styles.pjSubText1}> React + Redux를 이용한 프론트엔드 쇼핑 / 부동산 구매 금액 계산 사이트</div>
                                 </div>
                             </div>
                         </div>

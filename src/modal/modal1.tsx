@@ -85,11 +85,11 @@ export default function Modal() {
                             <div className={styles.frameworkText}>#Bootstrap  #JQuery #Swiper.js</div>
                         </div>
                     </div>
-                    <div className={styles.role}>💻기여도</div>
-                    <div className={styles.roleText}>총 인원 4명이 함께 개발</div>
-                    <div className={styles.myRole}>Friedns 페이지 개발 (이미지 2,3번)</div>
+                    <div className={styles.role}>💻나의 기여도</div>
+                    <div className={styles.roleText}> - 총 인원 4명이 프로젝트 참여</div>
+                    <div className={styles.myRole}>Friedns 페이지 개발 (이미지 2, 3번)</div>
                     <li className={styles.textLi}>Swiper.js 라이브러리를 이용한 카드 슬라이드 기능</li>
-                    <li className={styles.textLi}>JQuery를 이용한 댓글 작성 기능과 좋아요 버튼 및 카운트 기능</li>
+                    <li className={styles.textLi}>JQuery를 이용한 댓글 작성 기능과 eventlistener - click을 활용한 좋아요 버튼 및 카운트 기능</li>
                     <div className={styles.important}>📝개발 중점사항</div>
                     <li className={styles.textLi}>주요 이용 타겟층 설정 후 초점을 맞춰 개발</li>
                     <li className={styles.textLi}>사용자 친화적 UI / UX 및 간결하고 심플한 디자인</li>
