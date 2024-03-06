@@ -75,7 +75,7 @@ export default function Modal() {
 
 
                     <div className={styles.title}>[ How Long..? ] - 모의 구매 및 계산 시뮬레이터 </div>
-                    <div className={styles.subTitle}>구매에 필요한 금액과 기간을 계산해주는 시뮬레이터 사이트 </div>
+                    <div className={styles.subTitle}>React + Redux와 네이버API, 부동산 내역을 이용해 개발한 프론트엔드 모의 구매/금액 계산 사이트입니다. </div>
                     <hr className={styles.hr} />
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>

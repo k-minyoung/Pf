@@ -71,7 +71,7 @@ export default function Modal() {
 
 
                     <div className={styles.title}>[ Mood Diary ] - 일기 기록 및 공유 사이트 </div>
-                    <div className={styles.subTitle}>누구나 쉽게 접근하여 짧은 기록을 남기고 서로 공유할 수 있는 페이지</div>
+                    <div className={styles.subTitle}>Javascript를 이용해 개발한 기록 / 소통 다이어리 페이지입니다.  </div>
                     <hr className={styles.hr} />
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>
@@ -82,7 +82,7 @@ export default function Modal() {
                         <div className={styles.rangeText}>
                             <div className={styles.dateText}>2023/07/07 ~ 2023/07/26</div>
                             <div className={styles.skillText}>#HTML  #CSS  #Javascript </div>
-                            <div className={styles.frameworkText}>#Bootstrap  #JQuery #Swiper.js</div>
+                            <div className={styles.frameworkText}>#Bootstrap #JQuery #Swiper.js</div>
                         </div>
                     </div>
                     <div className={styles.role}>💻나의 기여도</div>

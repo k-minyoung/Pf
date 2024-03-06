@@ -77,7 +77,7 @@ export default function Modal() {
 
 
                     <div className={styles.title}>[ Chatta ] -  관심사 기반 채팅방 서비스 </div>
-                    <div className={styles.subTitle}>관심사가 다양한 유저들이 모여 직접 채팅방을 만들어 소통 할 수 있는 커뮤니티</div>
+                    <div className={styles.subTitle}>node.js의 socket.io를 중심으로 개발한 채팅 커뮤니티입니다. 템플릿 엔진은 ejs를 이용했습니다.</div>
                     <hr className={styles.hr} />
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>
@@ -97,7 +97,7 @@ export default function Modal() {
                     <div className={styles.roleText}> - 총 인원 5명이 프로젝트 참여</div>
                     <div className={styles.myRole}>로그인 / 회원가입 페이지 (이미지 1, 2번)</div>
                     <li className={styles.textLi}>JQuery를 이용한 로그인/회원가입 유효성 검사</li>
-                    <li className={styles.textLi}>데이터는 Sequelize와 Axios통신을 이용해 MySQL DB에 저장</li>
+                    <li className={styles.textLi}>데이터는 Sequelize와 Axios통신을 이용해 MySQL DB에 저장 / bcrypt로 암호화</li>
                     <div className={styles.myRole}>ID/PW찾기 (이미지 3번)</div>
                     <li className={styles.textLi}>Nodemailer를 이용해 회원가입시 입력한 Email로 암호화된 임시 비밀번호 전송</li>
                     {/* <li className={styles.textLi}>임시 비밀번호 전송 직후 회원의 비밀번호를 임시 비밀번호로 수정</li> */}

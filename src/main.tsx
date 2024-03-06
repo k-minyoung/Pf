@@ -426,7 +426,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj4}></img>
                                 <div className={styles.pjMainText1}>Demure - 가구 쇼핑몰
-                                    <div className={styles.pjSubText1}> React + Typescript + IKEA API를 이용한 풀스택 가구 쇼핑몰</div>
+                                    <div className={styles.pjSubText1}> 구입부터 결제까지 모든 기능을 구현한 가구 판매 쇼핑몰 </div>
                                 </div>
                             </div>
                         </div>
@@ -435,7 +435,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj3}></img>
                                 <div className={styles.pjMainText1}>How Long..? - 모의 구매 및 계산 시뮬레이터
-                                    <div className={styles.pjSubText1}> React + Redux를 이용한 프론트엔드 쇼핑 / 부동산 구매 금액 계산 사이트</div>
+                                    <div className={styles.pjSubText1}> 구매에 필요한 금액과 기간을 계산해주는 시뮬레이터 사이트 </div>
                                 </div>
                             </div>
                         </div>
@@ -444,7 +444,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj2}></img>
                                 <div className={styles.pjMainText1}>Chatta - 관심사 기반 채팅방 서비스
-                                    <div className={styles.pjSubText1}> Node.js + socket.io를 이용한 백엔드 채팅 커뮤니티</div>
+                                    <div className={styles.pjSubText1}>유저들이 직접 채팅방을 만들어 소통 할 수 있는 커뮤니티</div>
                                 </div>
                             </div>
                         </div>
@@ -453,7 +453,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj1}></img>
                                 <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                    <div className={styles.pjSubText1}> Javascript + JQuery를 이용한 프론트엔드 다이어리 사이트</div>
+                                    <div className={styles.pjSubText1}> 누구나 쉽게 짧은 기록을 남기고 서로 공유할 수 있는 페이지</div>
                                 </div>
                             </div>
                         </div>

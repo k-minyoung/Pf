@@ -81,7 +81,7 @@ export default function Modal() {
 
 
                     <div className={styles.title}>[ Demure ] -  가구 쇼핑몰 </div>
-                    <div className={styles.subTitle}>구입부터 결제까지 모든 기능을 구현한 가구 판매 쇼핑몰 </div>
+                    <div className={styles.subTitle}>React + Typescript를 주로 이용해 개발한 쇼핑몰입니다. 상품 구성은 IKEA API를 이용했습니다.</div>
                     <hr className={styles.hr} />
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>
@@ -105,14 +105,14 @@ export default function Modal() {
                     <li className={styles.textLi}>nodemailer를 이용한 이메일 인증과 타이머 (시간 초과시 인증번호 재전송 버튼 활성화)</li>
                     <li className={styles.textLi}>카카오API를 이용한 간단한 카카오 로그인</li>
                     <div className={styles.myRole}>상품 목록 / 검색 페이지 (이미지 5, 6번)</div>
-                    <li className={styles.textLi}>Axios통신으로 상품 색상 & 가격순 정렬 / 스크롤 위치를 추적해 무한 스크롤 상품목록 구현</li>
+                    <li className={styles.textLi}>Axios통신으로 상품 색상 & 가격순 정렬 / 스크롤 위치 추적으로 무한 스크롤 상품목록 구현</li>
                     <li className={styles.textLi}>세일중인 항목 표시, 클릭 시 상품 정보 페이지(이미지 9번)로 이동</li>
                     <div className={styles.myRole}>이벤트 & 기획전 페이지(이미지 7, 8번)</div>
                     <li className={styles.textLi}>쿠폰 발급과 기획전 컨셉에 맞는 상품 목록 표시</li>
                     <li className={styles.textLi}>이벤트 가구에 마우스 호버 시 상품 정보 표시 및 클릭시 이동</li>
                     <div className={styles.myRole}>프로필 페이지(이미지 12번)</div>
                     <li className={styles.textLi}>회원 정보, 주문 내역, 주소, 문의내역,보유 쿠폰 및 회원정보 수정 가능</li>
-                    <li className={styles.textLi}>주문 내역의 상품 이름 클릭 시 주문 내역 페이지(이미지 13번)로 이동해 디테일한 정보 확인 가능</li>
+                    <li className={styles.textLi}>주문 내역의 상품 이름 클릭 시 주문 내역 페이지(이미지 13번)로 이동</li>
                     <li className={styles.textLi}>내역이 없는 경우 내역없음 메세지 표시</li>
                     <div className={styles.myRole}>주문 내역 페이지(이미지 13번)</div>
                     <li className={styles.textLi}>주문 취소 기능</li>
@@ -122,7 +122,7 @@ export default function Modal() {
                     <div className={styles.important}>📝개발 중점사항</div>
                     <li className={styles.textLi}>결제를 포함 실제 쇼핑몰의 모든 기능을 구현하는데에 중점을 둠</li>
                     <li className={styles.textLi}>원활한 유지보수를 위해 깔끔한 코드와 디테일한 주석 작성</li>
-                    <li className={styles.textLi}>버그 방지를 위한 Typescript의 꼼꼼한 타입 설정</li>
+                    <li className={styles.textLi}>쇼핑몰 특유의 데이터를 불러오는 시간이 긴 단점 보완</li>
                     <li className={styles.textLi}>고급스럽고 깔끔한 느낌을 줄 수 있는 css와 메인페이지</li>
 
                     {/* <div className={styles.feedback}>📌보완할 점</div>
