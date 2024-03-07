@@ -18,6 +18,7 @@ import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
 import K from './icon/letter-k.png'
 import velog from './icon/velog.png'
+import tailwind from './icon/tailwind.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
@@ -89,51 +90,51 @@ export default function Main() {
         io.observe(document.querySelector("#header") as HTMLElement);//여기서 타겟 설정
     }, []);
 
-    // 프론트 뷰포트 감지
-    const io2 = new IntersectionObserver((entries) => {
-        entries.forEach((entry2, i) => {
-            if (entry2.isIntersecting) {
-                setFrontView(true)
-                console.log("프론트 뷰포트 상태" + frontView)
-            } else {
-                console.log("프론트 뷰포트 상태" + frontView)
-            }
-        });
-    },
-        {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.5
-        }
-    )
+    // // 프론트 뷰포트 감지
+    // const io2 = new IntersectionObserver((entries) => {
+    //     entries.forEach((entry2, i) => {
+    //         if (entry2.isIntersecting) {
+    //             setFrontView(true)
+    //             console.log("프론트 뷰포트 상태" + frontView)
+    //         } else {
+    //             console.log("프론트 뷰포트 상태" + frontView)
+    //         }
+    //     });
+    // },
+    //     {
+    //         root: null,
+    //         rootMargin: "0px",
+    //         threshold: 0.5
+    //     }
+    // )
 
-    useEffect(() => {
-        io2.observe(document.querySelector("#front") as HTMLElement);
-        console.log(frontView)
-    }, [frontView]);
+    // useEffect(() => {
+    //     io2.observe(document.querySelector("#front") as HTMLElement);
+    //     console.log(frontView)
+    // }, [frontView]);
 
-    // 백 뷰포트 감지
-    const io3 = new IntersectionObserver((entries) => {
-        entries.forEach((entry2, i) => {
-            if (entry2.isIntersecting) {
-                setBackView(true)
-                console.log("백 뷰포트 상태" + backView)
-            } else {
-                console.log("백 뷰포트 상태" + backView)
-            }
-        });
-    },
-        {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.5
-        }
-    )
+    // // 백 뷰포트 감지
+    // const io3 = new IntersectionObserver((entries) => {
+    //     entries.forEach((entry2, i) => {
+    //         if (entry2.isIntersecting) {
+    //             setBackView(true)
+    //             console.log("백 뷰포트 상태" + backView)
+    //         } else {
+    //             console.log("백 뷰포트 상태" + backView)
+    //         }
+    //     });
+    // },
+    //     {
+    //         root: null,
+    //         rootMargin: "0px",
+    //         threshold: 0.5
+    //     }
+    // )
 
-    useEffect(() => {
-        io3.observe(document.querySelector("#back") as HTMLElement);
-        console.log(backView)
-    }, [backView]);
+    // useEffect(() => {
+    //     io3.observe(document.querySelector("#back") as HTMLElement);
+    //     console.log(backView)
+    // }, [backView]);
 
     // mid 뷰포트 감지
     const io4 = new IntersectionObserver((entries) => {
@@ -174,7 +175,7 @@ export default function Main() {
         {
             root: null,
             rootMargin: "0px",
-            threshold: 0.3
+            threshold: 0.4
         }
     )
 
@@ -220,6 +221,18 @@ export default function Main() {
 
     const frontIconArray: Icon[] = [
         {
+            name: tailwind,
+            text: "Tailwind"
+        },
+        {
+            name: Jq,
+            text: "JQuery"
+        },
+        {
+            name: Ts,
+            text: "Typescript"
+        },
+        {
             name: HTML,
             text: "HTML"
         },
@@ -235,35 +248,27 @@ export default function Main() {
             name: react,
             text: "React"
         },
-        {
-            name: Ts,
-            text: "Typescript"
-        },
-        {
-            name: Jq,
-            text: "JQuery"
-        }
     ]
     const backIconArray: Icon[] = [
         {
-            name: Node,
-            text: 'Node.js'
+            name: AWS,
+            text: 'AWS'
         },
         {
-            name: Java,
-            text: 'Java'
+            name: Spring,
+            text: 'SpringBoot'
         },
         {
             name: MySQL,
             text: 'MySQL'
         },
         {
-            name: Spring,
-            text: 'Spring-boot'
+            name: Java,
+            text: 'Java'
         },
         {
-            name: AWS,
-            text: 'AWS'
+            name: Node,
+            text: 'Node.js'
         },
     ]
 
@@ -342,7 +347,126 @@ export default function Main() {
                     <div className={styles.titleWrapper}>
                         <div className={styles.skillTitle} ref={divRef} >Skill</div>
                     </div>
-                    <div className={styles.skill} id='front'>
+                    <div className={styles.skillCon}>
+                        <div className={styles.stackWrapper}>
+                            <div className={styles.stackText}>FrontEnd</div>
+                        </div>
+                        <div className={styles.frontIconWrapper}>
+                            <div className={styles.frontIconC}>
+                                {frontIconArray.map((i, index) => {
+                                    return (
+                                        <>
+                                            {index === 0 && (
+                                                <div key={index} className={styles.Wrapper} >
+                                                    <img src={i.name} className={styles.frontIcon} />
+                                                    <div className={styles.hoverText}>{i.text}</div>
+                                                </div>
+                                            )}
+                                        </>
+                                    )
+                                })} </div>
+                            <div className={styles.frontIconB}>
+                                {frontIconArray.map((i, index) => {
+                                    return (
+                                        <>
+                                            {index <= 2 && index > 0 && (
+                                                <div key={index} className={styles.Wrapper} >
+                                                    <img src={i.name} className={styles.frontIcon} />
+                                                    <div className={styles.hoverText}>{i.text}</div>
+                                                </div>
+                                            )}
+                                        </>
+                                    )
+                                })}
+                            </div>
+
+                            <div className={styles.frontIconA}>
+                                {frontIconArray.map((i, index) => {
+                                    return (
+                                        <>
+                                            {index <= 6 && index > 2 && (
+                                                <div key={index} className={styles.Wrapper} >
+                                                    <img src={i.name} className={styles.frontIcon} />
+                                                    <div className={styles.hoverText}>{i.text}</div>
+                                                </div>
+                                            )}
+                                        </>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <br />
+                        <div className={styles.graphWrapper}>
+                            <div className={styles.graphTop}></div>
+                            <div className={styles.graphTop}></div>
+                            <div className={styles.graphTop}></div>
+                            <div className={styles.graphBot}>
+                                <div className={styles.graphText}>시도해봄</div>
+                            </div>
+                            <div className={styles.graphBot}>
+                                <div className={styles.graphText}>사용가능</div>
+                            </div>
+                            <div className={styles.graphBot}>
+                                <div className={styles.graphText}>익숙함</div>
+                            </div>
+                        </div>
+
+                        <br />
+
+                        <div className={styles.backIconWrapper}>
+                            <div className={styles.backIconC}>
+                                {backIconArray.map((i, index) => {
+                                    return (
+                                        <>
+                                            {index <= 1 && (
+                                                <div key={index} className={styles.Wrapper}>
+                                                    <img src={i.name} className={styles.frontIcon} />
+                                                    <div className={styles.hoverText}>{i.text}</div>
+                                                </div>
+                                            )}
+                                        </>
+                                    )
+                                })}
+                            </div>
+
+                            <div className={styles.backIconB}>
+                                {backIconArray.map((i, index) => {
+                                    return (
+                                        <>
+                                            {index <= 3 && 1 < index && (
+                                                <div key={index} className={styles.Wrapper}>
+                                                    <img src={i.name} className={styles.frontIcon} />
+                                                    <div className={styles.hoverText}>{i.text}</div>
+                                                </div>
+                                            )}
+                                        </>
+                                    )
+                                })}
+                            </div>
+
+                            <div className={styles.backIconA}>
+                                {backIconArray.map((i, index) => {
+                                    return (
+                                        <>
+                                            {index <= 4 && 3 < index && (
+                                                <div key={index} className={styles.Wrapper}>
+                                                    <img src={i.name} className={styles.frontIcon} />
+                                                    <div className={styles.hoverText}>{i.text}</div>
+                                                </div>
+                                            )}
+                                        </>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                        <div className={styles.stackWrapper}>
+                            <div className={styles.stackText}>BackEnd</div>
+                        </div>
+                    </div>
+
+
+                </div>
+                {/* <div className={styles.skill} id='front'>
 
                         <div className={styles.frontBox} >
 
@@ -360,8 +484,8 @@ export default function Main() {
                                     )
                                 })}
                             </div>
-                            {/* <div className={styles.frontEnd}>Front-End</div>
-                            <div>어쩌고저쩌고</div> */}
+                            <div className={styles.frontEnd}>Front-End</div>
+                            <div>어쩌고저쩌고</div>
                         </div>
 
                         <div className={styles.backBox}>
@@ -369,7 +493,7 @@ export default function Main() {
                                 const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
                                 return (
                                     <div className={styles.barBox}>
-                                        {/* <div className={styles.stack}>{i.text}</div> */}
+                                        <div className={styles.stack}>{i.text}</div>
                                         <div className={frontView ? barFillClass : styles.barEmpty}></div>
                                     </div>
                                 )
@@ -391,8 +515,8 @@ export default function Main() {
                                     )
                                 })}
                             </div>
-                            {/* <div className={styles.backEnd}>Back-End</div>
-                            <div>어쩌고저쩌고</div> */}
+                            <div className={styles.backEnd}>Back-End</div>
+                            <div>어쩌고저쩌고</div>
                         </div>
 
                         <div className={styles.backBox2}>
@@ -407,14 +531,14 @@ export default function Main() {
                                 const barFillClass = barFillClasses[index]
                                 return (
                                     <div className={styles.barBox}>
-                                        {/* <div className={styles.stack}>{i.text}</div> */}
+                                        <div className={styles.stack}>{i.text}</div>
                                         <div className={backView ? barFillClass : styles.barEmpty}></div>
                                     </div>
                                 )
                             })}
                         </div>
-                    </div>
-                </div>
+                    </div> */}
+
 
                 <div className={styles.mid2} id='mid2'>
                     <div className={styles.titleWrapper}>
