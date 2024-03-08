@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from "./css/main.module.css";
 
+//////// background
+import m1 from './screenshot/m1.jpg'
 
 //////// ICON
 import frontIcon from './icon/9094993.png'
@@ -222,7 +224,7 @@ export default function Main() {
     const frontIconArray: Icon[] = [
         {
             name: tailwind,
-            text: "Tailwind"
+            text: "Tailwind CSS"
         },
         {
             name: Jq,
@@ -256,7 +258,7 @@ export default function Main() {
         },
         {
             name: Spring,
-            text: 'SpringBoot'
+            text: 'Spring Boot'
         },
         {
             name: MySQL,
@@ -284,13 +286,13 @@ export default function Main() {
         const updatePosition = () => {
             if (divRef.current) {
                 const rect = divRef.current.offsetTop
-                setPosition(rect)
+                setPosition(rect - 50)
             }
         };
         const updatePosition2 = () => {
             if (divRef2.current) {
                 const rect2 = divRef2.current.offsetTop
-                setPosition2(rect2)
+                setPosition2(rect2 - 50)
             }
         }
         const updatePosition3 = () => {
@@ -327,8 +329,10 @@ export default function Main() {
         <div className={styles.body} id='body'>
             <div className={styles.overlay}>
                 <div className={styles.top}>
-                    <img src={K}></img>
-                    <div className={styles.topText}>포트폴리오</div>
+                    <img className={styles.mainBG} src={m1} />
+                    <div className={styles.topOverlay}></div>
+                    <h2 style={{ position: "absolute", color: 'white', top: '180px' }}>포트폴리오</h2>
+                    <div className={styles.topText}>글씨가 들어갈 거에요</div>
                 </div>
                 <div className={visible || modalOpen || modalOpen2 || modalOpen3 || modalOpen4 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
