@@ -18,9 +18,13 @@ import Java from './icon/java.png'
 import MySQL from './icon/mysql.png'
 import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
-import K from './icon/letter-k.png'
 import velog from './icon/velog.png'
 import tailwind from './icon/tailwind.png'
+
+import name from './icon/user.png'
+import birth from './icon/birthday.png'
+import call from './icon/phone-call.png'
+import mail from './icon/email.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
@@ -42,6 +46,12 @@ export default function Main() {
     const [midView, setMidView] = useState<boolean>(false);
     const [mid2View, setMid2View] = useState<boolean>(false);
     const [infoView, setInfoView] = useState<boolean>(false);
+
+    // 페이지 최초 렌더시 true
+    const [pageLoad, setPageLoad] = useState<boolean>(false)
+    useEffect(() => {
+        setPageLoad(true)
+    }, [])
 
     //모달
 
@@ -211,11 +221,13 @@ export default function Main() {
     }, [infoView]);
     //https://ww8007-learn.tistory.com/6 참고했음
 
-    //새로고침
+    //새로고침하고 스크롤을 맨 위로 올림
     const reload = () => {
         window.location.reload();
         window.scrollTo(0, 0);
     }
+
+    //icon들의 인터페이스(타입설정)
     interface Icon {
         name: string;
         text: string;
@@ -274,7 +286,7 @@ export default function Main() {
         },
     ]
 
-    //div 위치 구해서 해당 위치로 스크롤
+    //Ref로 div 위치 구해서 해당 위치로 스크롤
     const divRef = useRef<HTMLDivElement>(null);
     const divRef2 = useRef<HTMLDivElement>(null);
     const divRef3 = useRef<HTMLDivElement>(null);
@@ -331,8 +343,28 @@ export default function Main() {
                 <div className={styles.top}>
                     <img className={styles.mainBG} src={m1} />
                     <div className={styles.topOverlay}></div>
-                    <h2 style={{ position: "absolute", color: 'white', top: '180px' }}>포트폴리오</h2>
+                    <h2 className={styles.topTitle}>포트폴리오</h2>
                     <div className={styles.topText}>글씨가 들어갈 거에요</div>
+
+                    <div className={styles.aboutMeCon}>
+                        <div className={styles.aboutTitle}>About Me</div>
+                        <div className={styles.aboutTextBox}>
+                            <div className={styles.aboutIcon}>
+                                <img src={name} className={styles.name} />
+                                <img src={birth} className={styles.birth} />
+                                <img src={call} className={styles.call} />
+                                <img src={mail} className={styles.mail} />
+
+                            </div>
+
+                            <div className={styles.aboutText}>
+                                김민영
+                            </div>
+
+                            <div className={styles.nameBox}> </div>
+                            <div>생년월일 : 1997.09.05</div>
+                        </div>
+                    </div>
                 </div>
                 <div className={visible || modalOpen || modalOpen2 || modalOpen3 || modalOpen4 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
