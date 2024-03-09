@@ -349,20 +349,19 @@ export default function Main() {
                     <div className={styles.aboutMeCon}>
                         <div className={styles.aboutTitle}>About Me</div>
                         <div className={styles.aboutTextBox}>
-                            <div className={styles.aboutIcon}>
-                                <img src={name} className={styles.name} />
-                                <img src={birth} className={styles.birth} />
-                                <img src={call} className={styles.call} />
-                                <img src={mail} className={styles.mail} />
 
+                            <img src={name} className={styles.name} />
+                            <div className={styles.aboutTextName}>김민영</div>
+                            <img src={birth} className={styles.birth} />
+                            <div className={styles.aboutTextBirth}>1997.09.05</div>
+                            <img src={mail} className={styles.mail} />
+                            <div className={styles.aboutTextMail}>alsdudsk12@naver.com</div>
+                            <img src={call} className={styles.call} />
+                            <div className={styles.aboutTextCall}>010-3617-1488</div>
+                            <hr className={styles.aboutHr} />
+                            <div className={styles.aboutLink}>
+                                <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
                             </div>
-
-                            <div className={styles.aboutText}>
-                                김민영
-                            </div>
-
-                            <div className={styles.nameBox}> </div>
-                            <div>생년월일 : 1997.09.05</div>
                         </div>
                     </div>
                 </div>
@@ -383,6 +382,8 @@ export default function Main() {
                     <div className={styles.titleWrapper}>
                         <div className={styles.skillTitle} ref={divRef} >Skill</div>
                     </div>
+
+                    {/* 데스크탑(넓은 화면 용) */}
                     <div className={styles.skillCon}>
                         <div className={styles.stackWrapper}>
                             <div className={styles.stackText}>FrontEnd</div>
@@ -497,6 +498,134 @@ export default function Main() {
                         </div>
                         <div className={styles.stackWrapper}>
                             <div className={styles.stackText}>BackEnd</div>
+                        </div>
+                    </div>
+
+
+                    {/* 모바일 용(width : 320px) */}
+                    <div className={styles.skillCon2}>
+                        <div className={styles.stackWrapper2}>
+                            <div className={styles.stackText2}>FrontEnd</div>
+                            <div className={styles.stackText2}>BackEnd</div>
+                        </div>
+                        <div className={styles.skillBox2}>
+                            <div className={styles.skillFront2}>
+                                <div className={styles.frontIconWrapper2}>
+                                    <div className={styles.frontIconC2}>
+                                        {frontIconArray.map((i, index) => {
+                                            return (
+                                                <>
+                                                    {index === 0 && (
+                                                        <div key={index} className={styles.Wrapper2} >
+                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <div className={styles.hoverText2}>{i.text}</div>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )
+                                        })} </div>
+                                    <div className={styles.frontIconB2}>
+                                        {frontIconArray.map((i, index) => {
+                                            return (
+                                                <>
+                                                    {index <= 2 && index > 0 && (
+                                                        <div key={index} className={styles.Wrapper2} >
+                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <div className={styles.hoverText2}>{i.text}</div>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )
+                                        })}
+                                    </div>
+
+                                    <div className={styles.frontIconA2}>
+                                        {frontIconArray.map((i, index) => {
+                                            return (
+                                                <>
+                                                    {index <= 6 && index > 2 && (
+                                                        <div key={index} className={styles.Wrapper2} >
+                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <div className={styles.hoverText2}>{i.text}</div>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={styles.graphBox2}>
+                                <div>
+                                    <div className={styles.graphLeft2}></div>
+                                    <div className={styles.graphLeft2}></div>
+                                    <div className={styles.graphLeft2}></div>
+                                </div>
+                                <div>
+                                    <div className={styles.graphRight2}></div>
+                                    <div className={styles.graphRight2}></div>
+                                    <div className={styles.graphRight2}></div>
+                                </div>
+                                <div className={styles.graphTextBox2}>
+                                    <div className={styles.graphTextC2}>시도해봄</div>
+                                </div>
+                                <div className={styles.graphTextBox2}>
+                                    <div className={styles.graphTextB2}>사용가능</div>
+                                </div>
+                                <div className={styles.graphTextBox2}>
+                                    <div className={styles.graphTextA2}>익숙함</div>
+                                </div>
+                            </div>
+
+                            <div className={styles.skillBack2}>
+                                <div className={styles.backIconWrapper2}>
+                                    <div className={styles.backIconC2}>
+                                        {backIconArray.map((i, index) => {
+                                            return (
+                                                <>
+                                                    {index <= 1 && (
+                                                        <div key={index} className={styles.Wrapper2}>
+                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <div className={styles.hoverText2}>{i.text}</div>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )
+                                        })}
+                                    </div>
+
+                                    <div className={styles.backIconB2}>
+                                        {backIconArray.map((i, index) => {
+                                            return (
+                                                <>
+                                                    {index <= 3 && 1 < index && (
+                                                        <div key={index} className={styles.Wrapper2}>
+                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <div className={styles.hoverText2}>{i.text}</div>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )
+                                        })}
+                                    </div>
+
+                                    <div className={styles.backIconA2}>
+                                        {backIconArray.map((i, index) => {
+                                            return (
+                                                <>
+                                                    {index <= 4 && 3 < index && (
+                                                        <div key={index} className={styles.Wrapper2}>
+                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <div className={styles.hoverText2}>{i.text}</div>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )
+                                        })}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

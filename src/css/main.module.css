@@ -21,15 +21,16 @@
 
 .overlay {
     position: relative;
+    z-index: -1;
 
 }
 
 .top {
     position: sticky;
     top: 0;
-    z-index: 1;
+    z-index: -1;
     width: auto;
-    height: 78vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +42,7 @@
 .topOverlay {
     position: absolute;
     width: 100%;
-    height: 78vh;
+    height: 80vh;
     background: rgb(0, 0, 0);
     background: radial-gradient(circle, rgba(0, 0, 0, 0.34) 52%, rgba(21, 63, 109, 0.33) 100%);
 }
@@ -100,37 +101,70 @@
     align-items: center;
     flex-direction: column;
     width: auto;
-    height: 80%;
-}
-
-.nameBox {
-    font-size: 20px;
-    text-align: center;
-    color: #F5F5F5;
-    width: auto;
-    height: 50px;
+    height: 100%;
 }
 
 .name {
-    width: 50px;
+    width: 40px;
+}
+
+.aboutTextName {
+    margin: 15px;
+    font-size: 18px;
+    color: #f5f5f5;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .birth {
-    width: 50px;
+    width: 40px;
+}
+
+.aboutTextBirth {
+    margin: 15px;
+    font-size: 18px;
+    color: #f5f5f5;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .call {
-    width: 50px;
+    width: 40px;
+}
+
+.aboutTextCall {
+    margin: 15px;
+    font-size: 18px;
+    color: #f5f5f5;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .mail {
-    width: 50px;
+    width: 40px;
+}
+
+.aboutTextMail {
+    margin: 15px;
+    font-size: 18px;
+    color: #f5f5f5;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.aboutHr {
+    width: 200px;
+    margin-bottom: 15px;
 }
 
 
-@media screen and (max-width : 760px) {
+@media screen and (max-width : 770px) {
     .mainBG {
-        height: 506px;
+        height: 514px;
+    }
+
+    .topOverlay {
+        height: 514px;
     }
 }
 
@@ -336,13 +370,13 @@
     text-align: center;
 }
 
-.Wrapper120 {
+/* .Wrapper120 {
     position: relative;
     width: 50px;
     display: flex;
     margin: 7px;
     flex-direction: column;
-}
+} */
 
 .frontIcon {
     width: 60px;
@@ -351,13 +385,14 @@
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* 
 .frontIcon120 {
     width: 50px;
     height: 50px;
     border-radius: 20px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 
-}
+} */
 
 .hoverText {
     font-size: 14px;
@@ -374,7 +409,7 @@
     border-radius: 20px;
 }
 
-.hoverText120 {
+/* .hoverText120 {
     display: none;
     position: absolute;
     text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
@@ -386,7 +421,7 @@
     color: white;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-}
+} */
 
 .frontIcon:hover+.hoverText {
     display: flex;
@@ -402,20 +437,20 @@
     animation-fill-mode: forwards;
 }
 
-.frontIcon120:hover+.hoverText120 {
+/* .frontIcon120:hover+.hoverText120 {
     display: flex;
     background-color: rgba(0, 0, 0, 0.5);
     animation: modalOpen 0.2s linear 0s 1;
     animation-fill-mode: forwards;
-}
+} */
 
-.hoverText120:hover {
+/* .hoverText120:hover {
     display: flex;
     background-color: rgba(0, 0, 0, 0.5);
     animation: modalOpen 0.2s linear 0s 1;
     animation-fill-mode: forwards;
 
-}
+} */
 
 .frontEnd {
     font-size: 28px;
@@ -730,9 +765,8 @@
 }
 
 .velog {
-    margin: 5px;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 10px;
 }
 
@@ -988,9 +1022,229 @@
     border-radius: 30px;
 }
 
+
+/* 뉴스킬(모바일용) */
+.skillCon2 {
+    display: none;
+    width: 280px;
+    height: 600px;
+    /* border: black solid 2px; */
+    border-radius: 15px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    border: #0077C2 solid 2px;
+}
+
+.stackWrapper2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+
+.stackText2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    width: 150px;
+    color: #00619a;
+}
+
+.skillBox2 {
+    display: flex;
+    justify-content: center;
+    height: 510px;
+
+}
+
+.skillFront2 {
+    display: flex;
+    justify-content: center;
+    width: 90px;
+
+}
+
+.frontIconWrapper2 {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.Wrapper2 {
+    position: relative;
+    width: 40px;
+    display: flex;
+    margin: 3px;
+    flex-direction: column;
+    text-align: center;
+}
+
+.frontIcon2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.hoverText2 {
+    font-size: 12px;
+    display: none;
+    position: absolute;
+    text-shadow: -1px 0px black, 0px 1px black, 1px 0px black, 0px -1px black;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.121);
+    color: white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.frontIcon2:hover+.hoverText2 {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: modalOpen 0.2s linear 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.hoverText2:hover {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: modalOpen 0.2s linear 0s 1;
+    animation-fill-mode: forwards;
+}
+
+.frontIconA2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.frontIconB2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.frontIconC2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.graphBox2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+.graphLeft2 {
+    width: 30px;
+    height: 170px;
+    border-top: solid black 1px;
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+.graphRight2 {
+    width: 30px;
+    height: 170px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    border-left: solid black 1px;
+}
+
+.skillBack2 {
+    display: flex;
+    justify-content: center;
+    width: 90px;
+}
+
+.backIconWrapper2 {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.backIconA2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.backIconB2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.backIconC2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.graphTextBox2 {
+    width: auto;
+}
+
+.graphTextC2 {
+    position: absolute;
+    top: 420px;
+    right: 0px;
+    text-align: center;
+    width: 60px;
+    font-size: 12px;
+    color: #f5f5f5;
+    background-color: #0077C2;
+    border-radius: 30px;
+}
+
+.graphTextB2 {
+    position: absolute;
+    top: 250px;
+    right: 0px;
+    text-align: center;
+    width: 60px;
+    font-size: 12px;
+    color: #f5f5f5;
+    background-color: #0077C2;
+    border-radius: 30px;
+}
+
+.graphTextA2 {
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    text-align: center;
+    width: 60px;
+    font-size: 12px;
+    color: #f5f5f5;
+    background-color: #0077C2;
+    border-radius: 30px;
+}
+
 @media screen and (max-width: 1102px) {
     .skillCon {
         display: none;
-        background-color: red;
     }
+
+    .skillCon2 {
+        display: flex;
+    }
+
 }
