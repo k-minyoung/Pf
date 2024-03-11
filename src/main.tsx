@@ -187,7 +187,7 @@ export default function Main() {
         {
             root: null,
             rootMargin: "0px",
-            threshold: 0.4
+            threshold: 0.3
         }
     )
 
@@ -273,12 +273,12 @@ export default function Main() {
             text: 'Spring Boot'
         },
         {
-            name: MySQL,
-            text: 'MySQL'
-        },
-        {
             name: Java,
             text: 'Java'
+        },
+        {
+            name: MySQL,
+            text: 'MySQL'
         },
         {
             name: Node,
@@ -378,7 +378,24 @@ export default function Main() {
                 </div>
 
                 <div className={styles.mid} id='mid'>
+                    <div className={styles.aboutMeCon2}>
+                        <div className={styles.aboutTitle2}>About Me</div>
+                        <div className={styles.aboutTextBox2}>
 
+                            <img src={name} className={styles.name} />
+                            <div className={styles.aboutTextName}>김민영</div>
+                            <img src={birth} className={styles.birth} />
+                            <div className={styles.aboutTextBirth}>1997.09.05</div>
+                            <img src={mail} className={styles.mail} />
+                            <div className={styles.aboutTextMail}>alsdudsk12@naver.com</div>
+                            <img src={call} className={styles.call} />
+                            <div className={styles.aboutTextCall}>010-3617-1488</div>
+                            <hr className={styles.aboutHr} />
+                            <div className={styles.aboutLink}>
+                                <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
+                            </div>
+                        </div>
+                    </div>
                     <div className={styles.titleWrapper}>
                         <div className={styles.skillTitle} ref={divRef} >Skill</div>
                     </div>
@@ -438,13 +455,13 @@ export default function Main() {
                             <div className={styles.graphTop}></div>
                             <div className={styles.graphTop}></div>
                             <div className={styles.graphBot}>
+                                <div className={styles.graphText}>알고있음</div>
+                            </div>
+                            <div className={styles.graphBot}>
                                 <div className={styles.graphText}>시도해봄</div>
                             </div>
                             <div className={styles.graphBot}>
-                                <div className={styles.graphText}>사용가능</div>
-                            </div>
-                            <div className={styles.graphBot}>
-                                <div className={styles.graphText}>익숙함</div>
+                                <div className={styles.graphText}>주로 사용</div>
                             </div>
                         </div>
 
@@ -455,7 +472,7 @@ export default function Main() {
                                 {backIconArray.map((i, index) => {
                                     return (
                                         <>
-                                            {index <= 1 && (
+                                            {index <= 2 && (
                                                 <div key={index} className={styles.Wrapper}>
                                                     <img src={i.name} className={styles.frontIcon} />
                                                     <div className={styles.hoverText}>{i.text}</div>
@@ -470,7 +487,7 @@ export default function Main() {
                                 {backIconArray.map((i, index) => {
                                     return (
                                         <>
-                                            {index <= 3 && 1 < index && (
+                                            {index === 3 && 1 < index && (
                                                 <div key={index} className={styles.Wrapper}>
                                                     <img src={i.name} className={styles.frontIcon} />
                                                     <div className={styles.hoverText}>{i.text}</div>
@@ -568,13 +585,13 @@ export default function Main() {
                                     <div className={styles.graphRight2}></div>
                                 </div>
                                 <div className={styles.graphTextBox2}>
-                                    <div className={styles.graphTextC2}>시도해봄</div>
+                                    <div className={styles.graphTextC2}>알고있음</div>
                                 </div>
                                 <div className={styles.graphTextBox2}>
-                                    <div className={styles.graphTextB2}>사용가능</div>
+                                    <div className={styles.graphTextB2}>시도해봄</div>
                                 </div>
                                 <div className={styles.graphTextBox2}>
-                                    <div className={styles.graphTextA2}>익숙함</div>
+                                    <div className={styles.graphTextA2}>주로 사용</div>
                                 </div>
                             </div>
 
@@ -584,7 +601,7 @@ export default function Main() {
                                         {backIconArray.map((i, index) => {
                                             return (
                                                 <>
-                                                    {index <= 1 && (
+                                                    {index <= 2 && (
                                                         <div key={index} className={styles.Wrapper2}>
                                                             <img src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
@@ -599,7 +616,7 @@ export default function Main() {
                                         {backIconArray.map((i, index) => {
                                             return (
                                                 <>
-                                                    {index <= 3 && 1 < index && (
+                                                    {index === 3 && 1 < index && (
                                                         <div key={index} className={styles.Wrapper2}>
                                                             <img src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
@@ -724,7 +741,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj3}></img>
                                 <div className={styles.pjMainText1}>How Long..? - 모의 구매 및 계산 시뮬레이터
-                                    <div className={styles.pjSubText1}> 구매에 필요한 금액과 기간을 계산해주는 시뮬레이터 사이트 </div>
+                                    <div className={styles.pjSubText1}> 구매에 필요한 금액과 기간을 계산하는 시뮬레이터 사이트 </div>
                                 </div>
                             </div>
                         </div>
@@ -742,7 +759,7 @@ export default function Main() {
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj1}></img>
                                 <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
-                                    <div className={styles.pjSubText1}> 누구나 쉽게 짧은 기록을 남기고 서로 공유할 수 있는 페이지</div>
+                                    <div className={styles.pjSubText1}> 누구나 쉽게 짧은 기록을 남기고 서로 공유하는 페이지</div>
                                 </div>
                             </div>
                         </div>
@@ -753,7 +770,7 @@ export default function Main() {
                     <div className={styles.pj4}>box4</div> */}
                     </div>
                     <div className={styles.bot} id='Info'>
-                        <div className={styles.infoTitle}>
+                        {/* <div className={styles.infoTitle}>
                             <div ref={divRef3}>INFOMATION</div>
                         </div>
                         <div className={styles.infoText}>
@@ -777,7 +794,7 @@ export default function Main() {
                                     <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>

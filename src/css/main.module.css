@@ -64,7 +64,7 @@
     position: absolute;
     left: 8%;
     top: 230px;
-    text-align: center;
+    text-align: start;
     color: #ffffff;
     opacity: 0;
     animation: textVisible 0.8s ease-in-out 1s 1 forwards;
@@ -78,11 +78,15 @@
     width: 320px;
     right: 0px;
     height: 100%;
-    background-color: #333333;
+    background-color: #333333b1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.aboutMeCon2 {
+    display: none;
 }
 
 .aboutTitle {
@@ -102,6 +106,46 @@
     flex-direction: column;
     width: auto;
     height: 100%;
+}
+
+@media screen and (max-width : 800px) {
+    .aboutMeCon {
+        display: none;
+    }
+
+    .aboutMeCon2 {
+        position: relative;
+        width: 300px;
+        right: 0px;
+        height: 100%;
+        background-color: #333333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 30px 0 30px 0;
+        margin-top: 40px;
+    }
+
+    .aboutTitle2 {
+        display: flex;
+        align-items: center;
+        width: auto;
+        height: 20%;
+        font-size: 42px;
+        font-weight: 700;
+        color: #F5F5F5;
+    }
+
+    .aboutTextBox2 {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        width: auto;
+        height: 100%;
+    }
+
 }
 
 .name {
@@ -663,8 +707,8 @@
 .pjMainImg1 {
     width: 510px;
     height: 225px;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
     cursor: pointer;
 }
 
@@ -699,6 +743,41 @@
     /* margin: 70px 400px 70px 400px; */
     height: 300px;
     border-radius: 10px;
+}
+
+@media screen and (max-width : 550px) {
+    .pjWrapper1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 300px;
+        height: 210px;
+    }
+
+    .pjMainImg1 {
+        padding-left: 1px;
+        width: 298px;
+        height: 200px;
+
+    }
+
+    .pj1 {
+        width: 300px;
+        height: 230px;
+    }
+
+    .pjMainText1 {
+
+        width: 300px;
+        font-size: 13px;
+
+        padding: 5px 5px 5px 5px;
+    }
+
+    .pjSubText1 {
+        font-size: 11px;
+    }
 }
 
 .bot {

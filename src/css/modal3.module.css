@@ -37,8 +37,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     overflow-x: hidden;
-    width: 1050px;
-    max-width: 1050px;
+    width: 1000px;
+    max-width: 1000px;
     max-height: 660px;
     animation: modalInner 0.3s ease 0s 1 forwards;
 }
@@ -50,8 +50,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     overflow-x: hidden;
-    width: 1050px;
-    max-width: 1050px;
+    width: 1000px;
+    max-width: 1000px;
     max-height: 660px;
     animation: modalInnerR 0.3s ease 0s 1 forwards;
 }
@@ -127,7 +127,7 @@
 }
 
 .imgBox {
-    width: 1030px;
+    width: 1000px;
     max-width: 1030px;
     height: 441px;
     display: flex;
