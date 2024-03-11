@@ -756,7 +756,7 @@
     }
 
     .pjMainImg1 {
-        padding-left: 1px;
+        padding: 0 1px 0 1px;
         width: 298px;
         height: 200px;
 

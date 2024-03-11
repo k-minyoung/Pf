@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../css/modal4.module.css';
+import styles from '../css/modal4M.module.css';
 
 import left from "../icon/left.png"
 import right from "../icon/right.png"
@@ -19,29 +19,28 @@ import slide13 from "../screenshot/d13.png"
 import slide14 from "../screenshot/d14.png"
 
 export default function Modal() {
-    const ref = useRef<HTMLUListElement>(null);
 
-    // 슬라이드 ------------------------------------------------------------
-
-    const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const products = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11, slide12, slide13, slide14]
+    const ref2 = useRef<HTMLUListElement>(null);
+    const products2 = [slide1, slide2, slide3, slide4, slide5, slide6, slide7, slide8, slide9, slide10, slide11, slide12, slide13, slide14]
+    const [currentSlideM, setCurrentSlideM] = useState<number>(0)
 
     useEffect(() => {
-        if (ref.current) {
-            ref.current.style.marginLeft = `${-currentSlide * 980}px`;
-        }
-    }, [currentSlide])
+        if (ref2.current) {
+            ref2.current.style.marginLeft = `${-currentSlideM * 600}px`;
 
-    const nextButtonClick = () => {
-        setCurrentSlide((prevIndex) =>
+        }
+    }, [currentSlideM])
+
+    const nextButtonClickM = () => {
+        setCurrentSlideM((prevIndex) =>
             // 버튼을 눌렀을 당시 index가 마지막 인덱스면 ? 첫번째 인덱스로 가기 / 아니라면 앞 인덱스
-            prevIndex === products.length - 1 ? 0 : prevIndex + 1
+            prevIndex === products2.length - 1 ? 0 : prevIndex + 1
         );
     };
-    const prevButtonClick = () => {
-        setCurrentSlide((prevIndex) =>
+    const prevButtonClickM = () => {
+        setCurrentSlideM((prevIndex) =>
             // 버튼을 눌렀을 당시 index가 첫번째 인덱스면 ? 마지막 인덱스로 가기 / 아니라면 뒷 인덱스
-            prevIndex === 0 ? products.length - 1 : prevIndex - 1
+            prevIndex === 0 ? products2.length - 1 : prevIndex - 1
         );
     };
 
@@ -58,15 +57,19 @@ export default function Modal() {
         <div className={isOpen ? styles.modalOverlay : styles.modalOverlayR} onClick={handleCloseModal}>
             {/* 모달 내부를 클릭하여도 닫히지 않게 함 */}
             <div className={isOpen ? styles.modalContent : styles.modalContentR} onClick={(e) => e.stopPropagation()}>
-                <div className={styles.mainImgBox}>
-                    <ul ref={ref} className={styles.sliderList}>
-                        {products && products.map((i, index) => {
+
+
+                {/* 모바일 슬라이드 */}
+
+                <div className={styles.mainImgBox2}>
+                    <ul ref={ref2} className={styles.sliderList2}>
+                        {products2 && products2.map((i, index) => {
 
                             return (
                                 <>
                                     <li key={index} className={styles.imgLi}>
 
-                                        <img className={styles.imgBox} src={i} />
+                                        <img className={styles.imgBox2} src={i} />
 
                                     </li>
                                 </>
@@ -74,14 +77,14 @@ export default function Modal() {
                         })}
                     </ul>
                 </div>
-                <img src={left} onClick={prevButtonClick} className={styles.prevBtn}></img>
-                <img src={right} onClick={nextButtonClick} className={styles.nextBtn}></img>
+                <img src={left} onClick={prevButtonClickM} className={styles.prevBtn}></img>
+                <img src={right} onClick={nextButtonClickM} className={styles.nextBtn}></img>
 
+                {/* 모바일 슬라이드 끝 */}
                 <div className={styles.textWrapper}>
 
-
                     <div className={styles.pageWrapper}>
-                        <div className={styles.page}>{currentSlide + 1 + " / " + products.length}</div>
+                        <div className={styles.page}>{currentSlideM + 1 + " / " + products2.length}</div>
                     </div>
                     <div className={styles.title}>[ Demure ] -  가구 쇼핑몰 </div>
                     <div className={styles.subTitle}>React + Typescript를 주로 이용해 개발한 쇼핑몰입니다. 상품 구성은 IKEA API를 이용했습니다.</div>
@@ -120,10 +123,10 @@ export default function Modal() {
                     <div className={styles.myRole}>주문 내역 페이지(이미지 13번)</div>
                     <li className={styles.textLi}>주문 취소 기능</li>
                     <div className={styles.myRole}>회원정보 수정 페이지(이미지 14번)</div>
-                    <li className={styles.textLi}>이메일을 제외한 이름, 비밀번호 변경 가능, 실시간 유효성 검사</li>
+                    <li className={styles.textLi}>이메일을 제외한 이름 / 비밀번호 변경, 실시간 유효성 검사</li>
                     <li className={styles.textLi}>회원 탈퇴 기능</li>
                     <div className={styles.important}>📝개발 중점사항</div>
-                    <li className={styles.textLi}>결제를 포함 실제 쇼핑몰의 모든 기능을 구현하는데에 중점을 둠</li>
+                    <li className={styles.textLi}>결제를 포함 실제 쇼핑몰의 모든 기능을 구현하는데 중점을 둠</li>
                     <li className={styles.textLi}>원활한 유지보수를 위해 깔끔한 코드와 디테일한 주석 작성</li>
                     <li className={styles.textLi}>쇼핑몰 특유의 데이터를 불러오는 시간이 긴 단점 보완</li>
                     <li className={styles.textLi}>고급스럽고 깔끔한 느낌을 줄 수 있는 css와 메인페이지</li>

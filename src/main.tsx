@@ -37,6 +37,10 @@ import Modal2 from './modal/modal2';
 import Modal3 from './modal/modal3';
 import Modal4 from './modal/modal4';
 
+import Modal1M from './modal/modal1M'
+import Modal2M from './modal/modal2M'
+import Modal3M from './modal/modal3M'
+import Modal4M from './modal/modal4M'
 export default function Main() {
 
 
@@ -335,6 +339,19 @@ export default function Main() {
         window.scrollTo({ top: position, behavior: 'smooth' })
         console.log(position)
     }
+
+    ///////현재 창의 width구해서 모바일 모달을 띄울건지, 그냥 모달을 띄울건지 결정
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+            setWindowWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     ////////////////
     return (
@@ -728,7 +745,7 @@ export default function Main() {
                     </div>
                     <div className={styles.mid2Box}>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen4, setModalName: setModalOpen4 })}>
-                            {modalOpen4 && <Modal4 />}
+                            {modalOpen4 && (windowWidth > 1100 ? <Modal4 /> : <Modal4M />)}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj4}></img>
                                 <div className={styles.pjMainText1}>Demure - 가구 쇼핑몰
@@ -737,7 +754,7 @@ export default function Main() {
                             </div>
                         </div>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen3, setModalName: setModalOpen3 })}>
-                            {modalOpen3 && <Modal3 />}
+                            {modalOpen3 && (windowWidth > 1100 ? <Modal3 /> : <Modal3M />)}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj3}></img>
                                 <div className={styles.pjMainText1}>How Long..? - 모의 구매 및 계산 시뮬레이터
@@ -746,7 +763,7 @@ export default function Main() {
                             </div>
                         </div>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
-                            {modalOpen2 && <Modal2 />}
+                            {modalOpen2 && (windowWidth > 1100 ? <Modal2 /> : <Modal2M />)}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj2}></img>
                                 <div className={styles.pjMainText1}>Chatta - 관심사 기반 채팅방 서비스
@@ -755,7 +772,7 @@ export default function Main() {
                             </div>
                         </div>
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
-                            {modalOpen && <Modal1 />}
+                            {modalOpen && (windowWidth > 1100 ? <Modal1 /> : <Modal1M />)}
                             <div className={styles.pjWrapper1}>
                                 <img className={styles.pjMainImg1} src={pj1}></img>
                                 <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트

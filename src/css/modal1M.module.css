@@ -181,6 +181,7 @@
     padding-top: 1px;
 }
 
+
 /* /////////////////////////////////////// */
 .title {
     font-size: 28px;
@@ -279,4 +280,57 @@
     text-indent: 10px;
     margin-left: 10px;
     margin: 5px 0 5px 10px;
+}
+
+/* 모바일 슬라이드 */
+
+
+.modalContent {
+    background-color: white;
+    padding: 0 60px 20px 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 600px;
+    max-width: 1000px;
+    max-height: 400px;
+    animation: modalInner 0.3s ease 0s 1 forwards;
+}
+
+.modalContentR {
+    background-color: white;
+    padding: 0 60px 20px 60px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 600px;
+    max-width: 1000px;
+    max-height: 400px;
+    animation: modalInnerR 0.3s ease 0s 1 forwards;
+}
+
+.mainImgBox2 {
+    width: 600px;
+    height: 280px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.imgBox2 {
+    width: 600px;
+    max-width: 1030px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    padding-right: 120px;
+}
+
+
+.sliderList2 {
+    display: flex;
+    transition: 0.5s;
 }

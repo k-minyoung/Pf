@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../css/modal1.module.css';
+import styles from '../css/modal1M.module.css';
 
 import left from "../icon/left.png"
 import right from "../icon/right.png"
@@ -7,32 +7,29 @@ import slide1 from "../screenshot/a1.png"
 import slide2 from "../screenshot/a2.png"
 import slide3 from "../screenshot/a3.png"
 import slide4 from "../screenshot/a4.png"
-
 export default function Modal() {
-    const ref1 = useRef<HTMLUListElement>(null);
 
-    // 슬라이드 ------------------------------------------------------------
-
-    const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const products = [slide1, slide2, slide3, slide4]
+    const ref2 = useRef<HTMLUListElement>(null);
+    const products2 = [slide1, slide2, slide3, slide4]
+    const [currentSlideM, setCurrentSlideM] = useState<number>(0)
 
     useEffect(() => {
-        if (ref1.current) {
-            ref1.current.style.marginLeft = `${-currentSlide * 980}px`;
-            console.log(ref1.current.style.marginLeft)
-        }
-    }, [currentSlide])
+        if (ref2.current) {
+            ref2.current.style.marginLeft = `${-currentSlideM * 600}px`;
 
-    const nextButtonClick = () => {
-        setCurrentSlide((prevIndex) =>
+        }
+    }, [currentSlideM])
+
+    const nextButtonClickM = () => {
+        setCurrentSlideM((prevIndex) =>
             // 버튼을 눌렀을 당시 index가 마지막 인덱스면 ? 첫번째 인덱스로 가기 / 아니라면 앞 인덱스
-            prevIndex === products.length - 1 ? 0 : prevIndex + 1
+            prevIndex === products2.length - 1 ? 0 : prevIndex + 1
         );
     };
-    const prevButtonClick = () => {
-        setCurrentSlide((prevIndex) =>
+    const prevButtonClickM = () => {
+        setCurrentSlideM((prevIndex) =>
             // 버튼을 눌렀을 당시 index가 첫번째 인덱스면 ? 마지막 인덱스로 가기 / 아니라면 뒷 인덱스
-            prevIndex === 0 ? products.length - 1 : prevIndex - 1
+            prevIndex === 0 ? products2.length - 1 : prevIndex - 1
         );
     };
 
@@ -49,15 +46,19 @@ export default function Modal() {
         <div className={isOpen ? styles.modalOverlay : styles.modalOverlayR} onClick={handleCloseModal}>
             {/* 모달 내부를 클릭하여도 닫히지 않게 함 */}
             <div className={isOpen ? styles.modalContent : styles.modalContentR} onClick={(e) => e.stopPropagation()}>
-                <div className={styles.mainImgBox}>
-                    <ul ref={ref1} className={styles.sliderList}>
-                        {products && products.map((i, index) => {
+
+
+                {/* 모바일 슬라이드 */}
+
+                <div className={styles.mainImgBox2}>
+                    <ul ref={ref2} className={styles.sliderList2}>
+                        {products2 && products2.map((i, index) => {
 
                             return (
                                 <>
                                     <li key={index} className={styles.imgLi}>
 
-                                        <img className={styles.imgBox} src={i} />
+                                        <img className={styles.imgBox2} src={i} />
 
                                     </li>
                                 </>
@@ -65,12 +66,15 @@ export default function Modal() {
                         })}
                     </ul>
                 </div>
-                <img src={left} onClick={prevButtonClick} className={styles.prevBtn}></img>
-                <img src={right} onClick={nextButtonClick} className={styles.nextBtn}></img>
+                <img src={left} onClick={prevButtonClickM} className={styles.prevBtn}></img>
+                <img src={right} onClick={nextButtonClickM} className={styles.nextBtn}></img>
+
+                {/* 모바일 슬라이드 끝 */}
+
 
                 <div className={styles.textWrapper}>
                     <div className={styles.pageWrapper}>
-                        <div className={styles.page}>{currentSlide + 1 + " / " + products.length}</div>
+                        <div className={styles.page}>{currentSlideM + 1 + " / " + products2.length}</div>
                     </div>
                     <div className={styles.title}>[ Mood Diary ] - 일기 기록 및 공유 사이트 </div>
                     <div className={styles.subTitle}>Javascript를 이용해 개발한 기록 / 소통 다이어리 페이지입니다.  </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../css/modal2.module.css';
+import styles from '../css/modal2M.module.css';
 
 import left from "../icon/left.png"
 import right from "../icon/right.png"
@@ -13,31 +13,29 @@ import slide4 from "../screenshot/b4.png"
 import slide5 from "../screenshot/b5.png"
 import slide6 from "../screenshot/b6.png"
 import slide7 from "../screenshot/b7.png"
-
 export default function Modal() {
-    const ref = useRef<HTMLUListElement>(null);
 
-    // 슬라이드 ------------------------------------------------------------
-
-    const [currentSlide, setCurrentSlide] = useState<number>(0)
-    const products = [slide1, slide15, slide16, slide2, slide25, slide3, slide4, slide5, slide6, slide7]
+    const ref2 = useRef<HTMLUListElement>(null);
+    const products2 = [slide1, slide15, slide16, slide2, slide25, slide3, slide4, slide5, slide6, slide7]
+    const [currentSlideM, setCurrentSlideM] = useState<number>(0)
 
     useEffect(() => {
-        if (ref.current) {
-            ref.current.style.marginLeft = `${-currentSlide * 980}px`;
-        }
-    }, [currentSlide])
+        if (ref2.current) {
+            ref2.current.style.marginLeft = `${-currentSlideM * 600}px`;
 
-    const nextButtonClick = () => {
-        setCurrentSlide((prevIndex) =>
+        }
+    }, [currentSlideM])
+
+    const nextButtonClickM = () => {
+        setCurrentSlideM((prevIndex) =>
             // 버튼을 눌렀을 당시 index가 마지막 인덱스면 ? 첫번째 인덱스로 가기 / 아니라면 앞 인덱스
-            prevIndex === products.length - 1 ? 0 : prevIndex + 1
+            prevIndex === products2.length - 1 ? 0 : prevIndex + 1
         );
     };
-    const prevButtonClick = () => {
-        setCurrentSlide((prevIndex) =>
+    const prevButtonClickM = () => {
+        setCurrentSlideM((prevIndex) =>
             // 버튼을 눌렀을 당시 index가 첫번째 인덱스면 ? 마지막 인덱스로 가기 / 아니라면 뒷 인덱스
-            prevIndex === 0 ? products.length - 1 : prevIndex - 1
+            prevIndex === 0 ? products2.length - 1 : prevIndex - 1
         );
     };
 
@@ -54,15 +52,19 @@ export default function Modal() {
         <div className={isOpen ? styles.modalOverlay : styles.modalOverlayR} onClick={handleCloseModal}>
             {/* 모달 내부를 클릭하여도 닫히지 않게 함 */}
             <div className={isOpen ? styles.modalContent : styles.modalContentR} onClick={(e) => e.stopPropagation()}>
-                <div className={styles.mainImgBox}>
-                    <ul ref={ref} className={styles.sliderList}>
-                        {products && products.map((i, index) => {
+
+
+                {/* 모바일 슬라이드 */}
+
+                <div className={styles.mainImgBox2}>
+                    <ul ref={ref2} className={styles.sliderList2}>
+                        {products2 && products2.map((i, index) => {
 
                             return (
                                 <>
                                     <li key={index} className={styles.imgLi}>
 
-                                        <img className={styles.imgBox} src={i} />
+                                        <img className={styles.imgBox2} src={i} />
 
                                     </li>
                                 </>
@@ -70,15 +72,16 @@ export default function Modal() {
                         })}
                     </ul>
                 </div>
-                <img src={left} onClick={prevButtonClick} className={styles.prevBtn}></img>
-                <img src={right} onClick={nextButtonClick} className={styles.nextBtn}></img>
+                <img src={left} onClick={prevButtonClickM} className={styles.prevBtn}></img>
+                <img src={right} onClick={nextButtonClickM} className={styles.nextBtn}></img>
 
+                {/* 모바일 슬라이드 끝 */}
 
                 <div className={styles.textWrapper}>
-
                     <div className={styles.pageWrapper}>
-                        <div className={styles.page}>{currentSlide + 1 + " / " + products.length}</div>
+                        <div className={styles.page}>{currentSlideM + 1 + " / " + products2.length}</div>
                     </div>
+
                     <div className={styles.title}>[ Chatta ] -  관심사 기반 채팅방 서비스 </div>
                     <div className={styles.subTitle}>node.js의 socket.io를 중심으로 개발한 채팅 커뮤니티입니다. 템플릿 엔진은 ejs를 이용했습니다.</div>
                     <hr className={styles.hr} />
