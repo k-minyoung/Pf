@@ -354,6 +354,15 @@ export default function Main() {
     }, []);
 
     ////////////////
+
+    ///햄버거 토글
+    const [sideMenuToggle, setSideMenuToggle] = useState<boolean>(false)
+
+    const sideToggle = () => {
+        setSideMenuToggle(!sideMenuToggle)
+        console.log("사이드바 토글 상태" + sideMenuToggle)
+    }
+
     return (
         <div className={styles.body} id='body'>
             <div className={styles.overlay}>
@@ -384,6 +393,7 @@ export default function Main() {
                 </div>
                 <div className={visible || modalOpen || modalOpen2 || modalOpen3 || modalOpen4 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
+                    { }
                     <div className={styles.headerText}>
                         <div className={styles.textWrapper}>
                             <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
@@ -391,7 +401,21 @@ export default function Main() {
                             <div className={!visible && infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(position3)}>Infomation</div>
                         </div>
                         <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
+
+                        {/* 700이하 햄버거 */}
+                        <div className={styles.burger} onClick={sideToggle}>햄버거</div>
                     </div>
+                    {sideMenuToggle &&
+                        <div className={styles.sideOverlay}>
+                            <div className={styles.sideCon}>
+                                <div className={styles.sideBox}>
+                                    <div className={styles.sideSkill}>Skill</div>
+                                    <div className={styles.sideProject}>Project</div>
+                                    <div className={styles.sideInfo}>Info</div>
+                                </div>
+                            </div>
+                        </div>
+                    }
                 </div>
 
                 <div className={styles.mid} id='mid'>
@@ -786,7 +810,7 @@ export default function Main() {
                     <div className={styles.pj3}>box3</div>
                     <div className={styles.pj4}>box4</div> */}
                     </div>
-                    <div className={styles.bot} id='Info'>
+                    <div ref={divRef3} className={styles.bot} id='Info'>
                         {/* <div className={styles.infoTitle}>
                             <div ref={divRef3}>INFOMATION</div>
                         </div>
@@ -815,6 +839,9 @@ export default function Main() {
                     </div>
                 </div>
             </div>
+
+
         </div>
+
     );
 }
