@@ -20,6 +20,7 @@ import Spring from './icon/spring.png'
 import AWS from './icon/AWS.png'
 import velog from './icon/velog.png'
 import tailwind from './icon/tailwind.png'
+import sass from './icon/sass.png'
 
 import name from './icon/user.png'
 import birth from './icon/birthday.png'
@@ -239,6 +240,10 @@ export default function Main() {
 
     const frontIconArray: Icon[] = [
         {
+            name: sass,
+            text: "Sass"
+        },
+        {
             name: tailwind,
             text: "Tailwind CSS"
         },
@@ -409,9 +414,14 @@ export default function Main() {
                         <div className={styles.sideOverlay}>
                             <div className={styles.sideCon}>
                                 <div className={styles.sideBox}>
-                                    <div className={styles.sideSkill}>Skill</div>
-                                    <div className={styles.sideProject}>Project</div>
-                                    <div className={styles.sideInfo}>Info</div>
+                                    <div className={styles.sideAboutMe} onClick={() => move(position - 580)}>About Me</div>
+                                    <hr className={styles.sideHr}></hr>
+                                    <div className={styles.sideSkill} onClick={() => move(position)}>Skill</div>
+                                    <hr className={styles.sideHr}></hr>
+                                    <div className={styles.sideProject} onClick={() => move(position2)}>Project</div>
+                                    <hr className={styles.sideHr}></hr>
+                                    <div className={styles.sideInfo} onClick={() => move(position3)}>Info</div>
+
                                 </div>
                             </div>
                         </div>
@@ -442,123 +452,145 @@ export default function Main() {
                     </div>
 
                     {/* 데스크탑(넓은 화면 용) */}
-                    <div className={styles.skillCon}>
-                        <div className={styles.stackWrapper}>
-                            <div className={styles.stackText}>FrontEnd</div>
-                        </div>
-                        <div className={styles.frontIconWrapper}>
-                            <div className={styles.frontIconC}>
-                                {frontIconArray.map((i, index) => {
-                                    return (
-                                        <>
-                                            {index === 0 && (
-                                                <div key={index} className={styles.Wrapper} >
-                                                    <img src={i.name} className={styles.frontIcon} />
-                                                    <div className={styles.hoverText}>{i.text}</div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )
-                                })} </div>
-                            <div className={styles.frontIconB}>
-                                {frontIconArray.map((i, index) => {
-                                    return (
-                                        <>
-                                            {index <= 2 && index > 0 && (
-                                                <div key={index} className={styles.Wrapper} >
-                                                    <img src={i.name} className={styles.frontIcon} />
-                                                    <div className={styles.hoverText}>{i.text}</div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )
-                                })}
+                    <div className={styles.skillMaster}>
+                        <div className={styles.stackTitle}>
+                            <div className={styles.stackTitleBox}>
+                                <div className={styles.stackblink}></div>
+                                <div className={styles.stackText}>{"<FrontEnd>"}</div>
                             </div>
-
-                            <div className={styles.frontIconA}>
-                                {frontIconArray.map((i, index) => {
-                                    return (
-                                        <>
-                                            {index <= 6 && index > 2 && (
-                                                <div key={index} className={styles.Wrapper} >
-                                                    <img src={i.name} className={styles.frontIcon} />
-                                                    <div className={styles.hoverText}>{i.text}</div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                        <br />
-                        <div className={styles.graphWrapper}>
-                            <div className={styles.graphTop}></div>
-                            <div className={styles.graphTop}></div>
-                            <div className={styles.graphTop}></div>
-                            <div className={styles.graphBot}>
-                                <div className={styles.graphText}>알고있음</div>
-                            </div>
-                            <div className={styles.graphBot}>
-                                <div className={styles.graphText}>시도해봄</div>
-                            </div>
-                            <div className={styles.graphBot}>
-                                <div className={styles.graphText}>주로 사용</div>
+                            <div className={styles.stackTitleBox2}>
+                                <div className={styles.stackText} style={{ color: "#6f00ff" }}>{"<BackEnd>"} </div>
+                                <div className={styles.stackblink}></div>
                             </div>
                         </div>
 
-                        <br />
 
-                        <div className={styles.backIconWrapper}>
-                            <div className={styles.backIconC}>
-                                {backIconArray.map((i, index) => {
-                                    return (
-                                        <>
-                                            {index <= 2 && (
-                                                <div key={index} className={styles.Wrapper}>
-                                                    <img src={i.name} className={styles.frontIcon} />
-                                                    <div className={styles.hoverText}>{i.text}</div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )
-                                })}
-                            </div>
+                        <div className={styles.skillCon}>
+                            <div className={styles.stackWrapper}>
 
-                            <div className={styles.backIconB}>
-                                {backIconArray.map((i, index) => {
-                                    return (
-                                        <>
-                                            {index === 3 && 1 < index && (
-                                                <div key={index} className={styles.Wrapper}>
-                                                    <img src={i.name} className={styles.frontIcon} />
-                                                    <div className={styles.hoverText}>{i.text}</div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )
-                                })}
+                                <div className={styles.graphBot2}>
+                                    <div className={styles.graphText}>알고있음</div>
+                                </div>
+                                <div className={styles.graphBot2}>
+                                    <div className={styles.graphText}>시도해봄</div>
+                                </div>
+                                <div className={styles.graphBot2}>
+                                    <div className={styles.graphText}>주로 사용</div>
+                                </div>
                             </div>
+                            <br />
+                            <div className={styles.frontIconWrapper}>
+                                <div className={styles.frontIconC}>
+                                    {frontIconArray.map((i, index) => {
+                                        return (
+                                            <>
+                                                {index === 0 && (
+                                                    <div key={index} className={styles.Wrapper} >
+                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <div className={styles.hoverText}>{i.text}</div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    })} </div>
+                                <div className={styles.frontIconB}>
+                                    {frontIconArray.map((i, index) => {
+                                        return (
+                                            <>
+                                                {index <= 3 && index > 0 && (
+                                                    <div key={index} className={styles.Wrapper} >
+                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <div className={styles.hoverText}>{i.text}</div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    })}
+                                </div>
 
-                            <div className={styles.backIconA}>
-                                {backIconArray.map((i, index) => {
-                                    return (
-                                        <>
-                                            {index <= 4 && 3 < index && (
-                                                <div key={index} className={styles.Wrapper}>
-                                                    <img src={i.name} className={styles.frontIcon} />
-                                                    <div className={styles.hoverText}>{i.text}</div>
-                                                </div>
-                                            )}
-                                        </>
-                                    )
-                                })}
+                                <div className={styles.frontIconA}>
+                                    {frontIconArray.map((i, index) => {
+                                        return (
+                                            <>
+                                                {index <= 7 && index > 3 && (
+                                                    <div key={index} className={styles.Wrapper} >
+                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <div className={styles.hoverText}>{i.text}</div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                        <div className={styles.stackWrapper}>
-                            <div className={styles.stackText}>BackEnd</div>
+                            <div className={styles.blink}></div>
+                            <div className={styles.graphWrapper}>
+                                <div className={styles.graphTop}></div>
+                                <div className={styles.graphTop}></div>
+                                <div className={styles.graphTop}></div>
+                                <div className={styles.graphBot}>
+                                    {/* <div className={styles.graphText}>알고있음</div> */}
+                                </div>
+                                <div className={styles.graphBot}>
+                                    {/* <div className={styles.graphText}>시도해봄</div> */}
+                                </div>
+                                <div className={styles.graphBot}>
+                                    {/* <div className={styles.graphText}>주로 사용</div> */}
+                                </div>
+                            </div>
+                            <div className={styles.blink}></div>
+
+
+                            <div className={styles.backIconWrapper}>
+                                <div className={styles.backIconC}>
+                                    {backIconArray.map((i, index) => {
+                                        return (
+                                            <>
+                                                {index <= 2 && (
+                                                    <div key={index} className={styles.Wrapper}>
+                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <div className={styles.hoverText}>{i.text}</div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    })}
+                                </div>
+
+                                <div className={styles.backIconB}>
+                                    {backIconArray.map((i, index) => {
+                                        return (
+                                            <>
+                                                {index === 3 && 1 < index && (
+                                                    <div key={index} className={styles.Wrapper}>
+                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <div className={styles.hoverText}>{i.text}</div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    })}
+                                </div>
+
+                                <div className={styles.backIconA}>
+                                    {backIconArray.map((i, index) => {
+                                        return (
+                                            <>
+                                                {index <= 4 && 3 < index && (
+                                                    <div key={index} className={styles.Wrapper}>
+                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <div className={styles.hoverText}>{i.text}</div>
+                                                    </div>
+                                                )}
+                                            </>
+                                        )
+                                    })}
+                                </div>
+                            </div>
+                            <br />
+                            <br />
                         </div>
                     </div>
-
 
                     {/* 모바일 용(width : 320px) */}
                     <div className={styles.skillCon2}>
@@ -586,7 +618,7 @@ export default function Main() {
                                         {frontIconArray.map((i, index) => {
                                             return (
                                                 <>
-                                                    {index <= 2 && index > 0 && (
+                                                    {index <= 3 && index > 0 && (
                                                         <div key={index} className={styles.Wrapper2} >
                                                             <img src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
@@ -601,7 +633,7 @@ export default function Main() {
                                         {frontIconArray.map((i, index) => {
                                             return (
                                                 <>
-                                                    {index <= 6 && index > 2 && (
+                                                    {index <= 7 && index > 3 && (
                                                         <div key={index} className={styles.Wrapper2} >
                                                             <img src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>

@@ -334,6 +334,58 @@
     cursor: pointer;
 }
 
+.sideCon {
+    position: relative;
+    width: auto;
+    height: 28vh;
+    top: 0px;
+    left: 0px;
+    background-color: white;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+    animation: burgerOpen 0.3s ease 0s 1 forwards;
+}
+
+@keyframes burgerOpen {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 28vh;
+    }
+}
+
+.sideBox {
+    width: auto;
+    padding-left: 30px;
+}
+
+.sideHr {
+    width: 90vw;
+    margin: 3px;
+    animation: modalOpen 0.5s ease 0s 1 forwards;
+}
+
+.sideAboutMe,
+.sideSkill,
+.sideProject,
+.sideInfo {
+    color: #00619a;
+    font-size: 28px;
+    font-weight: 700;
+    /* animation: modalOpen 1s ease 0s 1 forwards; */
+    cursor: pointer;
+}
+
+.sideAboutMe:hover,
+.sideSkill:hover,
+.sideProject:hover,
+.sideInfo:hover {
+    animation: textColor 0.3s ease-in-out 0s 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
 .mid {
     display: flex;
     flex-direction: column;
@@ -976,19 +1028,66 @@
     }
 }
 
+
+
 /* 뉴스킬 */
-.skillCon {
+.skillMaster {
     width: 1000px;
     height: 350px;
-    /* border: black solid 2px; */
     border-radius: 15px;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
+    border: #0077C2 solid 2px;
+    display: flex;
+}
+
+.stackTitleBox {
+    height: 50%;
+
+}
+
+.stackTitleBox2 {
+    height: 50%;
+
+}
+
+.stackTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 150px;
+    height: 350px;
+}
+
+.stackText {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 150px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #00619a;
+
+}
+
+.stackblink {
+    height: 25px;
+}
+
+.blink {
+    height: 15px;
+}
+
+.skillCon {
+    width: 850px;
+    height: 350px;
+    /* border: black solid 2px; */
+
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     flex-direction: column;
-    border: #0077C2 solid 2px;
+
 }
 
 .stackWrapper {
@@ -996,14 +1095,7 @@
     align-items: start;
 }
 
-.stackText {
 
-    font-size: 20px;
-    font-weight: 700;
-    width: 900px;
-    color: #00619a;
-
-}
 
 .frontIconWrapper {
     display: flex;
@@ -1092,6 +1184,14 @@
     border-right: solid black 1px;
     border-top: solid black 1px;
 
+}
+
+.graphBot2 {
+    width: 260px;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .graphText {
@@ -1201,21 +1301,21 @@
 
 .frontIconA2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     height: 170px;
 }
 
 .frontIconB2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     height: 170px;
 }
 
 .frontIconC2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     height: 170px;
 }
@@ -1273,7 +1373,7 @@
 
 .backIconC2 {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     height: 170px;
 }
@@ -1319,7 +1419,7 @@
 }
 
 @media screen and (max-width: 1102px) {
-    .skillCon {
+    .skillMaster {
         display: none;
     }
 
@@ -1340,14 +1440,4 @@
     display: flex;
     justify-content: center;
     align-items: center; */
-}
-
-.sideCon {
-    position: relative;
-    width: 100vw;
-    height: 25vh;
-    top: 0px;
-    left: 0px;
-    background-color: white;
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
 }
