@@ -26,6 +26,9 @@ import name from './icon/user.png'
 import birth from './icon/birthday.png'
 import call from './icon/phone-call.png'
 import mail from './icon/email.png'
+import menu from './icon/hamburger.png'
+import close from './icon/close.png'
+import rotate from './icon/rotate.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
@@ -69,13 +72,25 @@ export default function Main() {
     const [modalOpen2, setModalOpen2] = useState<boolean>(false);
     const [modalOpen3, setModalOpen3] = useState<boolean>(false);
     const [modalOpen4, setModalOpen4] = useState<boolean>(false);
+    const [modalMessage, setModalMessage] = useState<boolean>(false);
     const toggleModal = ({ modalName, setModalName }: ModalState) => {
         if (!modalName) {
             setModalName(true);
+            setTimeout(() => {
+                setModalMessage(true)
+            }, 1000);
+
+            setTimeout(() => {
+                setModalMessage(false)
+            }, 4000);
+
+            setSideMenuToggle(false)
         } else {
             // 모달 닫을 시 애니메이션이 나오지 않는 이유 = 애니메이션이 재생되기도 전에 닫혀버리기 때문
             // 애니메이션 시간만큼 setTimeout을 걸어서 재생될 시간을 주자.
             setTimeout(() => setModalName(false), 300)
+            setModalMessage(false)
+
         }
         console.log(modalName)
     };
@@ -344,6 +359,12 @@ export default function Main() {
         window.scrollTo({ top: position, behavior: 'smooth' })
         console.log(position)
     }
+    // 햄버거용 무브 (누르면 토글)
+    const moveM = (position: number) => {
+        window.scrollTo({ top: position, behavior: 'smooth' })
+        setSideMenuToggle(!sideMenuToggle)
+        console.log(position)
+    }
 
     ///////현재 창의 width구해서 모바일 모달을 띄울건지, 그냥 모달을 띄울건지 결정
 
@@ -364,6 +385,7 @@ export default function Main() {
     const [sideMenuToggle, setSideMenuToggle] = useState<boolean>(false)
 
     const sideToggle = () => {
+        // setTimeout(() => setSideMenuToggle(!sideMenuToggle), 300)
         setSideMenuToggle(!sideMenuToggle)
         console.log("사이드바 토글 상태" + sideMenuToggle)
     }
@@ -398,29 +420,29 @@ export default function Main() {
                 </div>
                 <div className={visible || modalOpen || modalOpen2 || modalOpen3 || modalOpen4 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
-                    { }
                     <div className={styles.headerText}>
                         <div className={styles.textWrapper}>
+                            {/* <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(0)}>Home</div> */}
+                            <div className={visible && !infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(0)}>Home</div>
                             <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
-                            <div className={!visible && mid2View && !infoView ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
-                            <div className={!visible && infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(position3)}>Infomation</div>
+                            <div className={!visible && mid2View ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
                         </div>
                         <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
 
                         {/* 700이하 햄버거 */}
-                        <div className={styles.burger} onClick={sideToggle}>햄버거</div>
+                        <div className={styles.burger} onClick={sideToggle}><img className={sideMenuToggle ? styles.close : styles.burgerIcon} src={sideMenuToggle ? close : menu} /></div>
                     </div>
                     {sideMenuToggle &&
                         <div className={styles.sideOverlay}>
                             <div className={styles.sideCon}>
                                 <div className={styles.sideBox}>
-                                    <div className={styles.sideAboutMe} onClick={() => move(position - 580)}>About Me</div>
+                                    <div className={styles.sideAboutMe} onClick={() => moveM(position - 580)}>About Me</div>
                                     <hr className={styles.sideHr}></hr>
-                                    <div className={styles.sideSkill} onClick={() => move(position)}>Skill</div>
+                                    <div className={styles.sideSkill} onClick={() => moveM(position)}>Skill</div>
                                     <hr className={styles.sideHr}></hr>
-                                    <div className={styles.sideProject} onClick={() => move(position2)}>Project</div>
+                                    <div className={styles.sideProject} onClick={() => moveM(position2)}>Project</div>
                                     <hr className={styles.sideHr}></hr>
-                                    <div className={styles.sideInfo} onClick={() => move(position3)}>Info</div>
+                                    <div className={styles.sideInfo} onClick={() => moveM(position3)}>Info</div>
 
                                 </div>
                             </div>
@@ -800,6 +822,7 @@ export default function Main() {
                         <div className={styles.projectTitle} ref={divRef2} >Project</div>
                     </div>
                     <div className={styles.mid2Box}>
+
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen4, setModalName: setModalOpen4 })}>
                             {modalOpen4 && (windowWidth > 1100 ? <Modal4 /> : <Modal4M />)}
                             <div className={styles.pjWrapper1}>
@@ -835,7 +858,16 @@ export default function Main() {
                                     <div className={styles.pjSubText1}> 누구나 쉽게 짧은 기록을 남기고 서로 공유하는 페이지</div>
                                 </div>
                             </div>
+                            {modalMessage &&
+
+                                <div className={styles.modalMsgBox}>
+                                    <div className={styles.modalMsgImgBox}><img className={styles.modalMsgImg} src={rotate} /></div>
+                                    <div className={styles.modalMsgText}>이미지가 보이지 않으면 가로로 돌려주세요</div>
+                                </div>
+
+                            }
                         </div>
+
                         {/* <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
                         {modalOpen2 && <Modal2 />}
                     </div>
