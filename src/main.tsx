@@ -29,6 +29,7 @@ import mail from './icon/email.png'
 import menu from './icon/hamburger.png'
 import close from './icon/close.png'
 import rotate from './icon/rotate.png'
+import arrow from './icon/arrow.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
@@ -396,8 +397,23 @@ export default function Main() {
                 <div className={styles.top}>
                     <img className={styles.mainBG} src={m1} />
                     <div className={styles.topOverlay}></div>
-                    <h2 className={styles.topTitle}>포트폴리오</h2>
-                    <div className={styles.topText}>글씨가 들어갈 거에요</div>
+
+
+                    <div className={styles.topTitleBox}>
+                        <div className={styles.topText}>프론트엔드 개발자를 희망하는</div>
+                        <div className={styles.topTitle}>
+                            <div className={styles.topTitle1}>김민영</div>
+                            <div className={styles.topTitle2}>입니다.</div>
+                        </div>
+                        <div className={styles.topText2}>짧은 코드를 위해 고민하며</div>
+                        <div className={styles.topText3}>기록하는 것을 좋아합니다.</div>
+                        <div className={styles.topText4}>
+                            <div className={styles.more}>더보기<img className={styles.moreIcon} src={arrow} /></div>
+                        </div>
+                        <div className={styles.downBox}>
+                            <img className={styles.topDown} src={close} />
+                        </div>
+                    </div>
 
                     <div className={styles.aboutMeCon}>
                         <div className={styles.aboutTitle}>About Me</div>
@@ -875,6 +891,9 @@ export default function Main() {
                     <div className={styles.pj4}>box4</div> */}
                     </div>
                     <div ref={divRef3} className={styles.bot} id='Info'>
+                        <div className={styles.botTitleBox}>
+                            <div className={styles.botTitle}>최종 업데이트 : 2024.03.20</div>
+                        </div>
                         {/* <div className={styles.infoTitle}>
                             <div ref={divRef3}>INFOMATION</div>
                         </div>

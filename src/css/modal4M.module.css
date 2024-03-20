@@ -11,7 +11,7 @@
     align-items: center;
 
     animation: modalOpen 0.3s ease 0s 1 forwards;
-
+    z-index: 3;
 
 }
 
@@ -28,6 +28,7 @@
     align-items: center;
 
     animation: modalOpenR 0.3s ease 0s 1 forwards;
+    z-index: 3;
 }
 
 .modalContent {
