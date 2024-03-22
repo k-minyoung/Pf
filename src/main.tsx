@@ -47,6 +47,7 @@ import Modal1M from './modal/modal1M'
 import Modal2M from './modal/modal2M'
 import Modal3M from './modal/modal3M'
 import Modal4M from './modal/modal4M'
+
 export default function Main() {
 
 
@@ -900,7 +901,7 @@ export default function Main() {
                     </div>
                     <div ref={divRef3} className={styles.bot} id='Info'>
                         <div className={styles.botTitleBox}>
-                            <div className={styles.botTitle}>최종 업데이트 : 2024.03.20</div>
+                            <div className={styles.botTitle}>최종 업데이트 : 2024.03.22</div>
                             <br />
                             <div className={styles.botTitle}> © 2024. Kim Min Young. All rights reserved.</div>
                         </div>

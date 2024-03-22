@@ -294,7 +294,7 @@
     overflow-x: hidden;
     width: 600px;
     max-width: 1000px;
-    max-height: 400px;
+    max-height: 320px;
     animation: modalInner 0.3s ease 0s 1 forwards;
 }
 
@@ -307,7 +307,7 @@
     overflow-x: hidden;
     width: 600px;
     max-width: 1000px;
-    max-height: 400px;
+    max-height: 320px;
     animation: modalInnerR 0.3s ease 0s 1 forwards;
 }
 

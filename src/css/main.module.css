@@ -1,7 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+@import "//cdn.jsdelivr.net/npm/font-kopub@1.0/kopubbatang.min.css";
+
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans KR'
 }
 
 :root {
@@ -61,20 +72,22 @@
 
 .topTitleBox {
     position: fixed;
-    width: 450px;
-    height: auto;
+    width: 100vmin;
+
     z-index: 3;
     top: 50%;
-    left: 60%;
+    left: 65%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
     flex-direction: column;
     letter-spacing: 1px;
+
 }
 
 .topText {
-    font-size: 80%;
+    font-family: 'MaruBuri-Regular';
+    font-size: 4vmin;
     font-weight: 700;
     text-align: start;
     color: #ffffff;
@@ -83,6 +96,7 @@
 }
 
 .topTitle {
+    font-family: 'MaruBuri-Regular';
     display: flex;
     color: #ffffff;
     align-items: end;
@@ -92,17 +106,25 @@
 }
 
 .topTitle1 {
-    font-size: 60px;
+    font-family: 'MaruBuri-Regular';
+    font-size: 8vmin;
     text-decoration: #00619a double underline;
     text-decoration-thickness: 5px;
     font-weight: 700;
 
 }
 
+.topTitle2 {
+    font-family: 'MaruBuri-Regular';
+    font-size: 4vmin;
+
+}
+
 .topText2 {
+    font-family: 'MaruBuri-Regular';
     display: flex;
     justify-content: center;
-    font-size: 24px;
+    font-size: 3vmin;
     color: #ffffff;
     font-weight: 500;
     margin: 5px;
@@ -111,9 +133,10 @@
 }
 
 .topText3 {
+    font-family: 'MaruBuri-Regular';
     display: flex;
     justify-content: center;
-    font-size: 24px;
+    font-size: 3vmin;
     color: #ffffff;
     font-weight: 500;
     margin: 5px;
@@ -244,6 +267,7 @@
     font-size: 42px;
     font-weight: 700;
     color: #F5F5F5;
+    margin: 10px;
 }
 
 .aboutTextBox {
@@ -258,6 +282,7 @@
 @media screen and (max-width : 800px) {
     .aboutMeCon {
         display: none;
+
     }
 
     .aboutMeCon2 {
@@ -273,6 +298,7 @@
         padding: 30px 0 30px 0;
         margin-top: 40px;
         z-index: 0;
+
     }
 
     .aboutTitle2 {
@@ -283,6 +309,7 @@
         font-size: 42px;
         font-weight: 700;
         color: #F5F5F5;
+        margin: 15px;
     }
 
     .aboutTextBox2 {
@@ -505,7 +532,7 @@
 .sideCon {
     position: relative;
     width: auto;
-    height: 185px;
+    height: 190px;
     top: 0px;
     left: 0px;
     background-color: white;
@@ -519,7 +546,7 @@
     }
 
     100% {
-        height: 185px;
+        height: 190px;
     }
 }
 
@@ -1660,6 +1687,7 @@
 
 .botTitle {
     color: #ffffff;
+    text-align: center;
 }
 
 .sideOverlay {
