@@ -30,6 +30,7 @@ import menu from './icon/hamburger.png'
 import close from './icon/close.png'
 import rotate from './icon/rotate.png'
 import arrow from './icon/arrow.png'
+import down from './icon/down.png'
 //////////////
 import pj1 from './screenshot/a1.png'
 import pj2 from './screenshot/b3.png'
@@ -395,10 +396,10 @@ export default function Main() {
         <div className={styles.body} id='body'>
             <div className={styles.overlay}>
                 <div className={styles.top}>
+
                     <img className={styles.mainBG} src={m1} />
-                    <div className={styles.topOverlay}></div>
-
-
+                    <div className={styles.topOverlay}>
+                    </div>
                     <div className={styles.topTitleBox}>
                         <div className={styles.topText}>프론트엔드 개발자를 희망하는</div>
                         <div className={styles.topTitle}>
@@ -407,14 +408,14 @@ export default function Main() {
                         </div>
                         <div className={styles.topText2}>짧은 코드를 위해 고민하며</div>
                         <div className={styles.topText3}>기록하는 것을 좋아합니다.</div>
-                        <div className={styles.topText4}>
+                        {/* <div className={styles.topText4}>
                             <div className={styles.more}>더보기<img className={styles.moreIcon} src={arrow} /></div>
-                        </div>
+                        </div> */}
+                        <br />
                         <div className={styles.downBox}>
-                            <img className={styles.topDown} src={close} />
+                            <img className={styles.topDown} src={down} />
                         </div>
                     </div>
-
                     <div className={styles.aboutMeCon}>
                         <div className={styles.aboutTitle}>About Me</div>
                         <div className={styles.aboutTextBox}>
@@ -432,7 +433,11 @@ export default function Main() {
                                 <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
                             </div>
                         </div>
+                        <div className={styles.aboutBlink}></div>
                     </div>
+
+
+
                 </div>
                 <div className={visible || modalOpen || modalOpen2 || modalOpen3 || modalOpen4 ? styles.header : styles.header2} id='header'>
                     {/* <div className={visible ? styles.header : styles.header2} id='header'> */}
@@ -492,6 +497,7 @@ export default function Main() {
                     {/* 데스크탑(넓은 화면 용) */}
                     <div className={styles.skillMaster}>
                         <div className={styles.stackTitle}>
+                            <br />
                             <div className={styles.stackTitleBox}>
                                 <div className={styles.stackblink}></div>
                                 <div className={styles.stackText}>{"<FrontEnd>"}</div>
@@ -504,6 +510,7 @@ export default function Main() {
 
 
                         <div className={styles.skillCon}>
+                            <br />
                             <div className={styles.stackWrapper}>
 
                                 <div className={styles.graphBot2}>
@@ -834,6 +841,7 @@ export default function Main() {
 
 
                 <div className={styles.mid2} id='mid2'>
+                    <div className={styles.line2}></div>
                     <div className={styles.titleWrapper}>
                         <div className={styles.projectTitle} ref={divRef2} >Project</div>
                     </div>
@@ -893,6 +901,8 @@ export default function Main() {
                     <div ref={divRef3} className={styles.bot} id='Info'>
                         <div className={styles.botTitleBox}>
                             <div className={styles.botTitle}>최종 업데이트 : 2024.03.20</div>
+                            <br />
+                            <div className={styles.botTitle}> © 2024. Kim Min Young. All rights reserved.</div>
                         </div>
                         {/* <div className={styles.infoTitle}>
                             <div ref={divRef3}>INFOMATION</div>

@@ -29,44 +29,52 @@
     position: sticky;
     top: 0;
     z-index: -1;
-    width: auto;
-    height: 80vh;
+    /* width: 99vw; */
+    height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 40px;
     /* background-color: #59a5f5; */
     /* border: 2px solid black; */
+    overflow: hidden;
 }
 
 .topOverlay {
     position: absolute;
-    width: 100%;
-    height: 80vh;
+    top: 0px;
+    width: 100vw;
+    height: 90vh;
     background: rgb(0, 0, 0);
     background: radial-gradient(circle, rgba(0, 0, 0, 0.34) 52%, rgba(21, 63, 109, 0.33) 100%);
+    overflow: hidden;
+    object-fit: cover;
+
 }
 
 .mainBG {
     position: absolute;
-    width: 100%;
+    width: 100vw;
+    min-width: 1660px;
+    object-fit: cover;
 }
 
 .topTitleBox {
     position: fixed;
     width: 450px;
-    height: 500px;
+    height: auto;
     z-index: 3;
-    top: 55%;
-    left: 67%;
+    top: 50%;
+    left: 60%;
     transform: translate(-50%, -50%);
     display: flex;
+    align-items: center;
     flex-direction: column;
     letter-spacing: 1px;
 }
 
 .topText {
-    font-size: 32px;
+    font-size: 80%;
     font-weight: 700;
     text-align: start;
     color: #ffffff;
@@ -80,13 +88,14 @@
     align-items: end;
     justify-content: center;
     margin: 5px;
+
 }
 
 .topTitle1 {
     font-size: 60px;
     text-decoration: #00619a double underline;
     text-decoration-thickness: 5px;
-    font-weight: 500;
+    font-weight: 700;
 
 }
 
@@ -208,13 +217,19 @@
     position: absolute;
     width: 320px;
     left: 0px;
-    height: 100%;
-    padding-top: 30px;
+    top: 0px;
+    height: 90vh;
+    /* padding-top: 10px; */
     background-color: #333333b1;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.aboutBlink {
+    width: auto;
+    height: 10%;
 }
 
 .aboutMeCon2 {
@@ -225,7 +240,7 @@
     display: flex;
     align-items: center;
     width: auto;
-    height: 20%;
+    height: 150px;
     font-size: 42px;
     font-weight: 700;
     color: #F5F5F5;
@@ -237,7 +252,7 @@
     align-items: center;
     flex-direction: column;
     width: auto;
-    height: 100%;
+    height: auto
 }
 
 @media screen and (max-width : 800px) {
@@ -335,6 +350,7 @@
     margin-bottom: 15px;
 }
 
+/* 
 
 @media screen and (max-width : 980px) {
     .mainBG {
@@ -344,7 +360,7 @@
     .topOverlay {
         height: 714px;
     }
-}
+} */
 
 
 .Logo {
@@ -540,6 +556,10 @@
 }
 
 @media screen and (max-width : 800px) {
+    .line2 {
+        background-color: black;
+        height: 2px;
+    }
 
     .burger {
         display: inline;
@@ -801,10 +821,16 @@
     align-items: start;
 }
 
+.line2 {
+    width: 300px;
+    margin: 30px;
+    height: 2px;
+    background-color: #6f6f6f;
+}
 
 .mid2 {
 
-    background-color: #c8ffff;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -1227,7 +1253,7 @@
 /* 뉴스킬 */
 .skillMaster {
     width: 1000px;
-    height: 350px;
+    height: 345px;
     border-radius: 15px;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2);
     background-color: #ffffff;
@@ -1629,6 +1655,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .botTitle {
