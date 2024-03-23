@@ -128,7 +128,7 @@ export default function Modal() {
                     <li className={styles.textLi}>쇼핑몰 특유의 데이터를 불러오는 시간이 긴 단점 보완</li>
                     <li className={styles.textLi}>고급스럽고 깔끔한 느낌을 줄 수 있는 css와 메인페이지</li>
                     <div className={styles.important}>📓프로젝트 회고록</div>
-                    <li className={styles.textLi}>블로그 주소</li>
+                    <a className={styles.link} href='https://url.kr/omcgys' target="_blank">4차 - 팀프로젝트 회고록 (Velog)</a>
                     {/* <div className={styles.feedback}>📌보완할 점</div>
                     <li className={styles.textLi}>기능 구현에 중점을 둬 다소 부족했던 CSS디자인</li>
                     <li className={styles.textLi}>모든 기능을 한눈에 볼 수 있는 메인 페이지의 부재</li>

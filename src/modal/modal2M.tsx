@@ -116,7 +116,7 @@ export default function Modal() {
                     <li className={styles.textLi}>기본적인 소셜 앱에서 제공하는 기능을 모두 구현</li>
                     <li className={styles.textLi}>카테고리별 유저들이 관심있는 곳으로 모일 수 있도록 직관적인 디자인</li>
                     <div className={styles.important}>📓프로젝트 회고록</div>
-                    <li className={styles.textLi}>블로그 주소</li>
+                    <a className={styles.link} href='https://url.kr/iloh3p' target="_blank">2차 - 팀프로젝트 회고록 (Velog)</a>
                     {/* <div className={styles.feedback}>📌보완할 점</div>
                     <li className={styles.textLi}>기능 구현에 중점을 둬 다소 부족했던 CSS디자인</li>
                     <li className={styles.textLi}>모든 기능을 한눈에 볼 수 있는 메인 페이지의 부재</li>

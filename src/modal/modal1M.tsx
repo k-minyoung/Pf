@@ -101,7 +101,7 @@ export default function Modal() {
                     <li className={styles.textLi}>사용자 친화적 UI / UX 및 간결하고 심플한 디자인</li>
                     <li className={styles.textLi}>독자적인 이모티콘 디자인으로 개성 및 접근성 향상</li>
                     <div className={styles.important}>📓프로젝트 회고록</div>
-                    <li className={styles.textLi}>블로그 주소</li>
+                    <a className={styles.link} href='https://url.kr/tnakp9' target="_blank">1차 - 팀프로젝트 회고록 (Velog)</a>
                     {/* <div className={styles.feedback}>📌보완할 점</div>
                     <li className={styles.textLi}>UI / UX에 중점을 두었으나 반응형 구현이 부족했던 점</li>
                     <li className={styles.textLi}>재사용에 용이한 코드를 작성하지 못한 점</li>

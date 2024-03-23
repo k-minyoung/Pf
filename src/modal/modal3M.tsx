@@ -116,7 +116,7 @@ export default function Modal() {
                     <li className={styles.textLi}>Redux, Tailwind CSS, React-Router-DOM을 이용해 효율적인 코드를 짜는데에 중점을 둠</li>
                     <li className={styles.textLi}>사용자가 비정상적인 데이터를 입력했을 때를 대비해 데이터 입력 범위 제한, 오작동을 방지</li>
                     <div className={styles.important}>📓프로젝트 회고록</div>
-                    <li className={styles.textLi}>블로그 주소</li>
+                    <a className={styles.link} href='https://url.kr/ybjax8' target="_blank">3차 - 개인프로젝트 회고록 (Velog)</a>
                     {/* <div className={styles.feedback}>📌보완할 점</div>
                     <li className={styles.textLi}>기능 구현에 중점을 둬 다소 부족했던 CSS디자인</li>
                     <li className={styles.textLi}>모든 기능을 한눈에 볼 수 있는 메인 페이지의 부재</li>

@@ -282,6 +282,11 @@
     margin: 5px 0 5px 10px;
 }
 
+.link {
+    font-size: 17px;
+    margin-left: 35px;
+}
+
 /* 모바일 슬라이드 */
 
 /* .mainImgBox2 {

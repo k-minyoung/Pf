@@ -283,6 +283,11 @@
     margin: 5px 0 5px 10px;
 }
 
+.link {
+    font-size: 17px;
+    margin-left: 35px;
+}
+
 /* 모바일 슬라이드 */
 
 
@@ -295,7 +300,7 @@
     overflow-x: hidden;
     width: 600px;
     max-width: 1000px;
-    max-height: 320px;
+    max-height: 350px;
     animation: modalInner 0.3s ease 0s 1 forwards;
 }
 
@@ -308,7 +313,7 @@
     overflow-x: hidden;
     width: 600px;
     max-width: 1000px;
-    max-height: 320px;
+    max-height: 350px;
     animation: modalInnerR 0.3s ease 0s 1 forwards;
 }
 

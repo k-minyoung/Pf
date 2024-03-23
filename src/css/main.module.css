@@ -15,6 +15,23 @@
     font-family: 'Noto Sans KR'
 }
 
+* ::-webkit-scrollbar {
+    width: 10px;
+    background-color: #cccccc
+}
+
+* ::-webkit-scrollbar-thumb {
+    background-color: #00619a;
+    border-radius: 15px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #cccccc;
+    box-shadow: inset 0px 0px 5px white;
+}
+
 :root {
     --barFill: #0077C2;
     --background: #ffffff;
