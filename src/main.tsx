@@ -408,11 +408,11 @@ export default function Main() {
                             <div className={styles.topTitle2}>입니다.</div>
                         </div>
                         <div className={styles.topText2}>짧은 코드를 위해 고민하며</div>
-                        <div className={styles.topText3}>기록하는 것을 좋아합니다.</div>
+                        <div className={styles.topText3}>기록하기 위해 노력합니다.</div>
                         {/* <div className={styles.topText4}>
                             <div className={styles.more}>더보기<img className={styles.moreIcon} src={arrow} /></div>
                         </div> */}
-                        <br />
+                        <div className={styles.topBlink}></div>
                         <div className={styles.downBox}>
                             <img className={styles.topDown} src={down} />
                         </div>
@@ -901,7 +901,7 @@ export default function Main() {
                     </div>
                     <div ref={divRef3} className={styles.bot} id='Info'>
                         <div className={styles.botTitleBox}>
-                            <div className={styles.botTitle}>최종 업데이트 : 2024.03.22</div>
+                            <div className={styles.botTitle}>배포 : </div>
                             <br />
                             <div className={styles.botTitle}> © 2024. Kim Min Young. All rights reserved.</div>
                         </div>

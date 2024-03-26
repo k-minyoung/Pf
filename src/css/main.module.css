@@ -103,17 +103,40 @@
 }
 
 .topText {
-    font-family: 'MaruBuri-Regular';
+    /* font-family: 'MaruBuri-Regular'; */
+    position: relative;
+    /* top: 10px; */
     font-size: 4vmin;
     font-weight: 700;
-    text-align: start;
+    color: #ffffff00
+}
+
+.topText::before {
+    content: "프론트엔드 개발자를 희망하는";
+    position: absolute;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    animation: typing 2s steps(16) 0.5s 1 forwards;
     color: #ffffff;
-    opacity: 0;
-    animation: textVisible 0.8s ease-in-out 1s 1 forwards;
+    border-right: #ffffff solid 1px;
+}
+
+@keyframes typing {
+    0% {
+        width: 0%;
+        border-right: #ffffff solid 1px;
+    }
+
+    100% {
+        width: 100%;
+        border-right: #ffffff solid 0px;
+    }
+
 }
 
 .topTitle {
-    font-family: 'MaruBuri-Regular';
+    /* font-family: 'MaruBuri-Regular'; */
     display: flex;
     color: #ffffff;
     align-items: end;
@@ -123,40 +146,48 @@
 }
 
 .topTitle1 {
-    font-family: 'MaruBuri-Regular';
+    /* font-family: 'MaruBuri-Regular'; */
     font-size: 8vmin;
     text-decoration: #00619a double underline;
     text-decoration-thickness: 5px;
     font-weight: 700;
+    opacity: 0;
+    animation: textVisible 0.8s ease-in-out 2.8s 1 forwards;
 
 }
 
 .topTitle2 {
-    font-family: 'MaruBuri-Regular';
+    /* font-family: 'MaruBuri-Regular'; */
     font-size: 4vmin;
+    opacity: 0;
+    animation: textVisible 0.8s ease-in-out 2.8s 1 forwards;
 
 }
 
 .topText2 {
-    font-family: 'MaruBuri-Regular';
+    /* font-family: 'MaruBuri-Regular'; */
     display: flex;
     justify-content: center;
     font-size: 3vmin;
     color: #ffffff;
     font-weight: 500;
     margin: 5px;
+    opacity: 0;
+    animation: textVisible 0.8s ease-in-out 3.3s 1 forwards;
 
 
 }
 
 .topText3 {
-    font-family: 'MaruBuri-Regular';
+    /* font-family: 'MaruBuri-Regular'; */
     display: flex;
     justify-content: center;
     font-size: 3vmin;
     color: #ffffff;
     font-weight: 500;
     margin: 5px;
+    opacity: 0;
+    animation: textVisible 0.8s ease-in-out 3.8s 1 forwards;
 }
 
 .topText4 {
@@ -189,16 +220,22 @@
     margin: 0 0 0 5px;
     background-color: #ffffff;
     border-radius: 40px;
+
 }
 
 .more:hover .moreIcon {
     animation: arrow 0.3s ease-in-out 0s 1 forwards;
 }
 
+.topBlink {
+    height: 30px;
+}
 
 .downBox {
     display: flex;
     justify-content: center;
+    opacity: 0;
+    animation: textVisible 0.8s ease-in-out 3.8s 1 forwards;
 }
 
 .topDown {
@@ -207,19 +244,9 @@
     width: 50px;
     height: 40px;
     rotate: 180deg;
-    animation: down 4s ease-in-out 2s infinite;
+    animation: down 3.5s ease-in-out 0s infinite;
     /* background-color: #ffffff;
     border-radius: 50px; */
-}
-
-@keyframes arrow {
-    0% {
-        rotate: 0;
-    }
-
-    100% {
-        rotate: 90deg;
-    }
 }
 
 @keyframes down {
@@ -256,7 +283,6 @@
 .aboutMeCon {
     position: absolute;
     width: 320px;
-    left: 0px;
     top: 0px;
     height: 90vh;
     /* padding-top: 10px; */
@@ -265,6 +291,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    left: 0px;
+    /* animation: moveLeft 0.8s ease-in-out 4.5s 1 forwards; */
+}
+
+@keyframes moveLeft {
+    0% {
+        left: -320px;
+    }
+
+    90% {
+        left: 5px;
+    }
+
+    100% {
+        left: 0px;
+    }
 }
 
 .aboutBlink {
@@ -656,7 +698,7 @@
     width: 100px;
     height: 60px;
     text-align: center;
-    margin: 40px 0 40px 0;
+    margin: 80px 0 40px 0;
     color: #0077C2;
     /* border-bottom: solid 4px #0077C2 */
     letter-spacing: 3px;
