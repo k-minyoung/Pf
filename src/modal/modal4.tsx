@@ -84,7 +84,7 @@ export default function Modal() {
                         <div className={styles.page}>{currentSlide + 1 + " / " + products.length}</div>
                     </div>
                     <div className={styles.title}>[ Demure ] -  가구 쇼핑몰 </div>
-                    <div className={styles.subTitle}>React + Typescript를 주로 이용해 개발한 쇼핑몰입니다. 상품 구성은 IKEA API를 이용했습니다.</div>
+                    <div className={styles.subTitle}>React + Typescript를 이용해 개발한 쇼핑몰입니다. 상품 구성은 IKEA API를 이용했습니다.</div>
                     <hr className={styles.hr} />
                     <div className={styles.modalTextBox}>
                         <div className={styles.range}>
@@ -94,7 +94,7 @@ export default function Modal() {
                             <div className={styles.framework}>프레임워크 & 라이브러리</div>
                         </div>
                         <div className={styles.rangeText}>
-                            <div className={styles.dateText}>2023/08/31 ~ 2023/09/15</div>
+                            <div className={styles.dateText}>2023/11/16 ~ 2023/12/08</div>
                             <div className={styles.skillText}> #HTML  #CSS  #Javascript #Typescript #React</div>
                             <div className={styles.skillText2}> #Node.js #Spring Boot #PostgreSQL </div>
                             <div className={styles.frameworkText}>#Redux #Nest #Axios #Nodemailer</div>

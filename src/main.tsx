@@ -186,7 +186,7 @@ export default function Main() {
         {
             root: null,
             rootMargin: "0px",
-            threshold: 0.3
+            threshold: 0.4
         }
     )
 
@@ -210,7 +210,7 @@ export default function Main() {
         {
             root: null,
             rootMargin: "0px",
-            threshold: 0.3
+            threshold: 0.4
         }
     )
 
@@ -445,9 +445,9 @@ export default function Main() {
                     <div className={styles.headerText}>
                         <div className={styles.textWrapper}>
                             {/* <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(0)}>Home</div> */}
-                            <div className={visible && !infoView ? styles.colorChange : styles.headerInfo} onClick={() => move(0)}>Home</div>
-                            <div className={!visible && !mid2View ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
-                            <div className={!visible && mid2View ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
+                            <div className={visible ? styles.colorChange : styles.headerInfo} onClick={() => move(0)}>Home</div>
+                            <div className={!visible && midView && !infoView ? styles.colorChange : styles.skill2} onClick={() => move(position)}>Skill</div>
+                            <div className={infoView || !visible && !midView ? styles.colorChange : styles.project} onClick={() => move(position2)}>Project</div>
                         </div>
                         <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
 
@@ -458,12 +458,15 @@ export default function Main() {
                         <div className={styles.sideOverlay}>
                             <div className={styles.sideCon}>
                                 <div className={styles.sideBox}>
-                                    <div className={styles.sideAboutMe} onClick={() => moveM(position - 580)}>About Me</div>
+                                    <div className={styles.sideAboutMe} onClick={() => moveM(position - 630)}>About Me</div>
                                     <hr className={styles.sideHr}></hr>
+                                    {/* <div className={styles.sideDiv}></div> */}
                                     <div className={styles.sideSkill} onClick={() => moveM(position)}>Skill</div>
                                     <hr className={styles.sideHr}></hr>
+                                    {/* <div className={styles.sideDiv}></div> */}
                                     <div className={styles.sideProject} onClick={() => moveM(position2)}>Project</div>
                                     <hr className={styles.sideHr}></hr>
+                                    {/* <div className={styles.sideDiv}></div> */}
                                     <div className={styles.sideInfo} onClick={() => moveM(position3)}>Info</div>
 
                                 </div>
@@ -518,7 +521,7 @@ export default function Main() {
                                     <div className={styles.graphText}>알고있음</div>
                                 </div>
                                 <div className={styles.graphBot2}>
-                                    <div className={styles.graphText}>시도해봄</div>
+                                    <div className={styles.graphText}>사용해봄</div>
                                 </div>
                                 <div className={styles.graphBot2}>
                                     <div className={styles.graphText}>주로 사용</div>
@@ -707,7 +710,7 @@ export default function Main() {
                                     <div className={styles.graphTextC2}>알고있음</div>
                                 </div>
                                 <div className={styles.graphTextBox2}>
-                                    <div className={styles.graphTextB2}>시도해봄</div>
+                                    <div className={styles.graphTextB2}>사용해봄</div>
                                 </div>
                                 <div className={styles.graphTextBox2}>
                                     <div className={styles.graphTextA2}>주로 사용</div>
@@ -883,14 +886,14 @@ export default function Main() {
                                     <div className={styles.pjSubText1}> 누구나 쉽게 짧은 기록을 남기고 서로 공유하는 페이지</div>
                                 </div>
                             </div>
-                            {modalMessage &&
+                            {/* {modalMessage &&
 
                                 <div className={styles.modalMsgBox}>
                                     <div className={styles.modalMsgImgBox}><img className={styles.modalMsgImg} src={rotate} /></div>
                                     <div className={styles.modalMsgText}>이미지가 보이지 않으면 가로로 돌려주세요</div>
                                 </div>
 
-                            }
+                            } */}
                         </div>
 
                         {/* <div className={styles.pj2} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>

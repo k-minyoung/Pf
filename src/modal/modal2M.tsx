@@ -19,9 +19,23 @@ export default function Modal() {
     const products2 = [slide1, slide15, slide16, slide2, slide25, slide3, slide4, slide5, slide6, slide7]
     const [currentSlideM, setCurrentSlideM] = useState<number>(0)
 
+    // 599이하 슬라이드
+    const [paddingScale, setPaddingScale] = useState<number>(600)
+
+    useEffect(() => {
+        if (390 < window.innerWidth && window.innerWidth < 600) {
+            setPaddingScale(260)
+        } else if (window.innerWidth <= 390) {
+            setPaddingScale(260)
+        } else {
+            setPaddingScale(600)
+        }
+
+    })
+    // 슬라이드 끝
     useEffect(() => {
         if (ref2.current) {
-            ref2.current.style.marginLeft = `${-currentSlideM * 600}px`;
+            ref2.current.style.marginLeft = `${-currentSlideM * paddingScale}px`;
 
         }
     }, [currentSlideM])
@@ -90,7 +104,7 @@ export default function Modal() {
                             <div className={styles.date}>기간</div>
                             <div className={styles.skill}>프론트엔드</div>
                             <div className={styles.skill}>백엔드</div>
-                            <div className={styles.framework}>라이브러리 & 모듈</div>
+                            <div className={styles.framework}>라이브러리 & <br />  모듈</div>
                         </div>
                         <div className={styles.rangeText}>
                             <div className={styles.dateText}>2023/08/31 ~ 2023/09/15</div>
@@ -99,6 +113,29 @@ export default function Modal() {
                             <div className={styles.frameworkText}>#JQuery | #JWT #Bcrypt #Sequelize #Socket.io #Axios #Nodemailer #ejs</div>
                         </div>
                     </div>
+
+                    {/* 565px보다 작아질 경우 */}
+                    <div className={styles.modalTextBox2}>
+                        <div className={styles.range2}>
+                            <div className={styles.textBox2}>
+                                <div className={styles.date}>기간</div>
+                                <div className={styles.dateText}>2023/08/31 ~ 2023/09/15</div>
+                            </div>
+                            <div className={styles.textBox2}>
+                                <div className={styles.skill}>프론트엔드</div>
+                                <div className={styles.skillText}> #HTML  #CSS  #Javascript</div>
+                            </div>
+                            <div className={styles.textBox2}>
+                                <div className={styles.skill}>백엔드</div>
+                                <div className={styles.skillText2}> #Node.js #Express #MySQL</div>
+                            </div>
+                            <div className={styles.textBox2}>
+                                <div className={styles.framework}>라이브러리 & 모듈</div>
+                                <div className={styles.frameworkText}>#JQuery | #JWT #Bcrypt #Sequelize #Socket.io #Axios #Nodemailer #ejs</div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div className={styles.role}>💻나의 기여도</div>
                     <div className={styles.roleText}> - 총 인원 5명이 프로젝트 참여</div>
                     <div className={styles.myRole}>로그인 / 회원가입 페이지 (이미지 1, 2번)</div>

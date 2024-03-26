@@ -148,8 +148,8 @@
 .topTitle1 {
     /* font-family: 'MaruBuri-Regular'; */
     font-size: 8vmin;
-    text-decoration: #00619a double underline;
-    text-decoration-thickness: 5px;
+    text-decoration: #00619a solid underline;
+    text-decoration-thickness: 1vmin;
     font-weight: 700;
     opacity: 0;
     animation: textVisible 0.8s ease-in-out 2.8s 1 forwards;
@@ -432,6 +432,7 @@
 }
 
 .aboutHr {
+
     width: 200px;
     margin-bottom: 15px;
 }
@@ -618,6 +619,12 @@
     width: auto;
     margin: 3px;
     animation: modalOpen 0.5s ease 0s 1 forwards;
+    color: #cccccc00
+}
+
+.sideDiv {
+    margin: 3px;
+    width: 10px;
 }
 
 .sideAboutMe,
@@ -958,7 +965,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 97vw;
+    width: 90vmin;
     margin-bottom: 30px;
 }
 

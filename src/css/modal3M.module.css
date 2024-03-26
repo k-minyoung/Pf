@@ -300,6 +300,7 @@
     width: 600px;
     max-width: 1000px;
     max-height: 350px;
+    min-width: 390px;
     animation: modalInner 0.3s ease 0s 1 forwards;
 }
 
@@ -313,6 +314,7 @@
     width: 600px;
     max-width: 1000px;
     max-height: 350px;
+    min-width: 390px;
     animation: modalInnerR 0.3s ease 0s 1 forwards;
 }
 
@@ -337,4 +339,64 @@
 .sliderList2 {
     display: flex;
     transition: 0.5s;
+}
+
+/* ///////////////// 565px이하 텍스트박스 */
+.modalTextBox2 {
+    display: none;
+}
+
+@media screen and (max-width:565px) {
+    .modalTextBox {
+        display: none;
+    }
+
+    .modalTextBox2 {
+        display: flex;
+    }
+
+    .range2 {
+        width: 100%;
+    }
+
+    .textBox2 {
+        margin: 8px;
+    }
+}
+
+/* 599보다 작을때 */
+@media screen and (max-width:599px) {
+
+    .mainImgBox2,
+    .imgBox2 {
+        width: 260px;
+        height: 130px;
+        padding-right: 0px;
+    }
+
+    .nextBtn,
+    .prevBtn {
+        top: 30%;
+    }
+
+    .title {
+        font-size: 5vmin;
+    }
+}
+
+@media screen and (max-width:390px) {
+
+    .nextBtn {
+        width: 35px;
+        height: 35px;
+        top: 51%;
+        right: 15%;
+    }
+
+    .prevBtn {
+        width: 35px;
+        height: 35px;
+        top: 51%;
+        left: 15%;
+    }
 }
