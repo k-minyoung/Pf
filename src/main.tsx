@@ -5,8 +5,6 @@ import styles from "./css/main.module.css";
 import m1 from './screenshot/m1.jpg'
 
 //////// ICON
-import frontIcon from './icon/9094993.png'
-import backIcon from './icon/cloud-server.png'
 import HTML from './icon/html-5.png'
 import CSS from './icon/css-3.png'
 import Js from './icon/js.png'
@@ -28,8 +26,6 @@ import call from './icon/phone-call.png'
 import mail from './icon/email.png'
 import menu from './icon/hamburger.png'
 import close from './icon/close.png'
-import rotate from './icon/rotate.png'
-import arrow from './icon/arrow.png'
 import down from './icon/down.png'
 //////////////
 import pj1 from './screenshot/a1.png'
@@ -52,17 +48,15 @@ export default function Main() {
 
 
     const [visible, setVisible] = useState<boolean>(false);
-    const [frontView, setFrontView] = useState<boolean>(false);
-    const [backView, setBackView] = useState<boolean>(false);
     const [midView, setMidView] = useState<boolean>(false);
     const [mid2View, setMid2View] = useState<boolean>(false);
     const [infoView, setInfoView] = useState<boolean>(false);
 
     // 페이지 최초 렌더시 true
-    const [pageLoad, setPageLoad] = useState<boolean>(false)
-    useEffect(() => {
-        setPageLoad(true)
-    }, [])
+    // const [pageLoad, setPageLoad] = useState<boolean>(false)
+    // useEffect(() => {
+    //     setPageLoad(true)
+    // }, [])
 
     //모달
 
@@ -75,16 +69,15 @@ export default function Main() {
     const [modalOpen2, setModalOpen2] = useState<boolean>(false);
     const [modalOpen3, setModalOpen3] = useState<boolean>(false);
     const [modalOpen4, setModalOpen4] = useState<boolean>(false);
-    const [modalMessage, setModalMessage] = useState<boolean>(false);
     const toggleModal = ({ modalName, setModalName }: ModalState) => {
         if (!modalName) {
             setModalName(true);
             setTimeout(() => {
-                setModalMessage(true)
+
             }, 1000);
 
             setTimeout(() => {
-                setModalMessage(false)
+
             }, 4000);
 
             setSideMenuToggle(false)
@@ -92,10 +85,10 @@ export default function Main() {
             // 모달 닫을 시 애니메이션이 나오지 않는 이유 = 애니메이션이 재생되기도 전에 닫혀버리기 때문
             // 애니메이션 시간만큼 setTimeout을 걸어서 재생될 시간을 주자.
             setTimeout(() => setModalName(false), 300)
-            setModalMessage(false)
+
 
         }
-        console.log(modalName)
+        // console.log(modalName)
     };
 
     //화면에 나타남을 감지(헤더)
@@ -103,11 +96,11 @@ export default function Main() {
         (entries) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
-                    console.log(`헤더가 뷰포트에 들어옴`);
+                    // console.log(`헤더가 뷰포트에 들어옴`);
                     setVisible(true)
 
                 } else {
-                    console.log(`헤더가 뷰포트에서 나감`);
+                    // console.log(`헤더가 뷰포트에서 나감`);
                     setVisible(false)
 
                 }
@@ -125,61 +118,15 @@ export default function Main() {
         io.observe(document.querySelector("#header") as HTMLElement);//여기서 타겟 설정
     }, []);
 
-    // // 프론트 뷰포트 감지
-    // const io2 = new IntersectionObserver((entries) => {
-    //     entries.forEach((entry2, i) => {
-    //         if (entry2.isIntersecting) {
-    //             setFrontView(true)
-    //             console.log("프론트 뷰포트 상태" + frontView)
-    //         } else {
-    //             console.log("프론트 뷰포트 상태" + frontView)
-    //         }
-    //     });
-    // },
-    //     {
-    //         root: null,
-    //         rootMargin: "0px",
-    //         threshold: 0.5
-    //     }
-    // )
-
-    // useEffect(() => {
-    //     io2.observe(document.querySelector("#front") as HTMLElement);
-    //     console.log(frontView)
-    // }, [frontView]);
-
-    // // 백 뷰포트 감지
-    // const io3 = new IntersectionObserver((entries) => {
-    //     entries.forEach((entry2, i) => {
-    //         if (entry2.isIntersecting) {
-    //             setBackView(true)
-    //             console.log("백 뷰포트 상태" + backView)
-    //         } else {
-    //             console.log("백 뷰포트 상태" + backView)
-    //         }
-    //     });
-    // },
-    //     {
-    //         root: null,
-    //         rootMargin: "0px",
-    //         threshold: 0.5
-    //     }
-    // )
-
-    // useEffect(() => {
-    //     io3.observe(document.querySelector("#back") as HTMLElement);
-    //     console.log(backView)
-    // }, [backView]);
-
     // mid 뷰포트 감지
     const io4 = new IntersectionObserver((entries) => {
         entries.forEach((entry2, i) => {
             if (entry2.isIntersecting) {
                 setMidView(true)
-                console.log(`mid가 뷰포트에 ${midView}`)
+                // console.log(`mid가 뷰포트에 ${midView}`)
             } else {
                 setMidView(false)
-                console.log(`mid가 뷰포트에 ${midView}`)
+                // console.log(`mid가 뷰포트에 ${midView}`)
             }
         });
     },
@@ -192,7 +139,7 @@ export default function Main() {
 
     useEffect(() => {
         io4.observe(document.querySelector("#mid") as HTMLElement);
-        console.log(midView)
+        // console.log(midView)
     }, [midView]);
 
     // mid2 뷰포트 감지
@@ -200,10 +147,10 @@ export default function Main() {
         entries.forEach((entry2, i) => {
             if (entry2.isIntersecting && !infoView) {
                 setMid2View(true)
-                console.log(`mid2가 뷰포트에 ${mid2View}`)
+                // console.log(`mid2가 뷰포트에 ${mid2View}`)
             } else {
                 setMid2View(false)
-                console.log(`mid2가 뷰포트에 ${mid2View}`)
+                // console.log(`mid2가 뷰포트에 ${mid2View}`)
             }
         });
     },
@@ -216,7 +163,7 @@ export default function Main() {
 
     useEffect(() => {
         io5.observe(document.querySelector("#mid2") as HTMLElement);
-        console.log(mid2View)
+        // console.log(mid2View)
     }, [mid2View]);
 
     // Info 뷰포트 감지
@@ -224,10 +171,10 @@ export default function Main() {
         entries.forEach((entry2, i) => {
             if (entry2.isIntersecting) {
                 setInfoView(true)
-                console.log(`Info가 뷰포트에 ${infoView}`)
+                // console.log(`Info가 뷰포트에 ${infoView}`)
             } else {
                 setInfoView(false)
-                console.log(`Info가 뷰포트에 ${infoView}`)
+                // console.log(`Info가 뷰포트에 ${infoView}`)
             }
         });
     },
@@ -240,9 +187,8 @@ export default function Main() {
 
     useEffect(() => {
         io6.observe(document.querySelector("#Info") as HTMLElement);
-        console.log(infoView)
+        // console.log(infoView)
     }, [infoView]);
-    //https://ww8007-learn.tistory.com/6 참고했음
 
     //새로고침하고 스크롤을 맨 위로 올림
     const reload = () => {
@@ -360,13 +306,13 @@ export default function Main() {
     // 해당 위치로 스크롤, behavior : 'smooth'를 붙여줘야 부드럽게 이동
     const move = (position: number) => {
         window.scrollTo({ top: position, behavior: 'smooth' })
-        console.log(position)
+        // console.log(position)
     }
     // 햄버거용 무브 (누르면 토글)
     const moveM = (position: number) => {
         window.scrollTo({ top: position, behavior: 'smooth' })
         setSideMenuToggle(!sideMenuToggle)
-        console.log(position)
+        // console.log(position)
     }
 
     ///////현재 창의 width구해서 모바일 모달을 띄울건지, 그냥 모달을 띄울건지 결정
@@ -390,7 +336,7 @@ export default function Main() {
     const sideToggle = () => {
         // setTimeout(() => setSideMenuToggle(!sideMenuToggle), 300)
         setSideMenuToggle(!sideMenuToggle)
-        console.log("사이드바 토글 상태" + sideMenuToggle)
+        // console.log("사이드바 토글 상태" + sideMenuToggle)
     }
 
     return (
@@ -398,7 +344,7 @@ export default function Main() {
             <div className={styles.overlay}>
                 <div className={styles.top}>
 
-                    <img className={styles.mainBG} src={m1} />
+                    <img alt="" className={styles.mainBG} src={m1} />
                     <div className={styles.topOverlay}>
                     </div>
                     <div className={styles.topTitleBox}>
@@ -410,28 +356,28 @@ export default function Main() {
                         <div className={styles.topText2}>짧은 코드를 위해 고민하며</div>
                         <div className={styles.topText3}>기록하기 위해 노력합니다.</div>
                         {/* <div className={styles.topText4}>
-                            <div className={styles.more}>더보기<img className={styles.moreIcon} src={arrow} /></div>
+                            <div className={styles.more}>더보기<img alt="" className={styles.moreIcon} src={arrow} /></div>
                         </div> */}
                         <div className={styles.topBlink}></div>
                         <div className={styles.downBox}>
-                            <img className={styles.topDown} src={down} />
+                            <img alt="" className={styles.topDown} src={down} />
                         </div>
                     </div>
                     <div className={styles.aboutMeCon}>
                         <div className={styles.aboutTitle}>About Me</div>
                         <div className={styles.aboutTextBox}>
 
-                            <img src={name} className={styles.name} />
+                            <img alt="" src={name} className={styles.name} />
                             <div className={styles.aboutTextName}>김민영</div>
-                            <img src={birth} className={styles.birth} />
+                            <img alt="" src={birth} className={styles.birth} />
                             <div className={styles.aboutTextBirth}>1997.09.05</div>
-                            <img src={mail} className={styles.mail} />
+                            <img alt="" src={mail} className={styles.mail} />
                             <div className={styles.aboutTextMail}>alsdudsk12@naver.com</div>
-                            <img src={call} className={styles.call} />
+                            <img alt="" src={call} className={styles.call} />
                             <div className={styles.aboutTextCall}>010-3617-1488</div>
                             <hr className={styles.aboutHr} />
                             <div className={styles.aboutLink}>
-                                <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
+                                <a href='https://velog.io/@votystiq/posts'>  <img alt="" className={styles.velog} src={velog}></img></a>
                             </div>
                         </div>
                         <div className={styles.aboutBlink}></div>
@@ -452,7 +398,7 @@ export default function Main() {
                         <div className={styles.Logo} onClick={reload}>KIM MIN YOUNG</div>
 
                         {/* 700이하 햄버거 */}
-                        <div className={styles.burger} onClick={sideToggle}><img className={sideMenuToggle ? styles.close : styles.burgerIcon} src={sideMenuToggle ? close : menu} /></div>
+                        <div className={styles.burger} onClick={sideToggle}><img alt="" className={sideMenuToggle ? styles.close : styles.burgerIcon} src={sideMenuToggle ? close : menu} /></div>
                     </div>
                     {sideMenuToggle &&
                         <div className={styles.sideOverlay}>
@@ -480,17 +426,17 @@ export default function Main() {
                         <div className={styles.aboutTitle2}>About Me</div>
                         <div className={styles.aboutTextBox2}>
 
-                            <img src={name} className={styles.name} />
+                            <img alt="" src={name} className={styles.name} />
                             <div className={styles.aboutTextName}>김민영</div>
-                            <img src={birth} className={styles.birth} />
+                            <img alt="" src={birth} className={styles.birth} />
                             <div className={styles.aboutTextBirth}>1997.09.05</div>
-                            <img src={mail} className={styles.mail} />
+                            <img alt="" src={mail} className={styles.mail} />
                             <div className={styles.aboutTextMail}>alsdudsk12@naver.com</div>
-                            <img src={call} className={styles.call} />
+                            <img alt="" src={call} className={styles.call} />
                             <div className={styles.aboutTextCall}>010-3617-1488</div>
                             <hr className={styles.aboutHr} />
                             <div className={styles.aboutLink}>
-                                <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
+                                <a href='https://velog.io/@votystiq/posts'>  <img alt="" className={styles.velog} src={velog}></img></a>
                             </div>
                         </div>
                     </div>
@@ -535,7 +481,7 @@ export default function Main() {
                                             <>
                                                 {index === 0 && (
                                                     <div key={index} className={styles.Wrapper} >
-                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <img alt="" src={i.name} className={styles.frontIcon} />
                                                         <div className={styles.hoverText}>{i.text}</div>
                                                     </div>
                                                 )}
@@ -548,7 +494,7 @@ export default function Main() {
                                             <>
                                                 {index <= 3 && index > 0 && (
                                                     <div key={index} className={styles.Wrapper} >
-                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <img alt="" src={i.name} className={styles.frontIcon} />
                                                         <div className={styles.hoverText}>{i.text}</div>
                                                     </div>
                                                 )}
@@ -563,7 +509,7 @@ export default function Main() {
                                             <>
                                                 {index <= 7 && index > 3 && (
                                                     <div key={index} className={styles.Wrapper} >
-                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <img alt="" src={i.name} className={styles.frontIcon} />
                                                         <div className={styles.hoverText}>{i.text}</div>
                                                     </div>
                                                 )}
@@ -597,7 +543,7 @@ export default function Main() {
                                             <>
                                                 {index <= 2 && (
                                                     <div key={index} className={styles.Wrapper}>
-                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <img alt="" src={i.name} className={styles.frontIcon} />
                                                         <div className={styles.hoverText}>{i.text}</div>
                                                     </div>
                                                 )}
@@ -612,7 +558,7 @@ export default function Main() {
                                             <>
                                                 {index === 3 && 1 < index && (
                                                     <div key={index} className={styles.Wrapper}>
-                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <img alt="" src={i.name} className={styles.frontIcon} />
                                                         <div className={styles.hoverText}>{i.text}</div>
                                                     </div>
                                                 )}
@@ -627,7 +573,7 @@ export default function Main() {
                                             <>
                                                 {index <= 4 && 3 < index && (
                                                     <div key={index} className={styles.Wrapper}>
-                                                        <img src={i.name} className={styles.frontIcon} />
+                                                        <img alt="" src={i.name} className={styles.frontIcon} />
                                                         <div className={styles.hoverText}>{i.text}</div>
                                                     </div>
                                                 )}
@@ -656,7 +602,7 @@ export default function Main() {
                                                 <>
                                                     {index === 0 && (
                                                         <div key={index} className={styles.Wrapper2} >
-                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <img alt="" src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
                                                         </div>
                                                     )}
@@ -669,7 +615,7 @@ export default function Main() {
                                                 <>
                                                     {index <= 3 && index > 0 && (
                                                         <div key={index} className={styles.Wrapper2} >
-                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <img alt="" src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
                                                         </div>
                                                     )}
@@ -684,7 +630,7 @@ export default function Main() {
                                                 <>
                                                     {index <= 7 && index > 3 && (
                                                         <div key={index} className={styles.Wrapper2} >
-                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <img alt="" src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
                                                         </div>
                                                     )}
@@ -725,7 +671,7 @@ export default function Main() {
                                                 <>
                                                     {index <= 2 && (
                                                         <div key={index} className={styles.Wrapper2}>
-                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <img alt="" src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
                                                         </div>
                                                     )}
@@ -740,7 +686,7 @@ export default function Main() {
                                                 <>
                                                     {index === 3 && 1 < index && (
                                                         <div key={index} className={styles.Wrapper2}>
-                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <img alt="" src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
                                                         </div>
                                                     )}
@@ -755,7 +701,7 @@ export default function Main() {
                                                 <>
                                                     {index <= 4 && 3 < index && (
                                                         <div key={index} className={styles.Wrapper2}>
-                                                            <img src={i.name} className={styles.frontIcon2} />
+                                                            <img alt="" src={i.name} className={styles.frontIcon2} />
                                                             <div className={styles.hoverText2}>{i.text}</div>
                                                         </div>
                                                     )}
@@ -770,80 +716,6 @@ export default function Main() {
 
 
                 </div>
-                {/* <div className={styles.skill} id='front'>
-
-                        <div className={styles.frontBox} >
-
-                            <div className={styles.iconBox} >
-                                {frontIconArray.map((i, index) => {
-                                    return (
-
-                                        <div className={styles.Wrapper} >
-
-                                            <img key={index} src={i.name} className={styles.frontIcon} />
-                                            <div className={styles.hoverText}>{i.text}</div>
-
-                                        </div>
-
-                                    )
-                                })}
-                            </div>
-                            <div className={styles.frontEnd}>Front-End</div>
-                            <div>어쩌고저쩌고</div>
-                        </div>
-
-                        <div className={styles.backBox}>
-                            {frontIconArray.map((i, index) => {
-                                const barFillClass = styles[`barFill${index + 1}`]; //index에 따른 barFill변화
-                                return (
-                                    <div className={styles.barBox}>
-                                        <div className={styles.stack}>{i.text}</div>
-                                        <div className={frontView ? barFillClass : styles.barEmpty}></div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div>
-                    <div>---------------------------</div>
-                    <div className={styles.skillBack} id='back'>
-
-                        <div className={styles.frontBox}>
-
-                            <div className={styles.iconBox2}>
-                                {backIconArray.map((i, index) => {
-                                    return (
-                                        <div className={styles.Wrapper}>
-                                            <img key={index} src={i.name} className={styles.frontIcon} />
-                                            <div className={styles.hoverText}>{i.text}</div>
-                                        </div>
-                                    )
-                                })}
-                            </div>
-                            <div className={styles.backEnd}>Back-End</div>
-                            <div>어쩌고저쩌고</div>
-                        </div>
-
-                        <div className={styles.backBox2}>
-                            {backIconArray.map((i, index) => {
-                                const barFillClasses = [
-                                    styles.barFill4,
-                                    styles.barFill5,
-                                    styles.barFill6,
-                                    styles.barFill6,
-                                    styles.barFill6
-                                ];
-                                const barFillClass = barFillClasses[index]
-                                return (
-                                    <div className={styles.barBox}>
-                                        <div className={styles.stack}>{i.text}</div>
-                                        <div className={backView ? barFillClass : styles.barEmpty}></div>
-                                    </div>
-                                )
-                            })}
-                        </div>
-                    </div> */}
-
-
                 <div className={styles.mid2} id='mid2'>
                     <div className={styles.line2}></div>
                     <div className={styles.titleWrapper}>
@@ -854,7 +726,7 @@ export default function Main() {
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen4, setModalName: setModalOpen4 })}>
                             {modalOpen4 && (windowWidth > 1100 ? <Modal4 /> : <Modal4M />)}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj4}></img>
+                                <img alt="" className={styles.pjMainImg1} src={pj4}></img>
                                 <div className={styles.pjMainText1}>Demure - 가구 쇼핑몰
                                     <div className={styles.pjSubText1}> 구입부터 결제까지 모든 기능을 구현한 가구 판매 쇼핑몰 </div>
                                 </div>
@@ -863,7 +735,7 @@ export default function Main() {
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen3, setModalName: setModalOpen3 })}>
                             {modalOpen3 && (windowWidth > 1100 ? <Modal3 /> : <Modal3M />)}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj3}></img>
+                                <img alt="" className={styles.pjMainImg1} src={pj3}></img>
                                 <div className={styles.pjMainText1}>How Long..? - 모의 구매 및 계산 시뮬레이터
                                     <div className={styles.pjSubText1}> 구매에 필요한 금액과 기간을 계산하는 시뮬레이터 사이트 </div>
                                 </div>
@@ -872,7 +744,7 @@ export default function Main() {
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen2, setModalName: setModalOpen2 })}>
                             {modalOpen2 && (windowWidth > 1100 ? <Modal2 /> : <Modal2M />)}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj2}></img>
+                                <img alt="" className={styles.pjMainImg1} src={pj2}></img>
                                 <div className={styles.pjMainText1}>Chatta - 관심사 기반 채팅방 서비스
                                     <div className={styles.pjSubText1}>유저들이 직접 채팅방을 만들어 소통 할 수 있는 커뮤니티</div>
                                 </div>
@@ -881,7 +753,7 @@ export default function Main() {
                         <div className={styles.pj1} onClick={() => toggleModal({ modalName: modalOpen, setModalName: setModalOpen })}>
                             {modalOpen && (windowWidth > 1100 ? <Modal1 /> : <Modal1M />)}
                             <div className={styles.pjWrapper1}>
-                                <img className={styles.pjMainImg1} src={pj1}></img>
+                                <img alt="" className={styles.pjMainImg1} src={pj1}></img>
                                 <div className={styles.pjMainText1}>Mood Diary - 일기 기록 및 공유 사이트
                                     <div className={styles.pjSubText1}> 누구나 쉽게 짧은 기록을 남기고 서로 공유하는 페이지</div>
                                 </div>
@@ -889,7 +761,7 @@ export default function Main() {
                             {/* {modalMessage &&
 
                                 <div className={styles.modalMsgBox}>
-                                    <div className={styles.modalMsgImgBox}><img className={styles.modalMsgImg} src={rotate} /></div>
+                                    <div className={styles.modalMsgImgBox}><img alt="" className={styles.modalMsgImg} src={rotate} /></div>
                                     <div className={styles.modalMsgText}>이미지가 보이지 않으면 가로로 돌려주세요</div>
                                 </div>
 
@@ -904,35 +776,10 @@ export default function Main() {
                     </div>
                     <div ref={divRef3} className={styles.bot} id='Info'>
                         <div className={styles.botTitleBox}>
-                            <div className={styles.botTitle}>배포 : </div>
+                            <div className={styles.botTitle}>회고록 : <a className={styles.botLink} rel="noreferrer" target="_blank" href='https://velog.io/@votystiq/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%82%AC%EC%9D%B4%ED%8A%B8-%ED%9A%8C%EA%B3%A0%EB%A1%9D'>포트폴리오 사이트 회고록 (Velog)</a> </div>
                             <br />
                             <div className={styles.botTitle}> © 2024. Kim Min Young. All rights reserved.</div>
                         </div>
-                        {/* <div className={styles.infoTitle}>
-                            <div ref={divRef3}>INFOMATION</div>
-                        </div>
-                        <div className={styles.infoText}>
-                            <div className={styles.infoLeft}>
-                                <div className={styles.infoLeftInner}>
-                                    <div className={styles.infoWrapper}>
-                                        <div>개발 기간 - ??~ ??</div>
-
-                                        <div>기술 - React + Typescript</div>
-
-                                        <div>배포 - ??</div>
-
-                                        <div>아이콘 - Flaticon</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.infoRight}>
-                                <div>E-MAIL</div>
-                                <div>alsdudsk12@naver.com</div>
-                                <div>
-                                    <a href='https://velog.io/@votystiq/posts'>  <img className={styles.velog} src={velog}></img></a>
-                                </div>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>
