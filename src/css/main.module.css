@@ -139,7 +139,7 @@
     /* font-family: 'MaruBuri-Regular'; */
     display: flex;
     color: #ffffff;
-    align-items: end;
+    align-items: flex-end;
     justify-content: center;
     margin: 5px;
 
@@ -331,7 +331,7 @@
 
 .aboutTextBox {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     width: auto;
@@ -373,7 +373,7 @@
 
     .aboutTextBox2 {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         align-items: center;
         flex-direction: column;
         width: auto;
@@ -488,7 +488,7 @@
     height: 50px;
     padding: 10px 0 10px 0;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     width: auto;
 }
@@ -718,7 +718,7 @@
 
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     width: 50px;
     height: 100%;
     text-align: center;
@@ -843,7 +843,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .backBox2 {
@@ -854,7 +854,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .line2 {
@@ -869,7 +869,7 @@
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -908,7 +908,7 @@
     margin: 0 5px 0 5px;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 
 }
 
@@ -1037,7 +1037,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     width: 250px;
 }
 
@@ -1307,7 +1307,7 @@
 
 .stackText {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     height: 150px;
     font-size: 20px;
@@ -1331,14 +1331,14 @@
 
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
     flex-direction: column;
 
 }
 
 .stackWrapper {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
 }
 
 
