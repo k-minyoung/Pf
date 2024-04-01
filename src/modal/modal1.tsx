@@ -45,6 +45,8 @@ export default function Modal() {
         console.log(isOpen)
     };
     //////////////
+
+
     return (
         <div className={isOpen ? styles.modalOverlay : styles.modalOverlayR} onClick={handleCloseModal}>
             {/* 모달 내부를 클릭하여도 닫히지 않게 함 */}
@@ -52,12 +54,15 @@ export default function Modal() {
                 <div className={styles.mainImgBox}>
                     <ul ref={ref1} className={styles.sliderList}>
                         {products && products.map((i, index) => {
+                            const handleClick = () => {
+                                window.open(i);
+                            };
 
                             return (
                                 <>
                                     <li key={index} className={styles.imgLi}>
 
-                                        <img className={styles.imgBox} src={i} />
+                                        <img onClick={handleClick} className={styles.imgBox} src={i} />
 
                                     </li>
                                 </>

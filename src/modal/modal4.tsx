@@ -61,12 +61,14 @@ export default function Modal() {
                 <div className={styles.mainImgBox}>
                     <ul ref={ref} className={styles.sliderList}>
                         {products && products.map((i, index) => {
-
+                            const handleClick = () => {
+                                window.open(i);
+                            };
                             return (
                                 <>
                                     <li key={index} className={styles.imgLi}>
 
-                                        <img className={styles.imgBox} src={i} />
+                                        <img onClick={handleClick} className={styles.imgBox} src={i} />
 
                                     </li>
                                 </>
