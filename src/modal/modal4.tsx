@@ -76,6 +76,7 @@ export default function Modal() {
                         })}
                     </ul>
                 </div>
+
                 <img src={left} onClick={prevButtonClick} className={styles.prevBtn}></img>
                 <img src={right} onClick={nextButtonClick} className={styles.nextBtn}></img>
 

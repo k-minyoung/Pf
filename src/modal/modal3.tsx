@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from '../css/modal2.module.css';
+import styles from '../css/modal3.module.css';
 
 import left from "../icon/left.png"
 import right from "../icon/right.png"
